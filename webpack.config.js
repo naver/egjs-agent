@@ -7,10 +7,6 @@ var path = require("path");
 
 module.exports = function(env) {
 	env = env || {};
-
-	if(/pkgd/.test(env.mode)) {
-		config.externals = [];
-	}
 	
 	if(!/server/.test(env.mode)) {
 		config.module.rules.push({
@@ -37,18 +33,6 @@ module.exports = function(env) {
 				minimize: true
 			}),
 			new webpack.BannerPlugin(banner.common)
-		);
-	} else if(env.mode === "pkgd") {
-		for(var p in config.entry) {
-			config.entry[p + ".pkgd"] = config.entry[p];
-			config.entry[p + ".pkgd.min"] = config.entry[p];
-			delete config.entry[p];
-		}
-		config.plugins.push(
-			new webpack.optimize.UglifyJsPlugin({
-				include: /\.min\.js$/,
-				minimize: true
-			}), new webpack.BannerPlugin(banner.pkgd)
 		);
 	} else {
 		config.plugins.push(new WriteFilePlugin());

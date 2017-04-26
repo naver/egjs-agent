@@ -10,10 +10,7 @@ const AgentList = [
 		"browser" : {
 			"name" : "safari",
 			"version" : "4.0"
-		},
-		"isHWAccelerable" : true,
-		"isTransitional" : true,
-		"_hasClickBug" : true
+		}
 	},
 	{
 		// iPhone 4.3.3
@@ -26,10 +23,7 @@ const AgentList = [
 		"browser" : {
 			"name" : "safari",
 			"version" : "5.0.2"
-		},
-		"isHWAccelerable" : true,
-		"isTransitional" : true,
-		"_hasClickBug" : true
+		}
 	},
 	{
 		// iPad 4.2.1
@@ -42,10 +36,7 @@ const AgentList = [
 		"browser" : {
 			"name" : "safari",
 			"version" : "5.0.2"
-		},
-		"isHWAccelerable" : true,
-		"isTransitional" : true,
-		"_hasClickBug" : true
+		}
 	},
 	{
 		// iPad 4.3.3
@@ -58,10 +49,7 @@ const AgentList = [
 		"browser" : {
 			"name" : "safari",
 			"version" : "5.0.2"
-		},
-		"isHWAccelerable" : true,
-		"isTransitional" : true,
-		"_hasClickBug" : true
+		}
 	},
 	{
 		// iPhone 5.0.1
@@ -74,10 +62,7 @@ const AgentList = [
 		"browser" : {
 			"name" : "safari",
 			"version" : "5.1"
-		},
-		"isHWAccelerable" : true,
-		"isTransitional" : true,
-		"_hasClickBug" : true
+		}
 	},
 	{
 		// iPhone 6.0
@@ -90,10 +75,7 @@ const AgentList = [
 		"browser" : {
 			"name" : "safari",
 			"version" : "6.0"
-		},
-		"isHWAccelerable" : true,
-		"isTransitional" : false,
-		"_hasClickBug" : true
+		}
 	},
 	{
 		// iPhone 6.1.2
@@ -106,10 +88,7 @@ const AgentList = [
 		"browser" : {
 			"name" : "safari",
 			"version" : "6.0"
-		},
-		"isHWAccelerable" : true,
-		"isTransitional" : false,
-		"_hasClickBug" : true
+		}
 	},
 	{
 		// iPhone 7.0
@@ -122,10 +101,7 @@ const AgentList = [
 		"browser" : {
 			"name" : "safari",
 			"version" : "6.0"
-		},
-		"isHWAccelerable" : true,
-		"isTransitional" : false,
-		"_hasClickBug" : true
+		}
 	},
 	{
         // iPhone 8.0
@@ -138,10 +114,7 @@ const AgentList = [
         "browser" : {
             "name" : "safari",
             "version" : "8.0"
-        },
-        "isHWAccelerable" : true,
-        "isTransitional" : false,
-        "_hasClickBug" : true
+        }
     },
 	{
         // iPhone 8.0 - webview (Naver)
@@ -155,10 +128,7 @@ const AgentList = [
             "name" : "safari",
             "version" : "-1",
             "webview" : true
-        },
-        "isHWAccelerable" : true,
-        "isTransitional" : false,
-        "_hasClickBug" : true
+        }
     },
     {
         // iPhone 8.0 - webview
@@ -172,10 +142,7 @@ const AgentList = [
             "name" : "safari",
             "version" : "-1",
             "webview" : true
-        },
-        "isHWAccelerable" : true,
-        "isTransitional" : false,
-        "_hasClickBug" : true
+        }
     },
 	{
         // iPhone 9.0
@@ -188,10 +155,7 @@ const AgentList = [
         "browser" : {
             "name" : "safari",
             "version" : "9.0"
-        },
-        "isHWAccelerable" : true,
-        "isTransitional" : false,
-        "_hasClickBug" : true
+        }
     },
 	{
         // iPhone 9.0 - webview (Naver) on iPhone 4S
@@ -205,10 +169,7 @@ const AgentList = [
             "name" : "safari",
             "version" : "-1",
             "webview" : true
-        },
-        "isHWAccelerable" : true,
-        "isTransitional" : false,
-        "_hasClickBug" : true
+        }
     },
     {
         // iPhone 9.0 - webview (LINE app)
@@ -222,10 +183,7 @@ const AgentList = [
             "name" : "safari",
             "version" : "-1",
             "webview" : true
-        },
-        "isHWAccelerable" : true,
-        "isTransitional" : false,
-        "_hasClickBug" : true
+        }
     },
 		{
         // iPhone 10.0 - WKWebView
@@ -239,10 +197,7 @@ const AgentList = [
             "name" : "safari",
             "version" : "-1",
             "webview" : true
-        },
-        "isHWAccelerable" : true,
-        "isTransitional" : false,
-        "_hasClickBug" : true
+        }
     },
 		{
         // iPad 10.0 - WKWebView
@@ -256,10 +211,7 @@ const AgentList = [
             "name" : "safari",
             "version" : "-1",
             "webview" : true
-        },
-        "isHWAccelerable" : true,
-        "isTransitional" : false,
-        "_hasClickBug" : true
+        }
     },
 	{
 		// GalaxyS:2.1
@@ -270,12 +222,9 @@ const AgentList = [
 			"version" : "2.1"
 		},
 		"browser" : {
-			"name" : "default",
-			"version" : "-1"
-		},
-		"isHWAccelerable" : false,
-		"isTransitional" : false,
-		"_hasClickBug" : false
+			"name" : "android browser",
+			"version" : "4.0"
+		}
 	},
 	{
 		// GalaxyS:2.2
@@ -286,12 +235,9 @@ const AgentList = [
 			"version" : "2.2"
 		},
 		"browser" : {
-			"name" : "default",
-			"version" : "-1"
-		},
-		"isHWAccelerable" : false,
-		"isTransitional" : false,
-		"_hasClickBug" : false
+			"name" : "android browser",
+			"version" : "4.0"
+		}
 	},
 	{
 		// GalaxyS:2.3.4
@@ -302,12 +248,9 @@ const AgentList = [
 			"version" : "2.3.4"
 		},
 		"browser" : {
-			"name" : "default",
-			"version" : "-1"
-		},
-		"isHWAccelerable" : false,
-		"isTransitional" : false,
-		"_hasClickBug" : false
+			"name" : "android browser",
+			"version" : "4.0"
+		}
 	},
 	{
 		// GalaxyS2:2.3.3
@@ -318,12 +261,9 @@ const AgentList = [
 			"version" : "2.3.3"
 		},
 		"browser" : {
-			"name" : "default",
-			"version" : "-1"
-		},
-		"isHWAccelerable" : false,
-		"isTransitional" : false,
-		"_hasClickBug" : false
+			"name" : "android browser",
+			"version" : "4.0"
+		}
 	},
 	{
 		// GalaxyNote:2.3.6
@@ -334,12 +274,9 @@ const AgentList = [
 			"version" : "2.3.6"
 		},
 		"browser" : {
-			"name" : "default",
-			"version" : "-1"
-		},
-		"isHWAccelerable" : false,
-		"isTransitional" : false,
-		"_hasClickBug" : false
+			"name" : "android browser",
+			"version" : "4.0"
+		}
 	},
 	{
 		// GalaxyTab2:3.1
@@ -350,12 +287,9 @@ const AgentList = [
 			"version" : "3.1"
 		},
 		"browser" : {
-			"name" : "default",
-			"version" : "-1"
-		},
-		"isHWAccelerable" : false,
-		"isTransitional" : false,
-		"_hasClickBug" : false
+			"name" : "android browser",
+			"version" : "4.0"
+		}
 	},
 	{
 		// GalaxyNexus:4.0.1
@@ -366,12 +300,9 @@ const AgentList = [
 			"version" : "4.0.1"
 		},
 		"browser" : {
-			"name" : "default",
-			"version" : "-1"
-		},
-		"isHWAccelerable" : false,
-		"isTransitional" : false,
-		"_hasClickBug" : false
+			"name" : "android browser",
+			"version" : "4.0"
+		}
 	},
 	{
 		// GalaxyS3:4.0.4
@@ -382,12 +313,9 @@ const AgentList = [
 			"version" : "4.0.4"
 		},
 		"browser" : {
-			"name" : "default",
-			"version" : "-1"
-		},
-		"isHWAccelerable" : true,
-		"isTransitional" : false,
-		"_hasClickBug" : false
+			"name" : "android browser",
+			"version" : "4.0"
+		}
 	},
 	{
 		// GalaxyS2:chrome
@@ -400,10 +328,7 @@ const AgentList = [
 		"browser" : {
 			"name" : "chrome",
 			"version" : "16.0.912.77"
-		},
-		"isHWAccelerable" : false,
-		"isTransitional" : true,
-		"_hasClickBug" : false
+		}
 	},
 	{
 		// GalaxyS4:4.2.2
@@ -414,12 +339,9 @@ const AgentList = [
 			"version" : "4.2.2"
 		},
 		"browser" : {
-			"name" : "sbrowser",
-			"version" : "18.0.1025.308"
-		},
-		"isHWAccelerable" : true,
-		"isTransitional" : true,
-		"_hasClickBug" : false
+			"name" : "samsung internet",
+			"version" : "1.0"
+		}
 	},
 	{
 		// GalaxyS4:chrome
@@ -432,26 +354,7 @@ const AgentList = [
 		"browser" : {
 			"name" : "chrome",
 			"version" : "18.0.1025.166"
-		},
-		"isHWAccelerable" : false,
-		"isTransitional" : true,
-		"_hasClickBug" : false
-	},
-	{
-		// GalaxyS5:4.4.2
-		"device" : "GalaxyS5:4.4.2",
-		"ua" : "Mozilla/5.0 (Linux; Android 4.4.2; SAMSUNG SM-G900S Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko) Version/1.6 Chrome/28.0.1500.94 Mobile Safari/537.36",
-		"os" : {
-			"name" : "android",
-			"version" : "4.4.2"
-		},
-		"browser" : {
-			"name" : "sbrowser",
-			"version" : "28.0.1500.94"
-		},
-		"isHWAccelerable" : true,
-		"isTransitional" : true,
-		"_hasClickBug" : false
+		}
 	},
 	{
 		// GalaxyS5:chrome
@@ -464,10 +367,7 @@ const AgentList = [
 		"browser" : {
 			"name" : "chrome",
 			"version" : "42.0.2311.108"
-		},
-		"isHWAccelerable" : true,
-		"isTransitional" : true,
-		"_hasClickBug" : false
+		}
 	},
 	{
         // GalaxyS5 4.4.2 - webview (NAVER app)
@@ -481,10 +381,7 @@ const AgentList = [
             "name" : "chrome",
             "version" : "28.0.1500.94",
             "webview" : true
-        },
-        "isHWAccelerable" : true,
-        "isTransitional" : true,
-        "_hasClickBug" : false
+        }
     },
     {
          // GalaxyS5 5.0 - webview
@@ -498,10 +395,7 @@ const AgentList = [
              "name" : "chrome",
              "version" : "42.0.2311.138",
              "webview" : true
-         },
-         "isHWAccelerable" : true,
-         "isTransitional" : true,
-         "_hasClickBug" : false
+         }
     },
 	{
         // GalaxyS5 - higgs
@@ -515,10 +409,7 @@ const AgentList = [
             "name" : "chrome",
             "version" : "33.0.1750.61",
             "webview" : true
-        },
-        "isHWAccelerable" : true,
-        "isTransitional" : true,
-        "_hasClickBug" : false
+        }
     },
 	{
 		// GalaxyS6 5.1.1
@@ -529,12 +420,9 @@ const AgentList = [
 			"version" : "5.1.1"
 		},
 		"browser" : {
-			"name" : "sbrowser",
-			"version" : "38.0.2125.102"
-		},
-		"isHWAccelerable" : true,
-		"isTransitional" : true,
-		"_hasClickBug" : false
+			"name" : "samsung internet",
+			"version" : "3.2"
+		}
 	},
 	{
 		// GalaxyS6:chrome
@@ -547,10 +435,7 @@ const AgentList = [
 		"browser" : {
 			"name" : "chrome",
 			"version" : "45.0.2454.84"
-		},
-		"isHWAccelerable" : true,
-		"isTransitional" : true,
-		"_hasClickBug" : false
+		}
 	},
 	{
         // GalaxyS6 5.1.1 - webview (Naver app)
@@ -564,10 +449,7 @@ const AgentList = [
             "name" : "chrome",
             "version" : "45.0.2454.95",
             "webview" : true
-        },
-        "isHWAccelerable" : true,
-        "isTransitional" : true,
-        "_hasClickBug" : false
+        }
     },
 	{
         // GalaxyS6 5.1.1 - webview (KAKAOTALK app)
@@ -581,10 +463,7 @@ const AgentList = [
             "name" : "chrome",
             "version" : "45.0.2454.95",
             "webview" : true
-        },
-        "isHWAccelerable" : true,
-        "isTransitional" : true,
-        "_hasClickBug" : false
+        }
     },
 	{
         // GalaxyS6 5.1.1 - webview (Facebook app)
@@ -598,10 +477,7 @@ const AgentList = [
             "name" : "chrome",
             "version" : "45.0.2454.95",
             "webview" : true
-        },
-        "isHWAccelerable" : true,
-        "isTransitional" : true,
-        "_hasClickBug" : false
+        }
     },
 	{
 		// GalaxyS7 Edge 6.0.1
@@ -612,12 +488,9 @@ const AgentList = [
 			"version" : "6.0.1"
 		},
 		"browser" : {
-			"name" : "sbrowser",
-			"version" : "44.0.2403.133"
-		},
-		"isHWAccelerable" : true,
-		"isTransitional" : true,
-		"_hasClickBug" : false
+			"name" : "samsung internet",
+			"version" : "4.0"
+		}
 	},
 	{
 		// GalaxyS7 Edge 6.0.1:chrome
@@ -630,10 +503,7 @@ const AgentList = [
 		"browser" : {
 			"name" : "chrome",
 			"version" : "49.0.2623.91"
-		},
-		"isHWAccelerable" : true,
-		"isTransitional" : true,
-		"_hasClickBug" : false
+		}
 	},
 	{
 		// GalaxyS7 Edge 6.0.1 - webview (Naver app)
@@ -647,10 +517,7 @@ const AgentList = [
 			"name" : "chrome",
 			"version" : "48.0.2564.10",
             "webview" : true
-		},
-		"isHWAccelerable" : true,
-		"isTransitional" : true,
-		"_hasClickBug" : false
+		}
 	},
 	{
 		// GalaxyNexus:4.2.2
@@ -661,12 +528,9 @@ const AgentList = [
 			"version" : "4.2.2"
 		},
 		"browser" : {
-			"name" : "default",
-			"version" : "-1"
-		},
-		"isHWAccelerable" : true,
-		"isTransitional" : false,
-		"_hasClickBug" : false
+			"name" : "android browser",
+			"version" : "4.0"
+		}
 	},
 	{
 		// GalaxyNexus:chrome
@@ -679,10 +543,7 @@ const AgentList = [
 		"browser" : {
 			"name" : "chrome",
 			"version" : "18.0.1364.169"
-		},
-		"isHWAccelerable" : false,
-		"isTransitional" : true,
-		"_hasClickBug" : false
+		}
 	},
 	{
 		// GalaxyNexus:chrome
@@ -695,10 +556,7 @@ const AgentList = [
 		"browser" : {
 			"name" : "chrome",
 			"version" : "25.0.1364.169"
-		},
-		"isHWAccelerable" : true,
-		"isTransitional" : true,
-		"_hasClickBug" : false
+		}
 	},
 	{
 		// GalaxyNote2:chrome
@@ -711,10 +569,7 @@ const AgentList = [
 		"browser" : {
 			"name" : "chrome",
 			"version" : "31.0.1650.59"
-		},
-		"isHWAccelerable" : true,
-		"isTransitional" : true,
-		"_hasClickBug" : false
+		}
 	},
 	{
 		// Xiaomi_2013061_TD:browser
@@ -725,12 +580,9 @@ const AgentList = [
 			"version" : "4.2.1"
 		},
 		"browser" : {
-			"name" : "default",
-			"version" : "-1"
-		},
-		"isHWAccelerable" : true,
-		"isTransitional" : false,
-		"_hasClickBug" : false
+			"name" : "miui browser",
+			"version" : "1.0"
+		}
 	},
 	{
 		// window && IE
@@ -743,10 +595,7 @@ const AgentList = [
 		"browser" : {
 			"name" : "ie",
 			"version" : "7.0"
-		},
-		"isHWAccelerable" : true,
-		"isTransitional" : false,
-		"_hasClickBug" : false
+		}
 	},
 	{
 		// Windows 7 && IE
@@ -759,10 +608,7 @@ const AgentList = [
 		"browser" : {
 			"name" : "ie",
 			"version" : "8.0"
-		},
-		"isHWAccelerable" : true,
-		"isTransitional" : false,
-		"_hasClickBug" : false
+		}
 	},
 	{
 		// Windows 7 && IE
@@ -775,10 +621,7 @@ const AgentList = [
 		"browser" : {
 			"name" : "ie",
 			"version" : "11.0"
-		},
-		"isHWAccelerable" : true,
-		"isTransitional" : false,
-		"_hasClickBug" : false
+		}
 	},
 	{
 		// Windows 7 && Chrome
@@ -791,10 +634,7 @@ const AgentList = [
 		"browser" : {
 			"name" : "chrome",
 			"version" : "41.0.2272.101"
-		},
-		"isHWAccelerable" : true,
-		"isTransitional" : true,
-		"_hasClickBug" : false
+		}
 	},
 	{
 		// Windows 7 && Firefox
@@ -807,10 +647,7 @@ const AgentList = [
 		"browser" : {
 			"name" : "firefox",
 			"version" : "36.0"
-		},
-		"isHWAccelerable" : true,
-		"isTransitional" : true,
-		"_hasClickBug" : false
+		}
 	},
 	{
 		// IE11 on Windows 10
@@ -823,10 +660,7 @@ const AgentList = [
 		"browser" : {
 			"name" : "ie",
 			"version" : "11.0"
-		},
-		"isHWAccelerable" : true,
-		"isTransitional" : false,
-		"_hasClickBug" : false
+		}
 	},
 	{
 		// 64-bit Windows 8.1 Update && IE11
@@ -839,10 +673,7 @@ const AgentList = [
 		"browser" : {
 			"name" : "ie",
 			"version" : "11.0"
-		},
-		"isHWAccelerable" : true,
-		"isTransitional" : false,
-		"_hasClickBug" : false
+		}
 	},
 	{
 		// 64-bit Windows 8.1 Update && IE11 for the desktop
@@ -855,10 +686,7 @@ const AgentList = [
 		"browser" : {
 			"name" : "ie",
 			"version" : "11.0"
-		},
-		"isHWAccelerable" : true,
-		"isTransitional" : false,
-		"_hasClickBug" : false
+		}
 	},
 	{
 		// Windows 10 && Microsoft Edge for desktop
@@ -871,10 +699,7 @@ const AgentList = [
 		"browser" : {
 			"name" : "edge",
 			"version" : "12.10240"
-		},
-		"isHWAccelerable" : true,
-		"isTransitional" : false,
-		"_hasClickBug" : false
+		}
 	},
 	{
 		// Mac && Chrome
@@ -887,10 +712,7 @@ const AgentList = [
 		"browser" : {
 			"name" : "chrome",
 			"version" : "41.0.2272.101"
-		},
-		"isHWAccelerable" : true,
-		"isTransitional" : true,
-		"_hasClickBug" : false
+		}
 	},
 	{
 		// Mac && Safari
@@ -903,10 +725,7 @@ const AgentList = [
 		"browser" : {
 			"name" : "safari",
 			"version" : "8.0.3"
-		},
-		"isHWAccelerable" : true,
-		"isTransitional" : true,
-		"_hasClickBug" : true
+		}
 	},
 	{
 		// Phantomjs (default value)
@@ -919,10 +738,7 @@ const AgentList = [
 		"browser" : {
 			"name" : "phantomjs",
 			"version" : "1.9.8"
-		},
-		"isHWAccelerable" : false,
-		"isTransitional" : false,
-		"_hasClickBug" : false
+		}
 	},
 	{
 		// Window XP && ie6
@@ -935,10 +751,7 @@ const AgentList = [
 		"browser" : {
 			"name" : "ie",
 			"version" : "6.0"
-		},
-		"isHWAccelerable" : true,
-		"isTransitional" : false,
-		"_hasClickBug" : false
+		}
 	},
 	{
 		// Window && ie6
@@ -951,10 +764,7 @@ const AgentList = [
 		"browser" : {
 			"name" : "ie",
 			"version" : "6.0"
-		},
-		"isHWAccelerable" : true,
-		"isTransitional" : false,
-		"_hasClickBug" : false
+		}
 	},
 	{
 		// Window XP && ie7
@@ -967,10 +777,7 @@ const AgentList = [
 		"browser" : {
 			"name" : "ie",
 			"version" : "7.0"
-		},
-		"isHWAccelerable" : true,
-		"isTransitional" : false,
-		"_hasClickBug" : false
+		}
 	},
 	{
 		// Window Vista && ie6.2
@@ -978,15 +785,12 @@ const AgentList = [
 		"ua" : "Mozilla/5.3 (compatible; MSIE 6.2; Windows NT 6.0)",
 		"os" : {
 			"name" : "window",
-			"version" : "6.0"
+			"version" : "vista"
 		},
 		"browser" : {
 			"name" : "ie",
 			"version" : "6.2"
-		},
-		"isHWAccelerable" : true,
-		"isTransitional" : false,
-		"_hasClickBug" : false
+		}
 	},
 	{
 		// Window 2000 && ie6
@@ -994,15 +798,12 @@ const AgentList = [
 		"ua" : "Mozilla/4.0 (compatible; MSIE 6.0; Windows 2000)",
 		"os" : {
 			"name" : "window",
-			"version" : "5.0"
+			"version" : "2000"
 		},
 		"browser" : {
 			"name" : "ie",
 			"version" : "6.0"
-		},
-		"isHWAccelerable" : true,
-		"isTransitional" : false,
-		"_hasClickBug" : false
+		}
 	},
 	{
 		// Phantomjs Window (default value)
@@ -1015,10 +816,7 @@ const AgentList = [
 		"browser" : {
 			"name" : "phantomjs",
 			"version" : "1.9.8"
-		},
-		"isHWAccelerable" : false,
-		"isTransitional" : false,
-		"_hasClickBug" : false
+		}
 	},
 	{
 		"device" : "Phantomjs (default value)",
@@ -1030,11 +828,23 @@ const AgentList = [
 		"os" : {
 			"name" : "unknown",
 			"version" : "-1"
+		}
+	},
+	{
+		"device" : "Windows 10 & Whale",
+		"ua" : "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Whale/0.7.31.4 Safari/537.36",
+		"browser" : {
+			"name" : "whale",
+			"version" : "0.7.31.4"
 		},
-		"isHWAccelerable" : false,
-		"isTransitional" : false,
-		"_hasClickBug" : false
-	}
+		"os" : {
+			"name" : "window",
+			"version" : "10.0"
+		}
+	},
+
+	
+
 ];
 
 // complement 

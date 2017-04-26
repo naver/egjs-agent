@@ -1,12 +1,37 @@
-# eg.Agent
+# egjs-agent
 Provide cache interface to handle persisted data among history navigation.
 
 ## Documentation
-
-## Dependency
-eg.Agent has no dependencies.
+* API Documentation
+    - Latest: [http://naver.github.io/egjs/latest/doc/eg.Agent.html](http://naver.github.io/egjs/latest/doc/eg.Agent.html)
+    - Specific version: [http://naver.github.io/egjs/[VERSION]/doc/eg.Agent.html](http://naver.github.io/egjs/[VERSION]/doc/eg.Agent.html)
+* An advanced demo is available here: []()
 
 ## How to Use
+### 1. Load agent.js
+```html
+<script src="../dist/agent.js"></script>
+```
+
+### 2. Use eg.Agent
+```javascript
+var agent = eg.Agent(); // eg.Agent will use browser's navigator.userAgent 
+console.log(agent);
+/*
+    {
+        browser: {
+            name: "",
+            version: ""
+            isWebview: true or false
+        },
+        os: {
+            name: "",
+            version: ""
+        }
+    }
+*/
+var agent = eg.Agent(ua); // eg.Agent will use given user-agent string
+```
 
 ## Bug Report
 

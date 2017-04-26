@@ -4,23 +4,23 @@ var StringReplacePlugin = require("string-replace-webpack-plugin");
 
 module.exports = {
 	entry: {
-		"egjs-persist": "./src/index.js"
+		"agent": "./src/index.js"
 	},
 	output: {
 		path: path.resolve(__dirname, "../dist"),
 		filename: "[name].js",
-		library:  ["eg", "persist" ],
+		library:  ["eg", "Agent"],
 		libraryTarget: "umd",
 	},
 	externals: [
-	// 	{
-	// 	"eg.component": {
-	// 		commonjs: "eg.component",
-	// 		commonjs2: "eg.component",
-	// 		amd: "eg.component",
-	// 		root: ["eg", "Component"]
-	// 	}
-	// }
+		{
+			"@egjs/": {
+				commonjs: "@egjs/",
+				commonjs2: "@egjs/",
+				amd: "@egjs/",
+				root: ["eg", "Agent"]
+			}
+		}
 	],
 	devServer: {
 		publicPath: "/dist/"

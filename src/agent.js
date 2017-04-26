@@ -3,56 +3,105 @@ import {navigator, RegExp} from "./browser";
 const userAgentRules = {
 	browser: [{
 		criteria: "PhantomJS",
-		identity: "PhantomJS"
+		identity: "PhantomJS",
+	}, {
+		criteria: /Whale/,
+		identity: "Whale",
+		versionSearch: "Whale",
 	}, {
 		criteria: /Edge/,
 		identity: "Edge",
-		versionSearch: "Edge"
+		versionSearch: "Edge",
 	}, {
 		criteria: /MSIE|Trident|Windows Phone/,
 		identity: "IE",
-		versionSearch: "IEMobile|MSIE|rv"
+		versionSearch: "IEMobile|MSIE|rv",
 	}, {
-		criteria: /SAMSUNG|SamsungBrowser/,
-		identity: "SBrowser",
-		versionSearch: "Chrome"
+		criteria: /MiuiBrowser/,
+		identity: "MIUI Browser",
+		versionSearch: "MiuiBrowser",
+	}, {
+		criteria: /SamsungBrowser/,
+		identity: "Samsung Internet",
+		versionSearch: "SamsungBrowser",
+	}, {
+		criteria: /SAMSUNG /,
+		identity: "Samsung Internet",
+		versionSearch: "Version",
 	}, {
 		criteria: /Chrome|CriOS/,
-		identity: "Chrome"
+		identity: "Chrome",
 	}, {
 		criteria: /Android/,
-		identity: "default"
+		identity: "Android Browser",
+		versionSearch: "Version",
 	}, {
 		criteria: /iPhone|iPad/,
 		identity: "Safari",
-		versionSearch: "Version"
+		versionSearch: "Version",
 	}, {
 		criteria: "Apple",
 		identity: "Safari",
-		versionSearch: "Version"
+		versionSearch: "Version",
 	}, {
 		criteria: "Firefox",
-		identity: "Firefox"
+		identity: "Firefox",
 	}],
 	os: [{
-		criteria: /Windows Phone|Windows NT/,
+		criteria: /Windows Phone/,
+		identity: "Windows Phone",
+		versionSearch: "Windows Phone",
+	}, {
+		criteria: "Windows NT 6.3",
 		identity: "Window",
-		versionSearch: "Windows Phone|Windows NT"
+		versionAlias: "8.1",
+	}, {
+		criteria: "Windows NT 6.2",
+		identity: "Window",
+		versionAlias: "8",
+	}, {
+		criteria: "Windows NT 6.1",
+		identity: "Window",
+		versionAlias: "7",
+	}, {
+		criteria: "Windows NT 6.0",
+		identity: "Window",
+		versionAlias: "Vista",
+	}, {
+		criteria: "Windows NT 5.1",
+		identity: "Window",
+		versionAlias: "XP",
+	}, {
+		criteria: "Windows NT 5.2",
+		identity: "Window",
+		versionAlias: "XP",
+	}, {
+		criteria: "Windows NT 5.1",
+		identity: "Window",
+		versionAlias: "XP",
+	}, {
+		criteria: /Windows NT 5.0|Windows NT 5.01/,
+		identity: "Window",
+		versionAlias: "2000",
 	}, {
 		criteria: "Windows 2000",
 		identity: "Window",
-		versionAlias: "5.0"
+		versionAlias: "2000",
+	}, {
+		criteria: /Windows NT/,
+		identity: "Window",
+		versionSearch: "Windows NT",
 	}, {
 		criteria: /iPhone|iPad/,
 		identity: "iOS",
-		versionSearch: "iPhone OS|CPU OS"
+		versionSearch: "iPhone OS|CPU OS",
 	}, {
 		criteria: "Mac",
 		versionSearch: "OS X",
-		identity: "MAC"
+		identity: "MAC",
 	}, {
 		criteria: /Android/,
-		identity: "Android"
+		identity: "Android",
 	}],
 
 	// Webview check condition
@@ -62,22 +111,22 @@ const userAgentRules = {
 	webview: [{
 		criteria: /iPhone|iPad/,
 		browserVersionSearch: "Version",
-		webviewBrowserVersion: /-1/
+		webviewBrowserVersion: /-1/,
 	}, {
 		criteria: /iPhone|iPad|Android/,
-		webviewToken: /NAVER|DAUM|; wv/
+		webviewToken: /NAVER|DAUM|; wv/,
 
 	}],
 	defaultString: {
 		browser: {
 			version: "-1",
-			name: "default"
+			name: "default",
 		},
 		os: {
 			version: "-1",
-			name: "unknown"
-		}
-	}
+			name: "unknown",
+		},
+	},
 };
 
 let UA;
@@ -94,10 +143,7 @@ function getIdentityStringFromArray(rules, defaultStrings) {
 }
 
 function getBrowserName(browserRules) {
-	return getIdentityStringFromArray(
-		browserRules,
-		userAgentRules.defaultString.browser
-	);
+	return getIdentityStringFromArray(browserRules, userAgentRules.defaultString.browser);
 }
 
 function getRule(rules, targetIdentity) {
@@ -153,16 +199,12 @@ function getBrowserVersion(browserName) {
 }
 
 function getOSName(osRules) {
-	return getIdentityStringFromArray(
-		osRules,
-		userAgentRules.defaultString.os
-	);
+	return getIdentityStringFromArray(osRules, userAgentRules.defaultString.os);
 }
 
 function getOSRule(osName) {
 	return getRule(userAgentRules.os, osName);
 }
-
 
 function getOSVersion(osName) {
 	const osRule = getOSRule(osName) || {};
@@ -177,11 +219,7 @@ function getOSVersion(osName) {
 	}
 	const osVersionToken = osRule.versionSearch || osName;
 	const osVersionRegex =
-		new RegExp(
-			`(${osVersionToken})\\s([\\d_\\.]+|\\d_0)`,
-			"i"
-		);
-
+		new RegExp(`(${osVersionToken})\\s([\\d_\\.]+|\\d_0)`, "i");
 	const osVersionRegexResult = osVersionRegex.exec(UA);
 
 	if (osVersionRegexResult) {
@@ -218,6 +256,47 @@ function postProcess(agent) {
 	return agent;
 }
 
+/**
+ * @namespace eg
+ */
+
+/**
+ * @typedef {Object} AgentInfo
+ * @property {Object} browser a object that contains browser information <ko>브라우저 정보를 담은 객체</ko>
+ * @property {String} browser.name name of the browser <ko>브라우저 이름</ko>
+ * @property {String} browser.version version of the browser <ko>브라우저 버전</ko>
+ * @property {Object} os a object that contains OS information <ko>운영체제 정보를 담은 객체</ko>
+ * @property {String} os.name name of the OS <ko>운영체제 이름</ko>
+ * @property {String} os.version version of the OS <ko>운영체제 버전</ko>
+ */
+
+/**
+ * Returns browser and OS information by parsing User-Agent string.
+ * @ko 유저 에이전트 문자열을 파싱하여 브라우저와 운영체제 정보를 반환한다.
+ * @name eg#Agent
+ * @alias eg.Agent
+ * @method
+ * @param {String} [uastring=navigator.userAgent] The user-agent string to parse. <ko>환경 분석에 사용할 유저에이전트 문자열</ko>
+ * @return {AgentInfo} agent information <ko>사용자 환경 정보</ko>
+ * @example
+ * ```javascript
+ * var agent = eg.Agent(); // eg.Agent will use browser's navigator.userAgent
+ * console.log(agent);
+ * // console.log will print below
+ * {
+ *  browser: {
+ *	 name: "",
+ *	 version: "",
+ *	 isWebview: true or false
+ *  },
+ *  os: {
+ *	 name: "",
+ *	 version: ""
+ *  }
+ * }
+ * var agent = eg.Agent(ua); // eg.Agent will use given user-agent string
+ * ```
+ */
 function Agent(uastring) {
 	if (uastring) {
 		UA = uastring;
@@ -227,7 +306,7 @@ function Agent(uastring) {
 
 	const agent = {
 		os: {},
-		browser: {}
+		browser: {},
 	};
 
 	agent.browser.name = getBrowserName(userAgentRules.browser);

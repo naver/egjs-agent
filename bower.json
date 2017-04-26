@@ -1,6 +1,6 @@
 {
 	"name": "egjs-agent",
-	"version": "2.0.0-beta",
+	"version": "2.0.0-rc.1",
 	"license": "MIT",
 	"keywords": [
 		"egjs",
@@ -12,5 +12,5 @@
 		"bower_components",
 		"node_modules"
 	],
-	"main": "dist/egjs-agent.js"
+	"main": "dist/agent.js"
 }
