@@ -1,5 +1,5 @@
 # egjs-agent
-Provide cache interface to handle persisted data among history navigation.
+Returns the User-Agent information.
 
 ## Documentation
 * API Documentation
