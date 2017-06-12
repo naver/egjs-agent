@@ -1,7 +1,8 @@
 {
   "name": "@egjs/agent",
   "version": "2.0.0-rc.1",
-  "main": "src/index.js",
+  "main": "dist/agent.js",
+  "es2015": "src/agent.js",
   "scripts": {
     "start": "webpack-dev-server --env.mode server",
     "build": "webpack --env.mode production --config webpack.config.js && webpack --env.mode --config webpack.config.js",
@@ -18,8 +19,6 @@
   },
   "homepage": "https://github.com/naver/egjs/agent",
   "license": "MIT <https://naver.github.io/egjs/license.txt>",
-  "dependencies": {
-  },
   "devDependencies": {
     "babel-core": "^6.24.1",
     "babel-loader": "^6.4.1",
