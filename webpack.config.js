@@ -1,6 +1,7 @@
 var webpack = require("webpack");
 var CleanWebpackPlugin = require("clean-webpack-plugin");
 var WriteFilePlugin = require("write-file-webpack-plugin");
+var UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 var banner = require("./config/banner");
 var config = require("./config/webpack");
 var path = require("path");
@@ -28,9 +29,22 @@ module.exports = function(env) {
 				verbose: true, 
 				dry: false
 			}),
-			new webpack.optimize.UglifyJsPlugin({
+			new UglifyJSPlugin({
 				include: /\.min\.js$/,
-				minimize: true
+				beautify: false,
+				mangle: {
+					screw_ie8: true,
+					keep_fnames: true
+				},
+				compress: {
+					screw_ie8: true,
+					warnings: false
+				},
+				output: {
+					screw_ie8: false
+				},
+				comments: false,
+				sourceMap: true
 			}),
 			new webpack.BannerPlugin(banner.common)
 		);

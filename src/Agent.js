@@ -321,6 +321,4 @@ function Agent(uastring) {
 	return postProcess(agent);
 }
 
-Agent.VERSION = "#__VERSION__#";
-
 export default Agent;

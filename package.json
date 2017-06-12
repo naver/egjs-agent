@@ -2,7 +2,7 @@
   "name": "@egjs/agent",
   "version": "2.0.0-rc.1",
   "main": "dist/agent.js",
-  "es2015": "src/agent.js",
+  "es2015": "src/Agent.js",
   "scripts": {
     "start": "webpack-dev-server --env.mode server",
     "build": "webpack --env.mode production --config webpack.config.js && webpack --env.mode --config webpack.config.js",
