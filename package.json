@@ -14,16 +14,14 @@
     "prepush": "npm run lint",
     "commitmsg": "node config/validate-commit-msg.js"
   },
-  "author": {
-    "name": "NAVER corp"
-  },
+  "author": "NAVER corp",
   "namespace" : {
     "eg": "eg"
   },
   "homepage": "https://github.com/naver/egjs/agent",
   "license": "MIT <https://naver.github.io/egjs/license.txt>",
   "devDependencies": {
-"babel-core": "^6.25.0",
+    "babel-core": "^6.25.0",
     "babel-loader": "^7.0.0",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-transform-object-assign": "^6.22.0",
