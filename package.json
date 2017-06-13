@@ -17,7 +17,9 @@
     "demo:build": "jekyll build -s demo",
     "demo:prebuild": "cpx 'doc/**/*' demo/doc/ --clean && cpx 'dist/**/*' demo/dist --clean"
   },
-  "author": "NAVER corp",
+  "author": {
+    "name": "NAVER corp"
+  },
   "namespace" : {
     "eg": "eg"
   },
