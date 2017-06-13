@@ -17,35 +17,63 @@ module.exports = function (config) {
 				rules: [webpackConfig.module.rules[0]]
 			}
 		},
+preprocessors: {
+			"./test/**/*.spec.js": config.coverage ? ["webpack"] : ["webpack", "sourcemap"]
+		},
+
+		// test results reporter to use
+		// possible values: 'dots', 'progress'
+		// available reporters: https://npmjs.org/browse/keyword/karma-reporter
+		reporters: ["mocha"],
+
+		// start these browsers
+		// available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
+		browsers: [],
+
 		webpackMiddleware: {
 			noInfo: true
 		},
 
-		preprocessors: {
-			'./test/**/*.spec.js': ['webpack']
+		// web server port
+		port: 9876,
+
+		// enable / disable colors in the output (reporters and logs)
+		colors: true,
+
+		// level of logging
+		// possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
+		logLevel: config.LOG_INFO,
+
+		// enable / disable watching file and executing tests whenever any file changes
+		autoWatch: true,
+
+		webpackServer: {
+			noInfo: true
 		},
 
-		reporters: ['mocha'],
+		// Concurrency level
+		// how many browser should be started simultaneous
+		concurrency: Infinity,
 
-		browsers: ["PhantomJS"]
+		captureTimeout: 60000
 	};
 
-	if (config.chrome) {
-		karmaConfig.browsers = ["Chrome"];
-	}
+	karmaConfig.browsers.push(config.chrome ? "Chrome" : "PhantomJS");
 
-	if (config.coverage) {
-		karmaConfig.preprocessors['./test/**/*.spec.js'].push('sourcemap');
+	if(config.coverage) {
 		karmaConfig.reporters.push('coverage-istanbul');
+
 		karmaConfig.coverageIstanbulReporter = {
-			reports: ['text-summary', 'html'],
-			dir: './coverage'
+			reports: ["text-summary", "html"],
+			dir: "./coverage"
 		};
+
 		karmaConfig.webpack.module.rules.unshift({
 			test: /\.js$/,
 			exclude: /(node_modules|test)/,
-			loader: 'istanbul-instrumenter-loader'
+			loader: "istanbul-instrumenter-loader"
 		});
+
 		karmaConfig.singleRun = true;
 	}
 
