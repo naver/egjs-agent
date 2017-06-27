@@ -1,0 +1,16 @@
+component: Agent
+home: //naver.github.io/egjs
+desc: Extracts browser and operating system information from the user agent string.
+download:
+  development: agent.js
+  production: agent.min.js
+GA: UA-70842526-15
+github:
+  user: naver
+  repo: egjs-agent 
+js:
+- https://cdnjs.cloudflare.com/ajax/libs/autosize.js/3.0.21/autosize.min.js
+- release/latest/dist/agent.js
+- assets/js/demo.js
+css:
+- assets/css/demo.css

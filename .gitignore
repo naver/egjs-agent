@@ -159,6 +159,8 @@ fabric.properties
 
 ### Jekyll ###
 _site/
+demo/dist
+demo/doc
 .sass-cache/
 .jekyll-metadata
 
@@ -201,8 +203,7 @@ GitHub.sublime-settings
 !.vscode/extensions.json
 
 ### Custom ###
-dist/
-doc/
 report/
 temp/
-
+doc/
+demo/_data/version.yml

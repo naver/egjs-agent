@@ -1,36 +1,52 @@
-# egjs-agent
-Returns the User-Agent information.
+# egjs-agent [![npm version](https://badge.fury.io/js/%40egjs%2Fagent.svg)](https://badge.fury.io/js/%40egjs%2Fagent) [![Build Status](https://travis-ci.org/naver/egjs-agent.svg?branch=master)](https://travis-ci.org/naver/egjs-agent) 
+
+[![Issue Stats](http://issuestats.com/github/naver/egjs-agent/badge/pr?style=flat)](http://issuestats.com/github/naver/egjs-agent)
+[![Issue Stats](http://issuestats.com/github/naver/egjs-agent/badge/issue?style=flat)](http://issuestats.com/github/naver/egjs-agent)
+
+Extracts browser and operating system information from the user agent.
 
 ## Documentation
 * API Documentation
-    - Latest: [http://naver.github.io/egjs/latest/doc/eg.Agent.html](http://naver.github.io/egjs/latest/doc/eg.Agent.html)
-    - Specific version: [http://naver.github.io/egjs/[VERSION]/doc/eg.Agent.html](http://naver.github.io/egjs/[VERSION]/doc/eg.Agent.html)
-* An advanced demo is available here: []()
+    - Latest: [https://naver.github.io/egjs-agent/release/latest/doc/](https://naver.github.io/egjs-agent/release/latest/doc/)
+    - Specific version: [https://naver.github.io/egjs-agent/release/[VERSION]/doc/](https://naver.github.io/egjs-agent/release/[VERSION]/doc/)
 
-## How to Use
-### 1. Load agent.js
-```html
-<script src="../dist/agent.js"></script>
-```
 
-### 2. Use eg.Agent
-```javascript
-var agent = eg.Agent(); // eg.Agent will use browser's navigator.userAgent 
-console.log(agent);
-/*
-    {
-        browser: {
-            name: "",
-            version: ""
-            isWebview: true or false
-        },
-        os: {
-            name: "",
-            version: ""
-        }
-    }
-*/
-var agent = eg.Agent(ua); // eg.Agent will use given user-agent string
+## Supported Browsers
+The following are the supported browsers.
+
+|Internet Explorer|Chrome|Firefox|Safari|iOS|Android|
+|---|---|---|---|---|---|
+|||||||
+
+
+
+
+
+
+## Download and Installation
+
+Download dist files from repo directly or install it via npm. 
+
+### For development (Uncompressed)
+
+You can download the uncompressed files for development
+
+- Latest : https://naver.github.io/egjs-agent/release/latest/dist/agent.js
+- Specific version : https://naver.github.io/egjs-agent/release/[VERSION]/dist/agent.js
+
+### For production (Compressed)
+
+You can download the compressed files for production
+
+- Latest : https://naver.github.io/egjs-agent/release/latest/dist/agent.min.js
+- Specific version : https://naver.github.io/egjs-agent/release/[VERSION]/dist/agent.min.js
+
+### Installation with npm
+
+The following command shows how to install egjs-agent using npm.
+
+```bash
+$ npm install @egjs/agent
 ```
 
 ## Bug Report
@@ -39,7 +55,8 @@ If you find a bug, please report it to us using the [Issues](https://github.com/
 
 
 ## License
-eg.Agent is released under the [MIT license](http://naver.github.io/egjs/license.txt).
+egjs-agent is released under the [MIT license](http://naver.github.io/egjs/license.txt).
+
 
 ```
 Copyright (c) 2015 NAVER Corp.
