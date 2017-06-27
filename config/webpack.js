@@ -4,24 +4,14 @@ var StringReplacePlugin = require("string-replace-webpack-plugin");
 
 module.exports = {
 	entry: {
-		"agent": "./src/index.js"
+		"agent": "./src/index.js",
 	},
 	output: {
 		path: path.resolve(__dirname, "../dist"),
 		filename: "[name].js",
-		library:  ["eg", "Agent"],
+		library:  [pkg.namespace.eg, "Agent"],
 		libraryTarget: "umd",
 	},
-	externals: [
-		{
-			"@egjs/": {
-				commonjs: "@egjs/",
-				commonjs2: "@egjs/",
-				amd: "@egjs/",
-				root: ["eg", "Agent"]
-			}
-		}
-	],
 	devServer: {
 		publicPath: "/dist/"
 	},
@@ -38,7 +28,6 @@ module.exports = {
 							"es2015",
 							{
 								"loose": true,
-								"modules": false
 							}
 						]
 					],
