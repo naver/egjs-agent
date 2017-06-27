@@ -6,10 +6,6 @@
  * 
  * 
  * @version 2.0.0-pre
- * 
- * All-in-one packaged file for ease use of '@egjs/agent' with below dependencies.
- * NOTE: This is not an official distribution file and is only for user convenience.
- * 
  */
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
