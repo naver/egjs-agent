@@ -1,5 +1,18 @@
 const AgentList = [
 	{
+		// Unknown agent
+		"device" : "unknown agent",
+		"ua" : "Mozilla/5.0 (PLAYSTATION 3; 1.00)",
+		"os" : {
+			"name" : "unknown",
+			"version" : "-1"
+		},
+		"browser" : {
+			"name" : "unknown",
+			"version" : "-1"
+		}
+	},	
+	{
 		// iPhone 3.0
 		"device" : "iPhone 3.0",
 		"ua" : "Mozilla/5.0 (iPod; U; CPU iPhone OS 3_0 like Mac OS X;ko-kr)AppleWebKit/528.18(KHTML, like Gecko)Version/4.0 Mobile/7A341 Safari/528.16",
@@ -651,7 +664,7 @@ const AgentList = [
 	},
 	{
 		// IE11 on Windows 10
-		"device" : "64-bit Windows 8.1 Update && IE11",
+		"device" : "Windows 10 Update && IE11",
 		"ua" : "Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko",
 		"os" : {
 			"name" : "window",
@@ -743,19 +756,6 @@ const AgentList = [
 	{
 		// Window XP && ie6
 		"device" : "Window XP && ie6",
-		"ua" : "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 1.1.4322; .NET CLR 1.0.3705; Media Center PC 3.1)",
-		"os" : {
-			"name" : "window",
-			"version" : "5.1"
-		},
-		"browser" : {
-			"name" : "ie",
-			"version" : "6.0"
-		}
-	},
-	{
-		// Window && ie6
-		"device" : "Window && ie6",
 		"ua" : "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 1.1.4322; .NET CLR 1.0.37052000; Media Center PC 3.1)",
 		"os" : {
 			"name" : "window",
@@ -767,8 +767,8 @@ const AgentList = [
 		}
 	},
 	{
-		// Window XP && ie7
-		"device" : "Window XP && ie7",
+		// Window 2000 && ie7
+		"device" : "Window 2000 && ie7",
 		"ua" : "Mozilla/5.0 (compatible; MSIE 7.0; Windows NT 5.0; Trident/4.0; FBSMTWB; .NET CLR 2.0.34861; .NET CLR 3.0.3746.3218; .NET CLR 3.5.33652; msn OptimizedIE8;ENUS)",
 		"os" : {
 			"name" : "window",
@@ -785,7 +785,7 @@ const AgentList = [
 		"ua" : "Mozilla/5.3 (compatible; MSIE 6.2; Windows NT 6.0)",
 		"os" : {
 			"name" : "window",
-			"version" : "vista"
+			"version" : "6.0"
 		},
 		"browser" : {
 			"name" : "ie",
@@ -798,7 +798,7 @@ const AgentList = [
 		"ua" : "Mozilla/4.0 (compatible; MSIE 6.0; Windows 2000)",
 		"os" : {
 			"name" : "window",
-			"version" : "2000"
+			"version" : "5.0"
 		},
 		"browser" : {
 			"name" : "ie",
@@ -806,7 +806,7 @@ const AgentList = [
 		}
 	},
 	{
-		// Phantomjs Window (default value)
+		// Phantomjs Window 7 (default value)
 		"device" : "Phantomjs Window (default value)",
 		"ua" : "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/534.34 (KHTML, like Gecko) PhantomJS/1.9.8 Safari/534.34",
 		"os" : {

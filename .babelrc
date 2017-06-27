@@ -1,10 +1,14 @@
 {
     "presets": [ 
         [
-            "es2015"
+            "es2015",
+            {
+                "loose": true
+            }
         ]
     ],
     "plugins": [
-        "add-module-exports"
+        "add-module-exports",
+        "transform-object-assign"
     ]
 }

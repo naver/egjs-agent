@@ -6,7 +6,7 @@
 <footer>(optional)
 
 ============= Sample ==============
-fix(persist): update aborting animation logic
+fix(movableCoord): update aborting animation logic
 
 Abort the animating post process when "tap" occurs or velocity is zero at inside border.
 
@@ -23,4 +23,3 @@ Ref #30
 
 ============ See More =============
 https://github.com/naver/egjs/wiki/Commit-Log-Guidelines
-
