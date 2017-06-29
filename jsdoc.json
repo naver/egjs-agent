@@ -29,7 +29,7 @@
 		},
 		"applicationName": "eg.Agent",
 		"disqus": "egjs",
-		"googleAnalytics": "",
+		"googleAnalytics": "UA-70842526-15",
 		"openGraph": {
 			"title": "",
 			"type": "website",
@@ -44,7 +44,7 @@
 		},
 		"linenums": true,
 		"link": {
-			"canonical": "http://naver.github.io/egjs/"
+			"canonical": "http://naver.github.io/egjs-agent/release/latest/doc/"
 		}
 	},
 	"markdown": {
