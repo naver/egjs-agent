@@ -1,27 +1,11 @@
-# egjs-agent [![npm version](https://badge.fury.io/js/%40egjs%2Fagent.svg)](https://badge.fury.io/js/%40egjs%2Fagent) [![Build Status](https://travis-ci.org/naver/egjs-agent.svg?branch=master)](https://travis-ci.org/naver/egjs-agent) 
+# egjs-agent [![npm version](https://badge.fury.io/js/%40egjs%2Fagent.svg)](https://badge.fury.io/js/%40egjs%2Fagent) [![Build Status](https://travis-ci.org/naver/egjs-agent.svg?branch=master)](https://travis-ci.org/naver/egjs-agent) [![Coverage Status](https://coveralls.io/repos/github/naver/egjs-agent/badge.svg?branch=master)](https://coveralls.io/github/naver/egjs-agent?branch=master)
 
-[![Issue Stats](http://issuestats.com/github/naver/egjs-agent/badge/pr?style=flat)](http://issuestats.com/github/naver/egjs-agent)
-[![Issue Stats](http://issuestats.com/github/naver/egjs-agent/badge/issue?style=flat)](http://issuestats.com/github/naver/egjs-agent)
 
 Extracts browser and operating system information from the user agent.
 
-## Documentation
-* API Documentation
-    - Latest: [https://naver.github.io/egjs-agent/release/latest/doc/](https://naver.github.io/egjs-agent/release/latest/doc/)
-    - Specific version: [https://naver.github.io/egjs-agent/release/[VERSION]/doc/](https://naver.github.io/egjs-agent/release/[VERSION]/doc/)
-
-
-## Supported Browsers
-The following are the supported browsers.
-
-|Internet Explorer|Chrome|Firefox|Safari|iOS|Android|
-|---|---|---|---|---|---|
-|||||||
-
-
-
-
-
+## Documents
+- [Get Started and Demos](https://naver.github.io/egjs-agent/)
+- [API documentation](https://naver.github.io/egjs-agent/release/latest/doc/)
 
 ## Download and Installation
 
