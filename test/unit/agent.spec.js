@@ -1,4 +1,4 @@
-import AgentInjector from "inject-loader!../../src/agent";
+import AgentInjector from "inject-loader!../../src/Agent";
 import AgentList from "./agent_list";
 import {RegExp} from "../../src/browser";
 
