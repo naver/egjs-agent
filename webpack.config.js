@@ -37,7 +37,6 @@ var config = {
 };
 
 module.exports = function (env) {
-	console.log(env);
 	env = env || "development";
 	return require("./config/webpack.config." + env + ".js")(config);
 };
