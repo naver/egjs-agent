@@ -18,8 +18,13 @@
 	<link rel="stylesheet" href="assets/css/demo.css">
 
 
+	<script src="release/latest/dist/agent.min.js"></script>
+
 <script>
 	window.LIBLINK = [];
+	
+	window.LIBLINK.push(window.location.href.replace("/index.html", "/")
+            .replace("/gallery.html", "/") + "release/latest/dist/agent.min.js");
 	
 </script>
 <body>
@@ -29,22 +34,30 @@
 		<div class="container">
 			<div class="docs-inner">
 				
-				<div class="useragent-container">
-    <p class="description">Target User Agent</p>
-    <textarea class="useragent-input"></textarea>
+				<div class="demobox" codepen="demo">
+    <div class="useragent-container">
+        <p class="description">Target User Agent</p>
+        <textarea class="useragent-input"></textarea>
+    </div>
+    <div class="result-container">
+        <h3>OS</h3>
+        <p class="os">
+            name: <span class="name"></span><br /> version: <span class="version"></span><br />
+        </p>
+        <h3>Browser</h3>
+        <p class="browser">
+            name: <span class="name"></span><br /> version: <span class="version"></span><br /> webview: <span class="webview"></span>
+        </p>
+    </div>
 </div>
-<div class="result-container">
-    <h3>OS</h3>
-    <p class="os">
-        name: <span class="name"></span><br />
-        version: <span class="version"></span><br />
-    </p>
-    <h3>Browser</h3>
-    <p class="browser">
-        name: <span class="name"></span><br />
-        version: <span class="version"></span><br />
-        webview: <span class="webview"></span>
-    </p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">agentInfo</span> <span class="o">=</span> <span class="nx">eg</span><span class="p">.</span><span class="nx">Agent</span><span class="p">(</span><span class="nx">uaInput</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+<span class="nx">osName</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">agentInfo</span><span class="p">.</span><span class="nx">os</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>
+<span class="nx">osVersion</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">agentInfo</span><span class="p">.</span><span class="nx">os</span><span class="p">.</span><span class="nx">version</span><span class="p">;</span>
+<span class="nx">browserName</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">agentInfo</span><span class="p">.</span><span class="nx">browser</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>
+<span class="nx">browserVersion</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">agentInfo</span><span class="p">.</span><span class="nx">browser</span><span class="p">.</span><span class="nx">version</span><span class="p">;</span>
+<span class="nx">browserWebview</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">agentInfo</span><span class="p">.</span><span class="nx">browser</span><span class="p">.</span><span class="nx">webview</span><span class="p">;</span>
+</code></pre>
 </div>
 
 			</div>
@@ -53,8 +66,6 @@
 </div>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/autosize.js/3.0.21/autosize.min.js"></script>
-
-	<script src="release/latest/dist/agent.js"></script>
 
 	<script src="assets/js/demo.js"></script>
 
