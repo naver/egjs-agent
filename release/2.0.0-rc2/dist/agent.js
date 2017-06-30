@@ -125,7 +125,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * Extracts browser and operating system information from the user agent string.
  * @ko 유저 에이전트 문자열에서 브라우저와 운영체제 정보를 추출한다.
  * @param {String} [userAgent=navigator.userAgent] user agent string to parse <ko>파싱할 유저에이전트 문자열</ko>
- * @return {Object} result
+ * @return {AgentInfo} result
  */
 /**
  * Copyright (c) NAVER Corp.
