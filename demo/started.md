@@ -20,10 +20,10 @@ import Agent from "@egjs/agent";
 
 ```javascript
 // eg.Agent will use browser's navigator.userAgent 
-var agentInfo = eg.Agent();
+var agentInfo = eg.agent();
 
 // or you can use own user-agent string
-agentInfo = eg.Agent(ua);
+agentInfo = eg.agent(ua);
 
 console.log(agentInfo);
 /*

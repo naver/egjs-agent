@@ -5,7 +5,7 @@
  * @egjs/agent JavaScript library
  * 
  * 
- * @version 2.0.0-pre
+ * @version 2.0.0-rc2
  */
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
@@ -115,12 +115,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * @param {String} [userAgent=navigator.userAgent] user agent string to parse <ko>파싱할 유저에이전트 문자열</ko>
  * @return {Object} agentInfo
  * @return {Object} agentInfo.os os Operating system information <ko>운영체제 정보</ko>
- * @return {String} agentInfo.os.name Operating system name (android, ios, window, mac) <ko>운영체제 이름 (android, ios, window, mac)</ko>
+ * @return {String} agentInfo.os.name Operating system name (android, ios, window, mac, unknown) <ko>운영체제 이름 (android, ios, window, mac, unknown)</ko>
  * @return {String} agentInfo.os.version Operating system version <ko>운영체제 버전</ko>
  * @return {String} agentInfo.browser Browser information <ko>브라우저 정보</ko>
- * @return {String} agentInfo.browser.name Browser name (default, safari, chrome, sbrowser, ie, firefox) <ko>브라우저 이름 (default, safari, chrome, sbrowser, ie, firefox)</ko>
+ * @return {String} agentInfo.browser.name Browser name (safari, chrome, sbrowser, ie, firefox, unknown) <ko>브라우저 이름 (safari, chrome, sbrowser, ie, firefox, unknown)</ko>
  * @return {String} agentInfo.browser.version Browser version <ko>브라우저 버전 </ko>
- * @return {String} agentInfo.browser.webview Indicates whether a WebView browser is available<ko>웹뷰 브라우저 여부</ko>
+ * @return {String} agentInfo.browser.webview Indicates whether the browser is inapp<ko>웹뷰 브라우저 여부</ko>
  */
 /**
  * Copyright (c) NAVER Corp.
@@ -337,7 +337,7 @@ var _agent2 = _interopRequireDefault(_agent);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_agent2.default.VERSION = "2.0.0-pre"; /**
+_agent2.default.VERSION = "2.0.0-rc2"; /**
                                         * Copyright (c) NAVER Corp.
                                         * egjs-agent projects are licensed under the MIT license
                                         */
