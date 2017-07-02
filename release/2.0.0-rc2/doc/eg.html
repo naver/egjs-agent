@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Global | egjs::agent - API</title>
+    <title>Namespace: eg | egjs::agent - API</title>
     
     <meta name="description" content="Extracts browser and operating system information from the user agent string." />
     
@@ -59,11 +59,49 @@
     <ul class="list">
     
     
+        <!-- Grouping Version -->
+        <ul class="group">
+        <span>egjs</span>
+        
+            
+
+<li class="item" data-name="eg">
+    <span class="title">
+        <a href="eg.html">eg</a>
+        
+        <span class="static">static</span>
+        
+    </span>
+    <ul class="members itemMembers expends">
+    
+    </ul>
+    <ul class="typedefs itemMembers expends">
+    
+    </ul>
+    <ul class="methods itemMembers expends">
+    
+    <span class="subtitle">Methods</span>
+    
+        <li data-name="eg#agent"><a href="eg.html#agent">agent</a></li>
+    
+    </ul>
+    <ul class="events itemMembers expends">
+    
+    </ul>
+
+    
+    <span class="title" style="margin-top:10px"><a href="index.html">readme</a></span>
+
+</li>
+
+        
+        </ul>
+    
     </ul>
 </div>
 
     <div class="main">
-        <h1 class="page-title" data-filename="global.html">Global</h1>
+        <h1 class="page-title" data-filename="eg.html">Namespace: eg</h1>
         
 
 
@@ -72,7 +110,7 @@
 
 <header>
     <h2>
-    
+    eg
     </h2>
     <button id="toggle">
         
@@ -139,14 +177,14 @@
             
 <dt>
     <div class="nameContainer">
-        <h4 class="name" id="Agent">
+        <h4 class="name" id="agent">
             
-            Agent<span class="signature">(<span class="optional">userAgent</span>)</span><span class="glyphicon glyphicon-circle-arrow-right"></span><span class="type-signature returnType">{<a href="global.html#AgentInfo">AgentInfo</a>}</span>
+            agent<span class="signature">(<span class="optional">userAgent</span>)</span><span class="glyphicon glyphicon-circle-arrow-right"></span><span class="type-signature returnType">{Object}</span>
         </h4>
     
         
         <div class="tag-source">
-            <a href="-_Users_Naver_git_egjs-agent_src_Agent.js.html">Agent.js</a>, <a href="-_Users_Naver_git_egjs-agent_src_Agent.js.html#line33">line 33</a>
+            <a href="-_Users_Naver_egjs-agent_src_agent.js.html">agent.js</a>, <a href="-_Users_Naver_egjs-agent_src_agent.js.html#line13">line 13</a>
         </div>
         
     </div>
@@ -231,7 +269,7 @@
 <table class="params">
     <thead>
     <tr>
-        
+        <th>Name</th>
         <th>Type</th>
         <th class="last">Description</th>
     </tr>
@@ -239,20 +277,208 @@
     <tbody>
     
         <tr>
-            
+            <td class="name"><code>agentInfo</code></td>
             <td class="type">
             
                     	
-                        <a href="global.html#AgentInfo">AgentInfo</a>
+                        Object
                         
                         
                     
             </td>
             <td class="description last">
                 
-                <div class="en">result</div>
-                <div class="ko">result</div>
+
                 
+                    
+
+
+<table class="params">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+        <tr>
+            <td class="name"><code>os</code></td>
+            <td class="type">
+            
+                    	
+                        Object
+                        
+                        
+                    
+            </td>
+            <td class="description last">
+                
+                <div class="en">os Operating system information </div>
+                <div class="ko"><p>운영체제 정보</p></div>
+                
+
+                
+                    
+
+
+<table class="params">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+        <tr>
+            <td class="name"><code>name</code></td>
+            <td class="type">
+            
+                    	
+                        String
+                        
+                        
+                    
+            </td>
+            <td class="description last">
+                
+                <div class="en">Operating system name (android, ios, window, mac, unknown) </div>
+                <div class="ko"><p>운영체제 이름 (android, ios, window, mac, unknown)</p></div>
+                
+
+                
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="name"><code>version</code></td>
+            <td class="type">
+            
+                    	
+                        String
+                        
+                        
+                    
+            </td>
+            <td class="description last">
+                
+                <div class="en">Operating system version </div>
+                <div class="ko"><p>운영체제 버전</p></div>
+                
+
+                
+            </td>
+        </tr>
+    
+    </tbody>
+</table>
+
+                
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="name"><code>browser</code></td>
+            <td class="type">
+            
+                    	
+                        String
+                        
+                        
+                    
+            </td>
+            <td class="description last">
+                
+                <div class="en">Browser information </div>
+                <div class="ko"><p>브라우저 정보</p></div>
+                
+
+                
+                    
+
+
+<table class="params">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+        <tr>
+            <td class="name"><code>name</code></td>
+            <td class="type">
+            
+                    	
+                        String
+                        
+                        
+                    
+            </td>
+            <td class="description last">
+                
+                <div class="en">Browser name (safari, chrome, sbrowser, ie, firefox, unknown) </div>
+                <div class="ko"><p>브라우저 이름 (safari, chrome, sbrowser, ie, firefox, unknown)</p></div>
+                
+
+                
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="name"><code>version</code></td>
+            <td class="type">
+            
+                    	
+                        String
+                        
+                        
+                    
+            </td>
+            <td class="description last">
+                
+                <div class="en">Browser version </div>
+                <div class="ko"><p>브라우저 버전 </p></div>
+                
+
+                
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="name"><code>webview</code></td>
+            <td class="type">
+            
+                    	
+                        String
+                        
+                        
+                    
+            </td>
+            <td class="description last">
+                
+                <div class="en">Indicates whether the browser is inapp</div>
+                <div class="ko"><p>웹뷰 브라우저 여부</p></div>
+                
+
+                
+            </td>
+        </tr>
+    
+    </tbody>
+</table>
+
+                
+            </td>
+        </tr>
+    
+    </tbody>
+</table>
 
                 
             </td>
@@ -299,429 +525,6 @@
     
 
     
-        <h3 class="subsection-title">Type Definitions</h3>
-
-        <dl>
-                
-
-<dt>
-    <div class="nameContainer">
-        <h4 class="name" id="AgentInfo">AgentInfo<span class="type-signature type object">Object</span> </h4>
-    </div>
-    
-</dt>
-<dd>
-    
-    
-
-    
-<dl class="details">
-    
-        <h5 class="subsection-title">Properties:</h5>
-
-        <dl>
-
-<table class="props">
-    <thead>
-	<tr>
-		
-		<th>Name</th>
-		
-		
-		<th>Type</th>
-		
-		
-		
-		
-		
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-	
-	<tbody>
-	
-	
-        <tr>
-            
-                <td class="name"><code>browser</code></td>
-            
-            
-            <td class="type">
-            
-                
-<span class="param-type"><a href="global.html#BrowserInfo">BrowserInfo</a></span>
-
-
-            
-            </td>
-            
-            
-            
-            
-            
-            <td class="description last">
-                
-                <div class="en"><p>browser information</p></div>
-                <div class="ko"><p>browser information</p></div>
-                
-
-                </td>
-        </tr>
-	
-	
-	
-        <tr>
-            
-                <td class="name"><code>os</code></td>
-            
-            
-            <td class="type">
-            
-                
-<span class="param-type"><a href="global.html#OsInfo">OsInfo</a></span>
-
-
-            
-            </td>
-            
-            
-            
-            
-            
-            <td class="description last">
-                
-                <div class="en"><p>browser information</p></div>
-                <div class="ko"><p>browser information</p></div>
-                
-
-                </td>
-        </tr>
-	
-	
-	</tbody>
-</table></dl>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-
-    <!-- if data.codepen -->
-</dl>
-
-
-    
-</dd>
-
-            
-                
-
-<dt>
-    <div class="nameContainer">
-        <h4 class="name" id="BrowserInfo">BrowserInfo<span class="type-signature type object">Object</span> </h4>
-    </div>
-    
-</dt>
-<dd>
-    
-    
-
-    
-<dl class="details">
-    
-        <h5 class="subsection-title">Properties:</h5>
-
-        <dl>
-
-<table class="props">
-    <thead>
-	<tr>
-		
-		<th>Name</th>
-		
-		
-		<th>Type</th>
-		
-		
-		
-		
-		
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-	
-	<tbody>
-	
-	
-        <tr>
-            
-                <td class="name"><code>name</code></td>
-            
-            
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-            
-            </td>
-            
-            
-            
-            
-            
-            <td class="description last">
-                
-                <div class="en"><p>browser name</p></div>
-                <div class="ko"><p>browser name</p></div>
-                
-
-                </td>
-        </tr>
-	
-	
-	
-        <tr>
-            
-                <td class="name"><code>version</code></td>
-            
-            
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-            
-            </td>
-            
-            
-            
-            
-            
-            <td class="description last">
-                
-                <div class="en"><p>browser version</p></div>
-                <div class="ko"><p>browser version</p></div>
-                
-
-                </td>
-        </tr>
-	
-	
-	
-        <tr>
-            
-                <td class="name"><code>webview</code></td>
-            
-            
-            <td class="type">
-            
-                
-<span class="param-type">Boolean</span>
-
-
-            
-            </td>
-            
-            
-            
-            
-            
-            <td class="description last">
-                
-                <div class="en"><p>is webview or not</p></div>
-                <div class="ko"><p>is webview or not</p></div>
-                
-
-                </td>
-        </tr>
-	
-	
-	</tbody>
-</table></dl>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-
-    <!-- if data.codepen -->
-</dl>
-
-
-    
-</dd>
-
-            
-                
-
-<dt>
-    <div class="nameContainer">
-        <h4 class="name" id="OsInfo">OsInfo<span class="type-signature type object">Object</span> </h4>
-    </div>
-    
-</dt>
-<dd>
-    
-    
-
-    
-<dl class="details">
-    
-        <h5 class="subsection-title">Properties:</h5>
-
-        <dl>
-
-<table class="props">
-    <thead>
-	<tr>
-		
-		<th>Name</th>
-		
-		
-		<th>Type</th>
-		
-		
-		
-		
-		
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-	
-	<tbody>
-	
-	
-        <tr>
-            
-                <td class="name"><code>name</code></td>
-            
-            
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-            
-            </td>
-            
-            
-            
-            
-            
-            <td class="description last">
-                
-                <div class="en"><p>OS name</p></div>
-                <div class="ko"><p>OS name</p></div>
-                
-
-                </td>
-        </tr>
-	
-	
-	
-        <tr>
-            
-                <td class="name"><code>version</code></td>
-            
-            
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-            
-            </td>
-            
-            
-            
-            
-            
-            <td class="description last">
-                
-                <div class="en"><p>OS version</p></div>
-                <div class="ko"><p>OS version</p></div>
-                
-
-                </td>
-        </tr>
-	
-	
-	</tbody>
-</table></dl>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-
-    <!-- if data.codepen -->
-</dl>
-
-
-    
-</dd>
-
-            </dl>
-    
 
     
 
@@ -743,7 +546,7 @@
         
 
         <footer>
-            Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Fri Jun 30 2017 19:23:24 GMT+0900 (KST)
+            Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Mon Jul 03 2017 00:46:37 GMT+0900 (KST)
         </footer>
     </div>
 </div>
