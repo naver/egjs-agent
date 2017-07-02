@@ -3,7 +3,7 @@
   "version": "2.0.0-pre",
   "description": "Extracts browser and operating system information from the user agent string.",
   "main": "dist/agent.js",
-  "es2015": "src/Agent.js",
+  "es2015": "src/agent.js",
   "scripts": {
     "start": "webpack-dev-server --open",
     "build": "webpack --env production",

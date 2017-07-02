@@ -3,7 +3,7 @@
  * egjs-agent projects are licensed under the MIT license
  */
 
-import Agent from "./Agent";
+import agent from "./agent";
 
-Agent.VERSION = "#__VERSION__#";
-module.exports = Agent;
+agent.VERSION = "#__VERSION__#";
+module.exports = agent;

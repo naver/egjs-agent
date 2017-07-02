@@ -93,6 +93,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 exports.__esModule = true;
+exports.default = agent;
 
 var _browser = __webpack_require__(2);
 
@@ -103,36 +104,48 @@ var _Parser2 = _interopRequireDefault(_Parser);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
+ * @namespace eg
+ * @group egjs
+ */
+
+/**
  * Extracts browser and operating system information from the user agent string.
  * @ko 유저 에이전트 문자열에서 브라우저와 운영체제 정보를 추출한다.
- * @alias eg.Agent
+ * @function eg#agent
+ * @param {String} [userAgent=navigator.userAgent] user agent string to parse <ko>파싱할 유저에이전트 문자열</ko>
+ * @return {Object} agentInfo
+ * @return {Object} agentInfo.os os Operating system information <ko>운영체제 정보</ko>
+ * @return {String} agentInfo.os.name Operating system name (android, ios, window, mac) <ko>운영체제 이름 (android, ios, window, mac)</ko>
+ * @return {String} agentInfo.os.version Operating system version <ko>운영체제 버전</ko>
+ * @return {String} agentInfo.browser Browser information <ko>브라우저 정보</ko>
+ * @return {String} agentInfo.browser.name Browser name (default, safari, chrome, sbrowser, ie, firefox) <ko>브라우저 이름 (default, safari, chrome, sbrowser, ie, firefox)</ko>
+ * @return {String} agentInfo.browser.version Browser version <ko>브라우저 버전 </ko>
+ * @return {String} agentInfo.browser.webview Indicates whether a WebView browser is available<ko>웹뷰 브라우저 여부</ko>
  */
 /**
  * Copyright (c) NAVER Corp.
  * egjs-agent projects are licensed under the MIT license
  */
-function Agent() {
-	var ua = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _browser.navigator.userAgent;
+function agent() {
+  var ua = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _browser.navigator.userAgent;
 
-	_Parser2.default.setUa(ua);
+  _Parser2.default.setUa(ua);
 
-	var agent = {
-		os: _Parser2.default.getOs(),
-		browser: _Parser2.default.getBrowser()
-	};
+  var agentInfo = {
+    os: _Parser2.default.getOs(),
+    browser: _Parser2.default.getBrowser()
+  };
 
-	agent.browser.name = agent.browser.name.toLowerCase();
-	agent.os.name = agent.os.name.toLowerCase();
-	agent.os.version = agent.os.version.toLowerCase();
+  agentInfo.browser.name = agentInfo.browser.name.toLowerCase();
+  agentInfo.os.name = agentInfo.os.name.toLowerCase();
+  agentInfo.os.version = agentInfo.os.version.toLowerCase();
 
-	if (agent.os.name === "ios" && agent.browser.webview) {
-		agent.browser.version = "-1";
-	}
+  if (agentInfo.os.name === "ios" && agentInfo.browser.webview) {
+    agentInfo.browser.version = "-1";
+  }
 
-	return agent;
+  return agentInfo;
 }
-
-exports.default = Agent;
 module.exports = exports["default"];
 
 /***/ }),
@@ -318,18 +331,18 @@ var navigator = exports.navigator = win.navigator;
 "use strict";
 
 
-var _Agent = __webpack_require__(0);
+var _agent = __webpack_require__(0);
 
-var _Agent2 = _interopRequireDefault(_Agent);
+var _agent2 = _interopRequireDefault(_agent);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_Agent2.default.VERSION = "2.0.0-pre"; /**
+_agent2.default.VERSION = "2.0.0-pre"; /**
                                         * Copyright (c) NAVER Corp.
                                         * egjs-agent projects are licensed under the MIT license
                                         */
 
-module.exports = _Agent2.default;
+module.exports = _agent2.default;
 
 /***/ }),
 /* 4 */
