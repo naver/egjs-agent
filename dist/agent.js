@@ -93,7 +93,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 exports.__esModule = true;
-exports.default = agent;
+exports["default"] = agent;
 
 var _browser = __webpack_require__(2);
 
@@ -101,7 +101,7 @@ var _Parser = __webpack_require__(1);
 
 var _Parser2 = _interopRequireDefault(_Parser);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 /**
  * @namespace eg
@@ -129,11 +129,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function agent() {
   var ua = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _browser.navigator.userAgent;
 
-  _Parser2.default.setUa(ua);
+  _Parser2["default"].setUa(ua);
 
   var agentInfo = {
-    os: _Parser2.default.getOs(),
-    browser: _Parser2.default.getBrowser()
+    os: _Parser2["default"].getOs(),
+    browser: _Parser2["default"].getBrowser()
   };
 
   agentInfo.browser.name = agentInfo.browser.name.toLowerCase();
@@ -161,7 +161,7 @@ var _parseRules = __webpack_require__(4);
 
 var _parseRules2 = _interopRequireDefault(_parseRules);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var UA = void 0;
 
@@ -195,11 +195,11 @@ function getRule(rules, targetIdentity) {
 }
 
 function getBrowserName() {
-	return getIdentityStringFromArray(_parseRules2.default.browser, _parseRules2.default.defaultString.browser);
+	return getIdentityStringFromArray(_parseRules2["default"].browser, _parseRules2["default"].defaultString.browser);
 }
 
 function getBrowserRule(browserName) {
-	var rule = getRule(_parseRules2.default.browser, browserName);
+	var rule = getRule(_parseRules2["default"].browser, browserName);
 
 	if (!rule) {
 		rule = {
@@ -213,7 +213,7 @@ function getBrowserRule(browserName) {
 }
 
 function extractBrowserVersion(versionToken, ua) {
-	var browserVersion = _parseRules2.default.defaultString.browser.version;
+	var browserVersion = _parseRules2["default"].defaultString.browser.version;
 	var versionRegexResult = new RegExp("(" + versionToken + ")", "i").exec(ua);
 
 	if (!versionRegexResult) {
@@ -246,7 +246,7 @@ function getBrowserVersion(browserName) {
 }
 
 function isWebview() {
-	var webviewRules = _parseRules2.default.webview;
+	var webviewRules = _parseRules2["default"].webview;
 	var browserVersion = void 0;
 
 	return webviewRules.filter(function (rule) {
@@ -262,16 +262,16 @@ function isWebview() {
 }
 
 function getOSRule(osName) {
-	return getRule(_parseRules2.default.os, osName);
+	return getRule(_parseRules2["default"].os, osName);
 }
 
 function getOsName() {
-	return getIdentityStringFromArray(_parseRules2.default.os, _parseRules2.default.defaultString.os);
+	return getIdentityStringFromArray(_parseRules2["default"].os, _parseRules2["default"].defaultString.os);
 }
 
 function getOsVersion(osName) {
 	var osRule = getOSRule(osName) || {};
-	var defaultOSVersion = _parseRules2.default.defaultString.os.version;
+	var defaultOSVersion = _parseRules2["default"].defaultString.os.version;
 	var osVersion = void 0;
 
 	if (!osName) {
@@ -304,7 +304,7 @@ function getBrowser() {
 	return { name: name, version: version, webview: isWebview() };
 }
 
-exports.default = {
+exports["default"] = {
 	getOs: getOs,
 	getBrowser: getBrowser,
 	setUa: setUa
@@ -335,14 +335,14 @@ var _agent = __webpack_require__(0);
 
 var _agent2 = _interopRequireDefault(_agent);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-_agent2.default.VERSION = "2.0.0-rc2"; /**
-                                        * Copyright (c) NAVER Corp.
-                                        * egjs-agent projects are licensed under the MIT license
-                                        */
+_agent2["default"].VERSION = "2.0.0-rc2"; /**
+                                           * Copyright (c) NAVER Corp.
+                                           * egjs-agent projects are licensed under the MIT license
+                                           */
 
-module.exports = _agent2.default;
+module.exports = _agent2["default"];
 
 /***/ }),
 /* 4 */
@@ -449,7 +449,7 @@ var parseRules = {
 	}
 };
 
-exports.default = parseRules;
+exports["default"] = parseRules;
 module.exports = exports["default"];
 
 /***/ })
