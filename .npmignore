@@ -23,7 +23,7 @@ README.md
 #editor settings
 .idea
 .editorconfig
-
+_site
 coverage/
 node_modules/
 .github
