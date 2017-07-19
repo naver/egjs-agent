@@ -1,4 +1,4 @@
-component: agent
+component: Agent
 home: //naver.github.io/egjs
 desc: Extracts browser and operating system information from the user agent string.
 dist:

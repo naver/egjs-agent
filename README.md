@@ -39,7 +39,7 @@ The following are the supported browsers.
 
 |Internet Explorer|Chrome|Firefox|Safari|iOS|Android|
 |---|---|---|---|---|---|
-|||||||
+|7+|latest|latest|latest|3+|2.1+|
 
 
 
