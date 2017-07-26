@@ -104,6 +104,10 @@ var _Parser2 = _interopRequireDefault(_Parser);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 /**
+ * @namespace eg
+ */
+
+/**
  * Extracts browser and operating system information from the user agent string.
  * @ko 유저 에이전트 문자열에서 브라우저와 운영체제 정보를 추출한다.
  * @function eg#agent
