@@ -7,7 +7,6 @@ import Parser from "./Parser";
 
 /**
  * @namespace eg
- * @group egjs
  */
 
 /**
