@@ -48,7 +48,7 @@ Steps to submit your pull request:
 6. Run test code by `npm run test OR npm run test:chrome`.
    Make sure tests are all passed at least in Chrome(latest desktop version)
 8. Write commit log following convention and push to your repository branch.
-9. Create a new PR from your branch to egjs-axes.
+9. Create a new PR from your branch to egjs-agent.
 10. Wait for reviews.
     When your contribution is well enough to be accepted, then will be merged to our branch.
 11. All done!
