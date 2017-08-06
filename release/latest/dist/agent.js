@@ -105,6 +105,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 /**
  * @namespace eg
+ * @group egjs
  */
 
 /**
