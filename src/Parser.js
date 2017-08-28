@@ -149,8 +149,13 @@ function getBrowser() {
 	return {name, version, webview: isWebview()};
 }
 
+function getIsMobile() {
+	return UA.indexOf("Mobi") !== -1;
+}
+
 export default {
 	getOs,
 	getBrowser,
+	getIsMobile,
 	setUa,
 };
