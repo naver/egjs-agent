@@ -842,9 +842,81 @@ const AgentList = [
 			"version" : "10.0"
 		}
 	},
+	{
+		"device" : "Tizen 2.3 & FamilyHub",
+		"ua" : "Mozilla/5.0 (Linux; Tizen 2.3; FamilyHub) AppleWebKit/537.3 (KHTML, like Gecko) Version/2.3 Mobile Safari/537.3",
+		"browser" : {
+			"name" : "safari",
+			"version" : "2.3"
+		},
+		"os" : {
+			"name" : "tizen",
+			"version" : "2.3"
+		}
+	},
 
+	{
+		"device" : "Tizen 3.0 & FamilyHub",
+		"ua" : "Mozilla/5.0 (Linux; Tizen 3.0; FamilyHub) AppleWebKit/537.3 (KHTML, like Gecko) Version/2.3 Mobile Safari/537.3",
+		"browser" : {
+			"name" : "safari",
+			"version" : "2.3"
+		},
+		"os" : {
+			"name" : "tizen",
+			"version" : "3.0"
+		}
+	},
 	
-
+	{
+		"device" : "Tizen 2.4.0 & Z3 & samsung internet",
+		"ua" : "Mozilla/5.0 (Linux; Tizen 2.4.0; TIZEN SM-Z300H) AppleWebKit/537.3 (KHTML, like Gecko)SamsungBrowser/1.1 Mobile Safari/537.3",
+		"browser" : {
+			"name" : "samsung internet",
+			"version" : "1.1"
+		},
+		"os" : {
+			"name" : "tizen",
+			"version" : "2.4.0"
+		}
+	},
+	
+	{
+		"device" : "Tizen 2.3 & SMART-TV & samsung internet",
+		"ua" : "Mozilla/5.0 (SMART-TV; Linux; Tizen 2.3) AppleWebkit/538.1 (KHTML, like Gecko) SamsungBrowser/1.0 TV Safari/538.1",
+		"browser" : {
+			"name" : "samsung internet",
+			"version" : "1.0"
+		},
+		"os" : {
+			"name" : "tizen",
+			"version" : "2.3"
+		}
+	},
+	{
+		"device" : "Android 5.x & Gear VR & samsung internet",
+		"ua" : "Mozilla/5.0 (Linux; Android 5.0.2; SAMSUNG SM-G925K Build/LRX22G) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/4.0 Chrome/44.0.2403.133 Mobile VR Safari/537.36",
+		"browser" : {
+			"name" : "samsung internet",
+			"version" : "4.0"
+		},
+		"os" : {
+			"name" : "android",
+			"version" : "5.0.2"
+		}
+	},
+	{
+		"device" : "WebOS & TV & app",
+		"ua" : "Mozilla/5.0 (Web0S; Linux/SmartTV) AppleWebKit/537.36 (KHTML, like Gecko) QtWebEngine/5.2.1 Chrome/38.0.2125.122 Safari/537.36 WebAppManager",
+		"browser" : {
+			"name" : "chrome",
+			"version" : "38.0.2125.122"
+		},
+		"os" : {
+			"name" : "webos",
+			"version" : "-1"
+		}
+	},
 ];
 
 // complement 
