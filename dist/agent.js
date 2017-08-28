@@ -421,6 +421,12 @@ var parseRules = {
 	}, {
 		criteria: /Android/,
 		identity: "Android"
+	}, {
+		criteria: /Tizen/,
+		identity: "Tizen"
+	}, {
+		criteria: /Web0S/,
+		identity: "WebOS"
 	}],
 
 	// Webview check condition

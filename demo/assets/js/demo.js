@@ -1,9 +1,13 @@
-
+var uaSelect = document.querySelector('.useragent-select');
 var uaInput = document.querySelector('.useragent-input');
-
 autosize(uaInput);
 
 uaInput.addEventListener('input', handler);
+uaSelect.addEventListener('input', function(e) {
+    var agentInfo = eg.Agent(e.target.value);
+    render(agentInfo);
+    uaInput.value = e.target.value;
+});
 
 var useragent = navigator.userAgent;
 uaInput.value = useragent;
@@ -23,6 +27,10 @@ handler();
 
 function handler() {
     var agentInfo = eg.Agent(uaInput.value);
+    render(agentInfo);
+}
+
+function render(agentInfo) {
     osName.innerHTML = agentInfo.os.name;
     osVersion.innerHTML = agentInfo.os.version;
     browserName.innerHTML = agentInfo.browser.name;
