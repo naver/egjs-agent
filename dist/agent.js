@@ -5,7 +5,7 @@
  * @egjs/agent JavaScript library
  * 
  * 
- * @version 2.0.1-rc
+ * @version 2.0.1
  */
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
@@ -336,10 +336,10 @@ var _agent2 = _interopRequireDefault(_agent);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-_agent2["default"].VERSION = "2.0.1-rc"; /**
-                                          * Copyright (c) NAVER Corp.
-                                          * egjs-agent projects are licensed under the MIT license
-                                          */
+_agent2["default"].VERSION = "2.0.1"; /**
+                                       * Copyright (c) NAVER Corp.
+                                       * egjs-agent projects are licensed under the MIT license
+                                       */
 
 module.exports = _agent2["default"];
 
