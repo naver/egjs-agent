@@ -10,7 +10,8 @@ const AgentList = [
 		"browser" : {
 			"name" : "unknown",
 			"version" : "-1"
-		}
+		},
+		"isMobile" : false,
 	},	
 	{
 		// iPhone 3.0
@@ -23,7 +24,8 @@ const AgentList = [
 		"browser" : {
 			"name" : "safari",
 			"version" : "4.0"
-		}
+		},
+		"isMobile" : true,
 	},
 	{
 		// iPhone 4.3.3
@@ -36,7 +38,8 @@ const AgentList = [
 		"browser" : {
 			"name" : "safari",
 			"version" : "5.0.2"
-		}
+		},
+		"isMobile" : true,
 	},
 	{
 		// iPad 4.2.1
@@ -49,7 +52,8 @@ const AgentList = [
 		"browser" : {
 			"name" : "safari",
 			"version" : "5.0.2"
-		}
+		},
+		"isMobile" : true,
 	},
 	{
 		// iPad 4.3.3
@@ -62,7 +66,8 @@ const AgentList = [
 		"browser" : {
 			"name" : "safari",
 			"version" : "5.0.2"
-		}
+		},
+		"isMobile" : true,
 	},
 	{
 		// iPhone 5.0.1
@@ -75,7 +80,8 @@ const AgentList = [
 		"browser" : {
 			"name" : "safari",
 			"version" : "5.1"
-		}
+		},
+		"isMobile" : true,
 	},
 	{
 		// iPhone 6.0
@@ -88,7 +94,8 @@ const AgentList = [
 		"browser" : {
 			"name" : "safari",
 			"version" : "6.0"
-		}
+		},
+		"isMobile" : true,
 	},
 	{
 		// iPhone 6.1.2
@@ -101,7 +108,8 @@ const AgentList = [
 		"browser" : {
 			"name" : "safari",
 			"version" : "6.0"
-		}
+		},
+		"isMobile" : true,
 	},
 	{
 		// iPhone 7.0
@@ -114,7 +122,8 @@ const AgentList = [
 		"browser" : {
 			"name" : "safari",
 			"version" : "6.0"
-		}
+		},
+		"isMobile" : true,
 	},
 	{
         // iPhone 8.0
@@ -127,7 +136,8 @@ const AgentList = [
         "browser" : {
             "name" : "safari",
             "version" : "8.0"
-        }
+        },
+		"isMobile" : true,
     },
 	{
         // iPhone 8.0 - webview (Naver)
@@ -141,7 +151,8 @@ const AgentList = [
             "name" : "safari",
             "version" : "-1",
             "webview" : true
-        }
+        },
+		"isMobile" : true,
     },
     {
         // iPhone 8.0 - webview
@@ -155,7 +166,8 @@ const AgentList = [
             "name" : "safari",
             "version" : "-1",
             "webview" : true
-        }
+        },
+		"isMobile" : true,
     },
 	{
         // iPhone 9.0
@@ -168,7 +180,8 @@ const AgentList = [
         "browser" : {
             "name" : "safari",
             "version" : "9.0"
-        }
+        },
+		"isMobile" : true,
     },
 	{
         // iPhone 9.0 - webview (Naver) on iPhone 4S
@@ -182,7 +195,8 @@ const AgentList = [
             "name" : "safari",
             "version" : "-1",
             "webview" : true
-        }
+        },
+		"isMobile" : true,
     },
     {
         // iPhone 9.0 - webview (LINE app)
@@ -196,7 +210,8 @@ const AgentList = [
             "name" : "safari",
             "version" : "-1",
             "webview" : true
-        }
+        },
+		"isMobile" : true,
     },
 		{
         // iPhone 10.0 - WKWebView
@@ -210,7 +225,8 @@ const AgentList = [
             "name" : "safari",
             "version" : "-1",
             "webview" : true
-        }
+        },
+		"isMobile" : true,
     },
 		{
         // iPad 10.0 - WKWebView
@@ -224,7 +240,8 @@ const AgentList = [
             "name" : "safari",
             "version" : "-1",
             "webview" : true
-        }
+        },
+		"isMobile" : true,
     },
 	{
 		// GalaxyS:2.1
@@ -237,7 +254,8 @@ const AgentList = [
 		"browser" : {
 			"name" : "android browser",
 			"version" : "4.0"
-		}
+		},
+		"isMobile" : true,
 	},
 	{
 		// GalaxyS:2.2
@@ -250,7 +268,8 @@ const AgentList = [
 		"browser" : {
 			"name" : "android browser",
 			"version" : "4.0"
-		}
+		},
+		"isMobile" : true,
 	},
 	{
 		// GalaxyS:2.3.4
@@ -263,7 +282,8 @@ const AgentList = [
 		"browser" : {
 			"name" : "android browser",
 			"version" : "4.0"
-		}
+		},
+		"isMobile" : true,
 	},
 	{
 		// GalaxyS2:2.3.3
@@ -276,7 +296,8 @@ const AgentList = [
 		"browser" : {
 			"name" : "android browser",
 			"version" : "4.0"
-		}
+		},
+		"isMobile" : true,
 	},
 	{
 		// GalaxyNote:2.3.6
@@ -289,7 +310,8 @@ const AgentList = [
 		"browser" : {
 			"name" : "android browser",
 			"version" : "4.0"
-		}
+		},
+		"isMobile" : true,
 	},
 	{
 		// GalaxyTab2:3.1
@@ -302,7 +324,8 @@ const AgentList = [
 		"browser" : {
 			"name" : "android browser",
 			"version" : "4.0"
-		}
+		},
+		"isMobile" : false,
 	},
 	{
 		// GalaxyNexus:4.0.1
@@ -315,7 +338,8 @@ const AgentList = [
 		"browser" : {
 			"name" : "android browser",
 			"version" : "4.0"
-		}
+		},
+		"isMobile" : true,
 	},
 	{
 		// GalaxyS3:4.0.4
@@ -328,7 +352,8 @@ const AgentList = [
 		"browser" : {
 			"name" : "android browser",
 			"version" : "4.0"
-		}
+		},
+		"isMobile" : true,
 	},
 	{
 		// GalaxyS2:chrome
@@ -341,7 +366,8 @@ const AgentList = [
 		"browser" : {
 			"name" : "chrome",
 			"version" : "16.0.912.77"
-		}
+		},
+		"isMobile" : true,
 	},
 	{
 		// GalaxyS4:4.2.2
@@ -354,7 +380,8 @@ const AgentList = [
 		"browser" : {
 			"name" : "samsung internet",
 			"version" : "1.0"
-		}
+		},
+		"isMobile" : true,
 	},
 	{
 		// GalaxyS4:chrome
@@ -367,7 +394,8 @@ const AgentList = [
 		"browser" : {
 			"name" : "chrome",
 			"version" : "18.0.1025.166"
-		}
+		},
+		"isMobile" : true,
 	},
 	{
 		// GalaxyS5:chrome
@@ -380,7 +408,8 @@ const AgentList = [
 		"browser" : {
 			"name" : "chrome",
 			"version" : "42.0.2311.108"
-		}
+		},
+		"isMobile" : true,
 	},
 	{
         // GalaxyS5 4.4.2 - webview (NAVER app)
@@ -394,7 +423,8 @@ const AgentList = [
             "name" : "chrome",
             "version" : "28.0.1500.94",
             "webview" : true
-        }
+        },
+		"isMobile" : true,
     },
     {
          // GalaxyS5 5.0 - webview
@@ -408,7 +438,8 @@ const AgentList = [
              "name" : "chrome",
              "version" : "42.0.2311.138",
              "webview" : true
-         }
+         },
+		 "isMobile" : true,
     },
 	{
         // GalaxyS5 - higgs
@@ -422,7 +453,8 @@ const AgentList = [
             "name" : "chrome",
             "version" : "33.0.1750.61",
             "webview" : true
-        }
+        },
+		"isMobile" : true,
     },
 	{
 		// GalaxyS6 5.1.1
@@ -435,7 +467,8 @@ const AgentList = [
 		"browser" : {
 			"name" : "samsung internet",
 			"version" : "3.2"
-		}
+		},
+		"isMobile" : true,
 	},
 	{
 		// GalaxyS6:chrome
@@ -448,7 +481,8 @@ const AgentList = [
 		"browser" : {
 			"name" : "chrome",
 			"version" : "45.0.2454.84"
-		}
+		},
+		"isMobile" : true,
 	},
 	{
         // GalaxyS6 5.1.1 - webview (Naver app)
@@ -462,7 +496,8 @@ const AgentList = [
             "name" : "chrome",
             "version" : "45.0.2454.95",
             "webview" : true
-        }
+        },
+		"isMobile" : true,
     },
 	{
         // GalaxyS6 5.1.1 - webview (KAKAOTALK app)
@@ -476,7 +511,8 @@ const AgentList = [
             "name" : "chrome",
             "version" : "45.0.2454.95",
             "webview" : true
-        }
+        },
+		"isMobile" : true,
     },
 	{
         // GalaxyS6 5.1.1 - webview (Facebook app)
@@ -490,7 +526,8 @@ const AgentList = [
             "name" : "chrome",
             "version" : "45.0.2454.95",
             "webview" : true
-        }
+        },
+		"isMobile" : true,
     },
 	{
 		// GalaxyS7 Edge 6.0.1
@@ -503,7 +540,8 @@ const AgentList = [
 		"browser" : {
 			"name" : "samsung internet",
 			"version" : "4.0"
-		}
+		},
+		"isMobile" : true,
 	},
 	{
 		// GalaxyS7 Edge 6.0.1:chrome
@@ -516,7 +554,8 @@ const AgentList = [
 		"browser" : {
 			"name" : "chrome",
 			"version" : "49.0.2623.91"
-		}
+		},
+		"isMobile" : true,
 	},
 	{
 		// GalaxyS7 Edge 6.0.1 - webview (Naver app)
@@ -530,7 +569,8 @@ const AgentList = [
 			"name" : "chrome",
 			"version" : "48.0.2564.10",
             "webview" : true
-		}
+		},
+		"isMobile" : true,
 	},
 	{
 		// GalaxyNexus:4.2.2
@@ -543,7 +583,8 @@ const AgentList = [
 		"browser" : {
 			"name" : "android browser",
 			"version" : "4.0"
-		}
+		},
+		"isMobile" : true,
 	},
 	{
 		// GalaxyNexus:chrome
@@ -556,7 +597,8 @@ const AgentList = [
 		"browser" : {
 			"name" : "chrome",
 			"version" : "18.0.1364.169"
-		}
+		},
+		"isMobile" : true,
 	},
 	{
 		// GalaxyNexus:chrome
@@ -569,7 +611,8 @@ const AgentList = [
 		"browser" : {
 			"name" : "chrome",
 			"version" : "25.0.1364.169"
-		}
+		},
+		"isMobile" : true,
 	},
 	{
 		// GalaxyNote2:chrome
@@ -582,7 +625,8 @@ const AgentList = [
 		"browser" : {
 			"name" : "chrome",
 			"version" : "31.0.1650.59"
-		}
+		},
+		"isMobile" : true,
 	},
 	{
 		// Xiaomi_2013061_TD:browser
@@ -595,7 +639,8 @@ const AgentList = [
 		"browser" : {
 			"name" : "miui browser",
 			"version" : "1.0"
-		}
+		},
+		"isMobile" : true,
 	},
 	{
 		// window && IE
@@ -608,7 +653,8 @@ const AgentList = [
 		"browser" : {
 			"name" : "ie",
 			"version" : "7.0"
-		}
+		},
+		"isMobile" : false,
 	},
 	{
 		// Windows 7 && IE
@@ -621,7 +667,8 @@ const AgentList = [
 		"browser" : {
 			"name" : "ie",
 			"version" : "8.0"
-		}
+		},
+		"isMobile" : false,
 	},
 	{
 		// Windows 7 && IE
@@ -634,7 +681,8 @@ const AgentList = [
 		"browser" : {
 			"name" : "ie",
 			"version" : "11.0"
-		}
+		},
+		"isMobile" : false,
 	},
 	{
 		// Windows 7 && Chrome
@@ -647,7 +695,8 @@ const AgentList = [
 		"browser" : {
 			"name" : "chrome",
 			"version" : "41.0.2272.101"
-		}
+		},
+		"isMobile" : false,
 	},
 	{
 		// Windows 7 && Firefox
@@ -660,7 +709,8 @@ const AgentList = [
 		"browser" : {
 			"name" : "firefox",
 			"version" : "36.0"
-		}
+		},
+		"isMobile" : false,
 	},
 	{
 		// IE11 on Windows 10
@@ -673,7 +723,8 @@ const AgentList = [
 		"browser" : {
 			"name" : "ie",
 			"version" : "11.0"
-		}
+		},
+		"isMobile" : false,
 	},
 	{
 		// 64-bit Windows 8.1 Update && IE11
@@ -686,7 +737,8 @@ const AgentList = [
 		"browser" : {
 			"name" : "ie",
 			"version" : "11.0"
-		}
+		},
+		"isMobile" : false,
 	},
 	{
 		// 64-bit Windows 8.1 Update && IE11 for the desktop
@@ -699,7 +751,8 @@ const AgentList = [
 		"browser" : {
 			"name" : "ie",
 			"version" : "11.0"
-		}
+		},
+		"isMobile" : false,
 	},
 	{
 		// Windows 10 && Microsoft Edge for desktop
@@ -712,7 +765,8 @@ const AgentList = [
 		"browser" : {
 			"name" : "edge",
 			"version" : "12.10240"
-		}
+		},
+		"isMobile" : false,
 	},
 	{
 		// Mac && Chrome
@@ -725,7 +779,8 @@ const AgentList = [
 		"browser" : {
 			"name" : "chrome",
 			"version" : "41.0.2272.101"
-		}
+		},
+		"isMobile" : false,
 	},
 	{
 		// Mac && Safari
@@ -738,7 +793,8 @@ const AgentList = [
 		"browser" : {
 			"name" : "safari",
 			"version" : "8.0.3"
-		}
+		},
+		"isMobile" : false,
 	},
 	{
 		// Phantomjs (default value)
@@ -751,7 +807,8 @@ const AgentList = [
 		"browser" : {
 			"name" : "phantomjs",
 			"version" : "1.9.8"
-		}
+		},
+		"isMobile" : false,
 	},
 	{
 		// Window XP && ie6
@@ -764,7 +821,8 @@ const AgentList = [
 		"browser" : {
 			"name" : "ie",
 			"version" : "6.0"
-		}
+		},
+		"isMobile" : false,
 	},
 	{
 		// Window 2000 && ie7
@@ -777,7 +835,8 @@ const AgentList = [
 		"browser" : {
 			"name" : "ie",
 			"version" : "7.0"
-		}
+		},
+		"isMobile" : false,
 	},
 	{
 		// Window Vista && ie6.2
@@ -790,7 +849,8 @@ const AgentList = [
 		"browser" : {
 			"name" : "ie",
 			"version" : "6.2"
-		}
+		},
+		"isMobile" : false,
 	},
 	{
 		// Window 2000 && ie6
@@ -803,7 +863,8 @@ const AgentList = [
 		"browser" : {
 			"name" : "ie",
 			"version" : "6.0"
-		}
+		},
+		"isMobile" : false,
 	},
 	{
 		// Phantomjs Window 7 (default value)
@@ -816,7 +877,8 @@ const AgentList = [
 		"browser" : {
 			"name" : "phantomjs",
 			"version" : "1.9.8"
-		}
+		},
+		"isMobile" : false,
 	},
 	{
 		"device" : "Phantomjs (default value)",
@@ -828,7 +890,8 @@ const AgentList = [
 		"os" : {
 			"name" : "unknown",
 			"version" : "-1"
-		}
+		},
+		"isMobile" : false,
 	},
 	{
 		"device" : "Windows 10 & Whale",
@@ -840,7 +903,8 @@ const AgentList = [
 		"os" : {
 			"name" : "window",
 			"version" : "10.0"
-		}
+		},
+		"isMobile" : false,
 	},
 	{
 		"device" : "Tizen 2.3 & FamilyHub",
@@ -852,7 +916,8 @@ const AgentList = [
 		"os" : {
 			"name" : "tizen",
 			"version" : "2.3"
-		}
+		},
+		"isMobile" : true,
 	},
 
 	{
@@ -865,7 +930,8 @@ const AgentList = [
 		"os" : {
 			"name" : "tizen",
 			"version" : "3.0"
-		}
+		},
+		"isMobile" : true,
 	},
 	
 	{
@@ -878,7 +944,8 @@ const AgentList = [
 		"os" : {
 			"name" : "tizen",
 			"version" : "2.4.0"
-		}
+		},
+		"isMobile" : true,
 	},
 	
 	{
@@ -891,7 +958,8 @@ const AgentList = [
 		"os" : {
 			"name" : "tizen",
 			"version" : "2.3"
-		}
+		},
+		"isMobile" : false,
 	},
 	{
 		"device" : "Android 5.x & Gear VR & samsung internet",
@@ -903,7 +971,8 @@ const AgentList = [
 		"os" : {
 			"name" : "android",
 			"version" : "5.0.2"
-		}
+		},
+		"isMobile" : true,
 	},
 	{
 		"device" : "WebOS & TV & app",
@@ -915,7 +984,8 @@ const AgentList = [
 		"os" : {
 			"name" : "webos",
 			"version" : "-1"
-		}
+		},
+		"isMobile" : false,
 	},
 ];
 

@@ -89,4 +89,19 @@ describe("Agent", function() {
             });
         });
     });
+
+    describe("Device is mobile", function() {
+        AgentList.forEach(function(uaInfo) {
+            it(uaInfo.device, () => {
+                // Given
+                var MockAgent = getMockAgent(uaInfo.ua);
+
+                // When
+                const agent = MockAgent();
+
+                // Then
+                expect(agent.isMobile).to.equal(uaInfo.isMobile);
+            });
+        });
+    });
 });

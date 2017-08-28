@@ -29,6 +29,7 @@ export default function agent(ua = navigator.userAgent) {
 	const agentInfo = {
 		os: Parser.getOs(),
 		browser: Parser.getBrowser(),
+		isMobile: Parser.getIsMobile(),
 	};
 
 	agentInfo.browser.name = agentInfo.browser.name.toLowerCase();
