@@ -1,29 +1,33 @@
 <div class="demobox" codepen="demo">
-    <div class="useragent-container">
-        <h3 class="description">Target User Agent</h3>
-        <span>(Copy and paste the user agent string to parse)</span>
-        <textarea class="useragent-input"></textarea>
-        <select class="useragent-select">
-            <option selected value="" >Pick One</option>     
-            <option value="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/600.3.18 (KHTML, like Gecko) Version/8.0.3 Safari/600.3.18">OS X Yosemite 10.10 / safari 8.0.3</option>            
-            <option value="Mozilla/5.0 (iPhone; CPU iPhone OS 10_0_2 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) Mobile/14A456 NAVER(inapp; search; 560; 7.7.0; 7)">iOS 10.0 / WKWebView</option>
-            <option value="Mozilla/5.0 (Linux; Android 6.0.1; SAMSUNG SM-G935L Build/MMB29K) AppleWebkit/537.36 (KHTML, like Gecko) SamsungBrowser/4.0 Chrome/44.0.2403.133 Mobile Safari/537.36">GalaxyS7 Edge 6.0.1 / Samsung Internet 4.0</option>            
-            <option value="Mozilla/5.0 (Linux; Android 5.1.1; SM-G925S Build/LMY47X) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.84 Mobile Safari/537.36" >Galaxy S6 (5.1.1) / Chrome 45.0.2454.84</option>
-            <option value="Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko" >Windows 10 / IE11</option>            
-            <option value="Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Whale/0.7.31.4 Safari/537.36" >Windows 10 / Whale 0.7.31.4</option>
-            <option value="Mozilla/5.0 (Linux; Tizen 3.0; FamilyHub) AppleWebKit/537.3 (KHTML, like Gecko) Version/2.3 Mobile Safari/537.3" >Tizen 3.0 / FamilyHub</option>
-            <option value="Mozilla/5.0 (Web0S; Linux/SmartTV) AppleWebKit/537.36 (KHTML, like Gecko) QtWebEngine/5.2.1 Chrome/38.0.2125.122 Safari/537.36 WebAppManager" >WebOS 3.0 / SmartTV</option>
-        </select>
+        <div class="useragent-container">
+            <h3 class="description">Target User Agent</h3>
+            <span>(Copy and paste the user agent string to parse)</span>
+            <textarea class="useragent-input"></textarea>
+            <select class="useragent-select">
+                <option selected value="" >Pick One</option>     
+                <option value="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/600.3.18 (KHTML, like Gecko) Version/8.0.3 Safari/600.3.18">OS X Yosemite 10.10 / safari 8.0.3</option>            
+                <option value="Mozilla/5.0 (Linux; Android 6.0.1; SAMSUNG SM-G935L Build/MMB29K) AppleWebkit/537.36 (KHTML, like Gecko) SamsungBrowser/4.0 Chrome/44.0.2403.133 Mobile Safari/537.36">Galaxy S7 Edge 6.0.1 / Samsung Internet 4.0</option>            
+                <option value="Mozilla/5.0 (Linux; Android 5.1.1; SM-G925S Build/LMY47X) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.84 Mobile Safari/537.36" >Galaxy S6 5.1.1 / Chrome 45.0.2454.84</option>
+                <option value="Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko" >Windows 10 / IE11</option>            
+                <option value="Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Whale/0.7.31.4 Safari/537.36" >Windows 10 / Whale 0.7.31.4</option>
+                <option value="Mozilla/5.0 (Linux; Tizen 3.0; FamilyHub) AppleWebKit/537.3 (KHTML, like Gecko) Version/2.3 Mobile Safari/537.3" >Tizen 3.0 / FamilyHub</option>
+                <option value="Mozilla/5.0 (Web0S; Linux/SmartTV) AppleWebKit/537.36 (KHTML, like Gecko) QtWebEngine/5.2.1 Chrome/38.0.2125.122 Safari/537.36 WebAppManager" >WebOS 3.0 / SmartTV</option>
+                <option value="Mozilla/5.0 (Linux; Android 5.1.1; SM-G925S Build/LMY47X; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/45.0.2454.95 Mobile Safari/537.36;KAKAOTALK" >Galaxy S6 / Kakao Talk</option>                
+                <option value="Mozilla/5.0 (Linux; Android 5.1.1; SM-G925S Build/LMY47X; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/45.0.2454.95 Mobile Safari/537.36 [FB_IAB/FB4A;FBAV/50.0.0.10.54;]">Galaxy S6 / Facebook</option>
+                <option value="Mozilla/5.0 (Linux; Android 5.1.1; SM-G925S Build/LMY47X; wv) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.95 Mobile Safari/537.36 NAVER(inapp; search; 390; 6.4.5)">Galaxy S6 / Naver</option>
+                <option value="Mozilla/5.0 (iPhone; CPU iPhone OS 10_0_2 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) Mobile/14A456 NAVER(inapp; search; 560; 7.7.0; 7)">iOS 10.0 / Naver</option>
+                <option value="Mozilla/5.0 (iPhone; CPU iPhone OS 9_0 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13A452 Safari Line/5.4.0">iOS 9.0 / LINE</option>
+            </select>
+        </div>
+        <div class="result-container">
+            <h3>Result</h3>
+            <h4>OS</h4>
+            <p class="os">
+                name: <span class="name"></span><br/> version: <span class="version"></span><br/>
+            </p>
+            <h4>Browser</h4>
+            <p class="browser">
+                name: <span class="name"></span><br/> version: <span class="version"></span><br/> webview: <span class="webview"></span>
+            </p>
+        </div>
     </div>
-    <div class="result-container">
-        <h3>Result</h3>
-        <h4>OS</h4>
-        <p class="os">
-            name: <span class="name"></span><br/> version: <span class="version"></span><br/>
-        </p>
-        <h4>Browser</h4>
-        <p class="browser">
-            name: <span class="name"></span><br/> version: <span class="version"></span><br/> webview: <span class="webview"></span>
-        </p>
-    </div>
-</div>
