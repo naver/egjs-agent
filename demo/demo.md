@@ -9,5 +9,6 @@ uaInput.addEventListener("input", function() {
     browserName.innerHTML = agentInfo.browser.name;
     browserVersion.innerHTML = agentInfo.browser.version;
     browserWebview.innerHTML = agentInfo.browser.webview;
+    isMobile.innerHTML = agentInfo.isMobile;
 })
 ```

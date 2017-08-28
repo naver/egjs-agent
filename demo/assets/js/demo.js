@@ -22,6 +22,7 @@ var osVersion = document.querySelector(".os > .version");
 var browserName = document.querySelector(".browser > .name");
 var browserVersion = document.querySelector(".browser > .version");
 var browserWebview = document.querySelector(".browser > .webview");
+var isMobile = document.querySelector(".isMobile");
 
 handler();
 
@@ -36,4 +37,5 @@ function render(agentInfo) {
     browserName.innerHTML = agentInfo.browser.name;
     browserVersion.innerHTML = agentInfo.browser.version;
     browserWebview.innerHTML = agentInfo.browser.webview;
+    isMobile.innerHTML = agentInfo.isMobile;
 }
