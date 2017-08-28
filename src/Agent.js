@@ -21,7 +21,8 @@ import Parser from "./Parser";
  * @return {String} agentInfo.browser Browser information <ko>브라우저 정보</ko>
  * @return {String} agentInfo.browser.name Browser name (safari, chrome, sbrowser, ie, firefox, unknown) <ko>브라우저 이름 (safari, chrome, sbrowser, ie, firefox, unknown)</ko>
  * @return {String} agentInfo.browser.version Browser version <ko>브라우저 버전 </ko>
- * @return {String} agentInfo.browser.webview Indicates whether the browser is inapp<ko>웹뷰 브라우저 여부</ko>
+ * @return {Boolean} agentInfo.browser.webview Indicates whether the browser is inapp<ko>웹뷰 브라우저 여부</ko>
+ * @return {Boolean} agentInfo.isMobile Indicates whether the browser is for mobile<ko>모바일 브라우저 여부</ko>
  */
 export default function agent(ua = navigator.userAgent) {
 	Parser.setUa(ua);
