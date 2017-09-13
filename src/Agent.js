@@ -24,7 +24,7 @@ import Parser from "./Parser";
  * @return {Boolean} agentInfo.browser.webview Indicates whether the browser is inapp<ko>웹뷰 브라우저 여부</ko>
  * @return {Boolean} agentInfo.isMobile Indicates whether the browser is for mobile<ko>모바일 브라우저 여부</ko>
  */
-export default function agent(ua = navigator.userAgent) {
+function agent(ua = navigator.userAgent) {
 	Parser.setUa(ua);
 
 	const agentInfo = {
@@ -43,4 +43,5 @@ export default function agent(ua = navigator.userAgent) {
 
 	return agentInfo;
 }
-
+agent.VERSION = "#__VERSION__#";
+export default agent;

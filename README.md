@@ -69,7 +69,7 @@ $ npm install
 
 #### 3. Build
 
-Use npm script to build eg.Agent
+Use npm script to build eg.agent
 
 ```bash
 # Run webpack-dev-server for development
