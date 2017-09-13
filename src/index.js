@@ -5,5 +5,4 @@
 
 import agent from "./agent";
 
-agent.VERSION = "#__VERSION__#";
 module.exports = agent;
