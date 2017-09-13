@@ -10,7 +10,7 @@ var config = {
 	output: {
 		path: path.resolve(__dirname, "dist"),
 		filename: "[name].js",
-		library: [pkg.namespace.eg, "Agent"],
+		library: [pkg.namespace.eg, "agent"],
 		libraryTarget: "umd"
 	},
 	externals: [],	
