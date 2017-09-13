@@ -11,8 +11,7 @@ var config = {
 		path: path.resolve(__dirname, "dist"),
 		filename: "[name].js",
 		library: [pkg.namespace.eg, "Agent"],
-		libraryTarget: "umd",
-		umdNamedDefine: true
+		libraryTarget: "umd"
 	},
 	externals: [],	
 	module: {
@@ -33,7 +32,10 @@ var config = {
 			})
 		}]
 	},
-	plugins: [new StringReplacePlugin()]
+	plugins: [
+		new webpack.optimize.ModuleConcatenationPlugin(),
+		new StringReplacePlugin()
+	]
 };
 
 module.exports = function (env) {
