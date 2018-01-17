@@ -4,7 +4,7 @@ autosize(uaInput);
 
 uaInput.addEventListener('input', handler);
 uaSelect.addEventListener('input', function(e) {
-    var agentInfo = eg.Agent(e.target.value);
+    var agentInfo = eg.agent(e.target.value);
     render(agentInfo);
     uaInput.value = e.target.value;
 });
@@ -27,7 +27,7 @@ var isMobile = document.querySelector(".isMobile");
 handler();
 
 function handler() {
-    var agentInfo = eg.Agent(uaInput.value);
+    var agentInfo = eg.agent(uaInput.value);
     render(agentInfo);
 }
 
