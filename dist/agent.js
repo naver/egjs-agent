@@ -5,7 +5,7 @@
  * @egjs/agent JavaScript library
  * 
  * 
- * @version 2.1.2-snapshot
+ * @version 2.1.3-rc
  */
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
@@ -161,7 +161,7 @@ function agent() {
 
   return agentInfo;
 }
-agent.VERSION = "2.1.2-snapshot";
+agent.VERSION = "2.1.3-rc";
 exports["default"] = agent;
 module.exports = exports["default"];
 
