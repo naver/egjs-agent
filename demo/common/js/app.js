@@ -1,5 +1,5 @@
 jQuery(document).ready(function($) {
-    const height = $("#promo").height() + $("#header").height();
+    var height = $("#promo").height() + $("#header").height();
 
     /* ======= Scrollspy ======= */
     $('body').scrollspy({ target: '#header', offset: 400});
