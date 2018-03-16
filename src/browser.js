@@ -1,4 +1,9 @@
+import Array from "./Array";
+
 const win = (typeof window !== `undefined` && window) || {};
 
-export const RegExp = win.RegExp;
-export const navigator = win.navigator;
+export default {
+	RegExp: win.RegExp,
+	navigator: win.navigator,
+	Array,
+};

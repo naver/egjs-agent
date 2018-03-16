@@ -13,7 +13,7 @@ function getMockAgent(userAgent) {
     );
 }
 
-describe("Agent", function() {
+describe("agent", function() {
 
     describe("OS name", function() {
         AgentList.forEach(function(uaInfo) {
