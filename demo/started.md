@@ -1,5 +1,5 @@
 ### Browser support
-IE 6+, latest of Chrome/FF/Safari, iOS 7+ and Android 2.3+ (except 3.x)
+IE 7+, latest of Chrome/FF/Safari, iOS 7+ and Android 2.3+ (except 3.x)
 
 ### Quick steps to use:
 
