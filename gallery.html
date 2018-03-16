@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./common/css/bootstrap.min.css">
     <link rel="stylesheet" href="./common/css/page.css">
     <link rel="stylesheet" href="./common/css/monokai.css">
-    <script src="./common/js/jquery-2.2.4.js"></script>
+    <script src="./common/js/jquery-1.12.4.js"></script>
     <script src="./common/js/bootstrap.min.js"></script>
 </head>
 
@@ -79,7 +79,7 @@
         </div>
     </div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">uaInput</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">".useragent-input"</span><span class="p">);</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">uaInput</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">".useragent-input"</span><span class="p">);</span>
 <span class="nx">uaInput</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"input"</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">agentInfo</span> <span class="o">=</span> <span class="nx">eg</span><span class="p">.</span><span class="nx">agent</span><span class="p">(</span><span class="nx">uaInput</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
     <span class="nx">osName</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">agentInfo</span><span class="p">.</span><span class="nx">os</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>
@@ -89,8 +89,7 @@
     <span class="nx">browserWebview</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">agentInfo</span><span class="p">.</span><span class="nx">browser</span><span class="p">.</span><span class="nx">webview</span><span class="p">;</span>
     <span class="nx">isMobile</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">agentInfo</span><span class="p">.</span><span class="nx">isMobile</span><span class="p">;</span>
 <span class="p">})</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 			</div>
 		</div>
