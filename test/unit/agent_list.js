@@ -990,10 +990,11 @@ const AgentList = [
 ];
 
 // complement 
-AgentList.forEach(agent => {
-    if(!agent.browser.webview) {
-        agent.browser.webview = false;
-    }
-});
+for (let i = 0; i < AgentList.length; i++) {
+	let agent = AgentList[i];
+	if(!agent.browser.webview) {
+		agent.browser.webview = false;
+	}
+}
 
 export default AgentList;
