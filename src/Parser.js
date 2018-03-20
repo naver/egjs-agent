@@ -1,5 +1,23 @@
 import parseRules from "./parseRules";
 
+function filter(arr, compare) {
+	const result = [];
+
+	for (let i = 0; i < arr.length; i++) {
+		compare(arr[i]) && result.push(arr[i]);
+	}
+	return result;
+}
+
+function some(arr, compare) {
+	for (let i = 0; i < arr.length; i++) {
+		if (compare(arr[i])) {
+			return true;
+		}
+	}
+	return false;
+}
+
 let UA;
 
 function setUa(ua) {
@@ -12,13 +30,13 @@ function isMatched(base, target) {
 }
 
 function getIdentityStringFromArray(rules, defaultStrings) {
-	const matchedRule = rules.filter(rule => isMatched(UA, rule.criteria))[0];
+	const matchedRule = filter(rules, rule => isMatched(UA, rule.criteria))[0];
 
 	return (matchedRule && matchedRule.identity) || defaultStrings.name;
 }
 
 function getRule(rules, targetIdentity) {
-	return rules.filter(rule => {
+	return filter(rules, rule => {
 		const criteria = rule.criteria;
 		const identityMatched = new RegExp(rule.identity, "i").test(targetIdentity);
 
@@ -91,17 +109,19 @@ function isWebview() {
 	const webviewRules = parseRules.webview;
 	let browserVersion;
 
-	return webviewRules.filter(rule => isMatched(UA, rule.criteria))
-		.some(rule => {
-			browserVersion =
-				extractBrowserVersion(rule.browserVersionSearch, UA);
-			if (isMatched(UA, rule.webviewToken) ||
-				isMatched(browserVersion, rule.webviewBrowserVersion)) {
-				return true;
-			} else {
-				return false;
+	return some(
+			filter(webviewRules, rule => isMatched(UA, rule.criteria)),
+			rule => {
+				browserVersion =
+					extractBrowserVersion(rule.browserVersionSearch, UA);
+				if (isMatched(UA, rule.webviewToken) ||
+					isMatched(browserVersion, rule.webviewBrowserVersion)) {
+					return true;
+				} else {
+					return false;
+				}
 			}
-		});
+		);
 }
 
 function getOSRule(osName) {
