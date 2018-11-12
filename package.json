@@ -75,5 +75,6 @@
 		"webpack-merge": "^4.1.0",
 		"eslint-plugin-import": "^2.7.0",
 		"write-file-webpack-plugin": "^4.1.0"
-	}
+	},
+  "types": "index.d.ts"
 }
