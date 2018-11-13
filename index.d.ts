@@ -10,9 +10,9 @@ declare module Agent {
 	}
 
 	export interface AgentInfo {
-		os: AgentInfoOs,
-		browser: AgentInfoBrowser,
-		isMobile: boolean
+		os: AgentInfoOs;
+		browser: AgentInfoBrowser;
+		isMobile: boolean;
 	}
 
 	export interface AgentInfoOs {
