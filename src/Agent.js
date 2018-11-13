@@ -6,13 +6,12 @@ import {navigator} from "./browser";
 import {setUa, getOs, getBrowser, getIsMobile} from "./Parser";
 
 /**
- * @namespace eg
+ * @namespace eg.agent
  */
-
 /**
  * Extracts browser and operating system information from the user agent string.
  * @ko 유저 에이전트 문자열에서 브라우저와 운영체제 정보를 추출한다.
- * @function eg#agent
+ * @function eg.agent#agent
  * @param {String} [userAgent=navigator.userAgent] user agent string to parse <ko>파싱할 유저에이전트 문자열</ko>
  * @return {Object} agentInfo
  * @return {Object} agentInfo.os os Operating system information <ko>운영체제 정보</ko>
@@ -23,6 +22,10 @@ import {setUa, getOs, getBrowser, getIsMobile} from "./Parser";
  * @return {String} agentInfo.browser.version Browser version <ko>브라우저 버전 </ko>
  * @return {Boolean} agentInfo.browser.webview Indicates whether the browser is inapp<ko>웹뷰 브라우저 여부</ko>
  * @return {Boolean} agentInfo.isMobile Indicates whether the browser is for mobile<ko>모바일 브라우저 여부</ko>
+ * @example
+import agent from "@egjs/agent";
+
+const {os, browser, isMobile} = agent();
  */
 function agent(ua = navigator.userAgent) {
 	setUa(ua);
@@ -43,5 +46,15 @@ function agent(ua = navigator.userAgent) {
 
 	return agentInfo;
 }
+/**
+ * Version info string
+ * @ko 버전정보 문자열
+ * @name VERSION
+ * @static
+ * @type {String}
+ * @example
+ * eg.agent.VERSION;  // ex) 2.2.0
+ * @memberof eg.agent
+ */
 agent.VERSION = "#__VERSION__#";
 export default agent;
