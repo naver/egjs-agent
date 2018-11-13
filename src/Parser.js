@@ -173,7 +173,7 @@ function getIsMobile() {
 	return UA.indexOf("Mobi") !== -1;
 }
 
-export default {
+export {
 	getOs,
 	getBrowser,
 	getIsMobile,

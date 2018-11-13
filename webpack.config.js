@@ -4,6 +4,7 @@ var path = require("path");
 var StringReplacePlugin = require("string-replace-webpack-plugin");
 
 var config = {
+	devtool: "cheap-source-map",
 	entry: {
 		"agent": "./src/index.js"
 	},

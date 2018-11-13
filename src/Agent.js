@@ -3,7 +3,7 @@
  * egjs-agent projects are licensed under the MIT license
  */
 import {navigator} from "./browser";
-import Parser from "./Parser";
+import {setUa, getOs, getBrowser, getIsMobile} from "./Parser";
 
 /**
  * @namespace eg
@@ -25,12 +25,12 @@ import Parser from "./Parser";
  * @return {Boolean} agentInfo.isMobile Indicates whether the browser is for mobile<ko>모바일 브라우저 여부</ko>
  */
 function agent(ua = navigator.userAgent) {
-	Parser.setUa(ua);
+	setUa(ua);
 
 	const agentInfo = {
-		os: Parser.getOs(),
-		browser: Parser.getBrowser(),
-		isMobile: Parser.getIsMobile(),
+		os: getOs(),
+		browser: getBrowser(),
+		isMobile: getIsMobile(),
 	};
 
 	agentInfo.browser.name = agentInfo.browser.name.toLowerCase();

@@ -1,7 +1,7 @@
 export as namespace eg;
 
 declare const Agent: Agent.Agent;
-export = Agent;
+export default Agent;
 
 declare module Agent {
 
