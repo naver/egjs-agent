@@ -1,6 +1,6 @@
 {
 	"name": "@egjs/agent",
-	"version": "2.1.4-snapshot",
+	"version": "2.1.5",
 	"description": "Extracts browser and operating system information from the user agent string.",
 	"main": "dist/agent.js",
 	"module": "dist/agent.esm.js",
