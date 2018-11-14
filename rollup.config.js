@@ -10,6 +10,7 @@ ${require("./config/banner").common}
 export default {
 	input: "./src/Agent.js",
 	plugins: [babel({
+		"babelrc": false,
 		"presets": [
 			[
 				"es2015",
