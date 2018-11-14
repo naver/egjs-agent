@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Namespace: agent | egjs::agent - API</title>
+    
+    <meta name="description" content="Extracts browser and operating system information from the user agent string." />
+    
+    
+    
+    <meta property="og:title" content=""/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content=""/>
+    
+    <meta property="og:url" content=""/>
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <script src="scripts/jquery.min.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    
+    <link rel="canonical" href="http://naver.github.io/egjs-agent/release/latest/doc/"/>
+    
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/jaguar.css">
+    
+    
+    <script>
+    var config = {"monospaceLinks":true,"cleverLinks":true,"default":{"outputSourceFiles":true},"applicationName":"eg.Agent","disqus":"egjs","googleAnalytics":"UA-70842526-15","openGraph":{"title":"","type":"website","image":"","site_name":"","url":""},"meta":{"title":"egjs::agent - API","description":"Extracts browser and operating system information from the user agent string.","keyword":""},"linenums":true,"link":{"canonical":"http://naver.github.io/egjs-agent/release/latest/doc/"}};
+    </script>
+    
+
+    
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', config.googleAnalytics]);
+      _gaq.push(['_trackPageview']);
+    
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    
+</head>
+<body>
+<div id="wrap" class="clearfix">
+    
+<div class="navigation">
+    <h3 class="applicationName">
+        <a href="//naver.github.io/egjs/"><img style="width:40px; height:20px;" src="img/type_white.svg"/></a>
+
+        <!-- Homepage link (prefer link.home than applicationName) -->
+        
+        <a href="//naver.github.io/egjs-agent/">Agent</a>
+        
+    </h3>
+
+    <div class="search">
+        <input id="search" type="text" class="form-control input-sm" placeholder="Search Documentations">
+    </div>
+    <ul class="list">
+        <li class="item">
+            <span class="title">
+                <a href="index.html">README</a>
+            </span>
+        </li>
+    
+        <!-- Non Grouping Version -->
+        
+            
+
+<li class="item" data-name="eg.agent">
+    <span class="title">
+        <a href="eg.agent.html">eg.agent</a>
+        
+        <span class="static">static</span>
+        
+    </span>
+    <ul class="members itemMembers expends">
+    
+    <span class="subtitle">Members</span>
+    
+        <li data-name="eg.agent.VERSION"><a href="eg.agent.html#.VERSION">VERSION</a></li>
+    
+    </ul>
+    <ul class="typedefs itemMembers expends">
+    
+    </ul>
+    <ul class="methods itemMembers expends">
+    
+    <span class="subtitle">Methods</span>
+    
+        <li data-name="eg.agent#agent"><a href="eg.agent.html#agent">agent</a></li>
+    
+    </ul>
+    <ul class="events itemMembers expends">
+    
+    </ul>
+
+    
+</li>
+
+        
+    
+    </ul>
+</div>
+
+    <div class="main">
+        <h1 class="page-title" data-filename="eg.agent.html">Namespace: agent</h1>
+        
+
+
+
+<section>
+
+<header>
+    <h2>
+    
+        <span>eg.agent</span>
+        
+    </h2>
+    <button id="toggle">
+        
+            English
+        
+    </button>
+</header>
+
+<article>
+    <div class="container-overview">
+    
+
+    
+        
+        
+<dl class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    <!-- if data.codepen -->
+</dl>
+
+        
+    
+    </div>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        <dl>
+            
+
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id=".VERSION"><span class="type-signature static">static</span>eg.agent.VERSION<span class="type-signature type string">String</span> </h4>
+    </div>
+    
+</dt>
+<dd>
+    
+    <div class="description en">
+        <p>Version info string</p>
+    </div>
+    
+    
+    <div class="description ko">
+        <p>버전정보 문자열</p>
+    </div>
+    
+
+    
+<dl class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    <!-- if data.codepen -->
+</dl>
+
+
+    
+        <h5>Example</h5>
+        
+
+    
+    <pre class="prettyprint"><code><p>eg.agent.VERSION;  // ex) 2.2.0</p></code></pre>
+    
+
+    
+</dd>
+
+        </dl>
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        <dl>
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="agent">
+            
+            agent<span class="signature">(<span class="optional">userAgent</span>)</span><span class="glyphicon glyphicon-circle-arrow-right"></span><span class="type-signature returnType">{Object}</span>
+        </h4>
+    
+        
+        <div class="tag-source">
+            <a href="-_Users_user_Desktop_naver_egjs-agent_src_Agent.js.html">Agent.js</a>, <a href="-_Users_user_Desktop_naver_egjs-agent_src_Agent.js.html#line11">line 11</a>
+        </div>
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+	<div class="description en">
+		<p>Extracts browser and operating system information from the user agent string.</p>
+	</div>
+	
+	
+	<div class="description ko">
+		<p>유저 에이전트 문자열에서 브라우저와 운영체제 정보를 추출한다.</p>
+	</div>
+	
+
+    
+    
+    
+    
+    
+        
+
+<ul class="parameters">
+    
+    <li>
+        <!-- parameter name -->
+        <div>
+            <strong>userAgent</strong>
+            
+                (default: <code>navigator.userAgent</code>)
+            
+
+            
+                
+                    <span class="optional">optional</span>
+                
+                
+                    
+                
+            
+        </div>
+        <!-- parameter type -->
+        
+        <div>Type: 
+<span class="param-type">String</span>
+
+</div>
+        
+    
+        <!-- Description -->
+        <div>
+            
+            <div class="description en"><p>user agent string to parse </p></div>
+            <div class="description ko"><p>파싱할 유저에이전트 문자열</p></div>
+            
+        </div>
+
+        <!-- Sub parameters -->
+        
+    </li>
+    
+</ul>
+    
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+
+
+<table class="params">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+        <tr>
+            <td class="name"><code>agentInfo</code></td>
+            <td class="type">
+            
+                    	
+                        Object
+                        
+                        
+                    
+            </td>
+            <td class="description last">
+                
+
+                
+                    
+
+
+<table class="params">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+        <tr>
+            <td class="name"><code>os</code></td>
+            <td class="type">
+            
+                    	
+                        Object
+                        
+                        
+                    
+            </td>
+            <td class="description last">
+                
+                <div class="en">os Operating system information </div>
+                <div class="ko"><p>운영체제 정보</p></div>
+                
+
+                
+                    
+
+
+<table class="params">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+        <tr>
+            <td class="name"><code>name</code></td>
+            <td class="type">
+            
+                    	
+                        String
+                        
+                        
+                    
+            </td>
+            <td class="description last">
+                
+                <div class="en">Operating system name (android, ios, window, mac, unknown) </div>
+                <div class="ko"><p>운영체제 이름 (android, ios, window, mac, unknown)</p></div>
+                
+
+                
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="name"><code>version</code></td>
+            <td class="type">
+            
+                    	
+                        String
+                        
+                        
+                    
+            </td>
+            <td class="description last">
+                
+                <div class="en">Operating system version </div>
+                <div class="ko"><p>운영체제 버전</p></div>
+                
+
+                
+            </td>
+        </tr>
+    
+    </tbody>
+</table>
+
+                
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="name"><code>browser</code></td>
+            <td class="type">
+            
+                    	
+                        String
+                        
+                        
+                    
+            </td>
+            <td class="description last">
+                
+                <div class="en">Browser information </div>
+                <div class="ko"><p>브라우저 정보</p></div>
+                
+
+                
+                    
+
+
+<table class="params">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+        <tr>
+            <td class="name"><code>name</code></td>
+            <td class="type">
+            
+                    	
+                        String
+                        
+                        
+                    
+            </td>
+            <td class="description last">
+                
+                <div class="en">Browser name (safari, chrome, sbrowser, ie, firefox, unknown) </div>
+                <div class="ko"><p>브라우저 이름 (safari, chrome, sbrowser, ie, firefox, unknown)</p></div>
+                
+
+                
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="name"><code>version</code></td>
+            <td class="type">
+            
+                    	
+                        String
+                        
+                        
+                    
+            </td>
+            <td class="description last">
+                
+                <div class="en">Browser version </div>
+                <div class="ko"><p>브라우저 버전 </p></div>
+                
+
+                
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="name"><code>webview</code></td>
+            <td class="type">
+            
+                    	
+                        Boolean
+                        
+                        
+                    
+            </td>
+            <td class="description last">
+                
+                <div class="en">Indicates whether the browser is inapp</div>
+                <div class="ko"><p>웹뷰 브라우저 여부</p></div>
+                
+
+                
+            </td>
+        </tr>
+    
+    </tbody>
+</table>
+
+                
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="name"><code>isMobile</code></td>
+            <td class="type">
+            
+                    	
+                        Boolean
+                        
+                        
+                    
+            </td>
+            <td class="description last">
+                
+                <div class="en">Indicates whether the browser is for mobile</div>
+                <div class="ko"><p>모바일 브라우저 여부</p></div>
+                
+
+                
+            </td>
+        </tr>
+    
+    </tbody>
+</table>
+
+                
+            </td>
+        </tr>
+    
+    </tbody>
+</table>
+
+    
+    
+    
+        <h5>Example</h5>
+        
+
+    
+    <pre class="prettyprint"><code><p>import agent from &quot;@egjs/agent&quot;;</p>
+<p>const {os, browser, isMobile} = agent();</p></code></pre>
+    
+
+    
+
+    
+<dl class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    <!-- if data.codepen -->
+</dl>
+
+</dd>
+
+        </dl>
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+        
+        <!-- disqus code -->
+        <div id="disqus_thread"></div>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="//disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        <!-- // disqus code -->
+        
+
+        <footer>
+            Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Wed Nov 14 2018 17:54:34 GMT+0900 (Korean Standard Time)
+        </footer>
+    </div>
+</div>
+<script>prettyPrint();</script>
+<script src="scripts/main.js"></script>
+</body>
+</html>

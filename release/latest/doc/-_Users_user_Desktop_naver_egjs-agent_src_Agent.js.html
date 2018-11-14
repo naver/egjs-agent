@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Source: /Users/user/Desktop/naver/egjs-agent/src/Agent.js | egjs::agent - API</title>
+    
+    <meta name="description" content="Extracts browser and operating system information from the user agent string." />
+    
+    
+    
+    <meta property="og:title" content=""/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content=""/>
+    
+    <meta property="og:url" content=""/>
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <script src="scripts/jquery.min.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    
+    <link rel="canonical" href="http://naver.github.io/egjs-agent/release/latest/doc/"/>
+    
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/jaguar.css">
+    
+    
+    <script>
+    var config = {"monospaceLinks":true,"cleverLinks":true,"default":{"outputSourceFiles":true},"applicationName":"eg.Agent","disqus":"egjs","googleAnalytics":"UA-70842526-15","openGraph":{"title":"","type":"website","image":"","site_name":"","url":""},"meta":{"title":"egjs::agent - API","description":"Extracts browser and operating system information from the user agent string.","keyword":""},"linenums":true,"link":{"canonical":"http://naver.github.io/egjs-agent/release/latest/doc/"}};
+    </script>
+    
+
+    
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', config.googleAnalytics]);
+      _gaq.push(['_trackPageview']);
+    
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    
+</head>
+<body>
+<div id="wrap" class="clearfix">
+    
+<div class="navigation">
+    <h3 class="applicationName">
+        <a href="//naver.github.io/egjs/"><img style="width:40px; height:20px;" src="img/type_white.svg"/></a>
+
+        <!-- Homepage link (prefer link.home than applicationName) -->
+        
+        <a href="//naver.github.io/egjs-agent/">Agent</a>
+        
+    </h3>
+
+    <div class="search">
+        <input id="search" type="text" class="form-control input-sm" placeholder="Search Documentations">
+    </div>
+    <ul class="list">
+        <li class="item">
+            <span class="title">
+                <a href="index.html">README</a>
+            </span>
+        </li>
+    
+        <!-- Non Grouping Version -->
+        
+            
+
+<li class="item" data-name="eg.agent">
+    <span class="title">
+        <a href="eg.agent.html">eg.agent</a>
+        
+        <span class="static">static</span>
+        
+    </span>
+    <ul class="members itemMembers expends">
+    
+    <span class="subtitle">Members</span>
+    
+        <li data-name="eg.agent.VERSION"><a href="eg.agent.html#.VERSION">VERSION</a></li>
+    
+    </ul>
+    <ul class="typedefs itemMembers expends">
+    
+    </ul>
+    <ul class="methods itemMembers expends">
+    
+    <span class="subtitle">Methods</span>
+    
+        <li data-name="eg.agent#agent"><a href="eg.agent.html#agent">agent</a></li>
+    
+    </ul>
+    <ul class="events itemMembers expends">
+    
+    </ul>
+
+    
+</li>
+
+        
+    
+    </ul>
+</div>
+
+    <div class="main">
+        <h1 class="page-title" data-filename="-_Users_user_Desktop_naver_egjs-agent_src_Agent.js.html">Source: /Users/user/Desktop/naver/egjs-agent/src/Agent.js</h1>
+        
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Copyright (c) NAVER Corp.
+ * egjs-agent projects are licensed under the MIT license
+ */
+import {navigator} from "./browser";
+import {setUa, getOs, getBrowser, getIsMobile} from "./Parser";
+
+/**
+ * @namespace eg.agent
+ */
+/**
+ * Extracts browser and operating system information from the user agent string.
+ * @ko 유저 에이전트 문자열에서 브라우저와 운영체제 정보를 추출한다.
+ * @function eg.agent#agent
+ * @param {String} [userAgent=navigator.userAgent] user agent string to parse &lt;ko>파싱할 유저에이전트 문자열&lt;/ko>
+ * @return {Object} agentInfo
+ * @return {Object} agentInfo.os os Operating system information &lt;ko>운영체제 정보&lt;/ko>
+ * @return {String} agentInfo.os.name Operating system name (android, ios, window, mac, unknown) &lt;ko>운영체제 이름 (android, ios, window, mac, unknown)&lt;/ko>
+ * @return {String} agentInfo.os.version Operating system version &lt;ko>운영체제 버전&lt;/ko>
+ * @return {String} agentInfo.browser Browser information &lt;ko>브라우저 정보&lt;/ko>
+ * @return {String} agentInfo.browser.name Browser name (safari, chrome, sbrowser, ie, firefox, unknown) &lt;ko>브라우저 이름 (safari, chrome, sbrowser, ie, firefox, unknown)&lt;/ko>
+ * @return {String} agentInfo.browser.version Browser version &lt;ko>브라우저 버전 &lt;/ko>
+ * @return {Boolean} agentInfo.browser.webview Indicates whether the browser is inapp&lt;ko>웹뷰 브라우저 여부&lt;/ko>
+ * @return {Boolean} agentInfo.isMobile Indicates whether the browser is for mobile&lt;ko>모바일 브라우저 여부&lt;/ko>
+ * @example
+import agent from "@egjs/agent";
+
+const {os, browser, isMobile} = agent();
+ */
+function agent(ua = navigator.userAgent) {
+	setUa(ua);
+
+	const agentInfo = {
+		os: getOs(),
+		browser: getBrowser(),
+		isMobile: getIsMobile(),
+	};
+
+	agentInfo.browser.name = agentInfo.browser.name.toLowerCase();
+	agentInfo.os.name = agentInfo.os.name.toLowerCase();
+	agentInfo.os.version = agentInfo.os.version.toLowerCase();
+
+	if (agentInfo.os.name === "ios" &amp;&amp; agentInfo.browser.webview) {
+		agentInfo.browser.version = "-1";
+	}
+
+	return agentInfo;
+}
+/**
+ * Version info string
+ * @ko 버전정보 문자열
+ * @name VERSION
+ * @static
+ * @type {String}
+ * @example
+ * eg.agent.VERSION;  // ex) 2.2.0
+ * @memberof eg.agent
+ */
+agent.VERSION = "#__VERSION__#";
+export default agent;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+
+
+        
+        <!-- disqus code -->
+        <div id="disqus_thread"></div>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="//disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        <!-- // disqus code -->
+        
+
+        <footer>
+            Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Wed Nov 14 2018 17:54:34 GMT+0900 (Korean Standard Time)
+        </footer>
+    </div>
+</div>
+<script>prettyPrint();</script>
+<script src="scripts/main.js"></script>
+</body>
+</html>
