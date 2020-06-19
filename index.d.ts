@@ -17,7 +17,7 @@ declare module Agent {
 
 	export interface AgentInfoOs {
 		name: string;
-
+		version: string;
 	}
 	export interface AgentInfoBrowser {
 		name: string;
@@ -25,4 +25,3 @@ declare module Agent {
 		webview: boolean;
 	}
 }
-
