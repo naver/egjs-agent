@@ -67,8 +67,10 @@ setTimeout(function() {
 
 var osName = $(".os > .name")[0];
 var osVersion = $(".os > .version")[0];
+var osMajorVersion = $(".os > .majorVersion")[0];
 var browserName = $(".browser > .name")[0];
 var browserVersion = $(".browser > .version")[0];
+var browserMajorVersion = $(".browser > .majorVersion")[0];
 var browserWebview = $(".browser > .webview")[0];
 var browserWebkit = $(".browser > .webkit")[0];
 var browserChromium = $(".browser > .chromium")[0];
@@ -84,8 +86,12 @@ function handler() {
 function render(agentInfo) {
     osName.innerHTML = agentInfo.os.name;
     osVersion.innerHTML = agentInfo.os.version;
+    osMajorVersion.innerHTML = agentInfo.os.majorVersion;
+
     browserName.innerHTML = agentInfo.browser.name;
     browserVersion.innerHTML = agentInfo.browser.version;
+    browserMajorVersion.innerHTML = agentInfo.browser.majorVersion;
+
     browserWebview.innerHTML = agentInfo.browser.webview;
     browserWebkit.innerHTML = agentInfo.browser.webkit;
     browserChromium.innerHTML = agentInfo.browser.chromium;

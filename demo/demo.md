@@ -7,8 +7,12 @@ uaInput.addEventListener("input", function() {
 
     osName.innerHTML = agentInfo.os.name;
     osVersion.innerHTML = agentInfo.os.version;
+    osMajorVersion.innerHTML = agentInfo.os.majorVersion;
+
     browserName.innerHTML = agentInfo.browser.name;
     browserVersion.innerHTML = agentInfo.browser.version;
+    browserMajorVersion.innerHTML = agentInfo.browser.majorVersion;
+    
     browserWebview.innerHTML = agentInfo.browser.webview;
     browserWebkit.innerHTML = agentInfo.browser.webkit;
     browserChromium.innerHTML = agentInfo.browser.chromium;

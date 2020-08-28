@@ -45,15 +45,17 @@ console.log(agentInfo);
 /*
     {
         browser: {
-            name: "",
-            version: "",
+            name: "string",
+            version: "number",
+            majorVersion: number,
             webview: true or false,
             webkit: true or false,
             chromium: true or false,
         },
         os: {
-            name: "",
-            version: ""
+            name: "string",
+            version: "number",
+            majorVersion: number,
         },
         isHints: ture or false,
     }

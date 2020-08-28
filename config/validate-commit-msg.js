@@ -25,7 +25,8 @@ var TYPES = {
   style: true,
   refactor: true,
   test: true,
-  chore: true
+  chore: true,
+  demo: true,
 };
 
 var error = function() {
@@ -38,7 +39,7 @@ var error = function() {
 
 var validateMessage = function(message, fullMessage) {
   var isValid = true;
-  
+
   if (IGNORED.test(message)) {
     console.log('Commit message validation ignored.');
     return true;
