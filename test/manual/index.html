@@ -1,14 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>egjs-agent</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body>
-<!-- Add your content here -->
-<p>Hello egjs-agent Manual Test!!!</p>
 <script src="../../dist/agent.js"></script>
-<script src="js/test.js"></script>
-</body>
-</html>
+
+<script>
+    console.log(eg.agent());
+    console.log(eg.agent(""));
+    console.log(eg.agent(navigator.userAgent));
+    console.log(eg.agent("Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 1.1.4322; .NET CLR 1.0.37052000; Media Center PC 3.1)"));
+    console.log(eg.agent("Mozilla/5.0 (Linux; Android 5.0; SM-G900S Build/LRX21T; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/42.0.2311.138 Mobile Safari/537.36"));
+    console.log(eg.agent("Mozilla/5.0 (iPod; U; CPU iPhone OS 3_0 like Mac OS X;ko-kr)AppleWebKit/528.18(KHTML, like Gecko)Version/4.0 Mobile/7A341 Safari/528.16"));
+    console.log(eg.agent("Mozilla/5.0 (iPhone; CPU iPhone OS 8_0 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) Mobile/12B440"));
+    console.log("Mozilla/5.0 (iPad; CPU OS 10_0_2 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) Mobile/14A456 Version/5.1 Safari/7534.48.3 NAVER(inapp; search; 134; 7.7.0)");
+    console.log(eg.agent("Mozilla/5.0 (iPad; CPU OS 10_0_2 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) Mobile/14A456 Version/5.1 Safari/7534.48.3 NAVER(inapp; search; 134; 7.7.0)"));
+
+    // eg.agent.getAccurateAgent().then(agent => {
+    //     console.log(agent);
+    // });
+</script>

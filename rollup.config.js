@@ -1,43 +1,41 @@
 
-import babel from "rollup-plugin-babel";
-import replace from "rollup-plugin-replace";
+const buildHelper = require("@egjs/build-helper");
 
-const pkg = require("./package.json");
-const banner = `/*
-${require("./config/banner").common}
-*/`;
+const external = {
+    "@egjs/axes": "eg.Axes",
+    "@egjs/component": "eg.Component",
+}
+const name = "eg.agent";
 
-export default {
-	input: "./src/Agent.js",
-	plugins: [babel({
-		"babelrc": false,
-		"presets": [
-			[
-				"es2015",
-				{
-					"loose": true,
-					"modules": false,
-				},
-			],
-		],
-		"plugins": [
-			"transform-object-assign",
-			"transform-es3-property-literals",
-			"transform-es3-member-expression-literals",
-		],
-	}), replace({
-		"#__VERSION__#": pkg.version,
-		delimiters: ["", ""],
+export default buildHelper([
+    {
+        name,
+        input: "./src/index.umd.ts",
+        output: "./dist/agent.js",
+        exports: "default",
+        format: "umd",
+    },
+    {
+        name,
+        input: "./src/index.umd.ts",
+        output: "./dist/agent.min.js",
+        format: "umd",
+        exports: "default",
+        uglify: true,
+    },
+    {
+        input: "./src/agent.ts",
+        output: "./dist/agent.esm.js",
+        format: "esm",
+        external,
+        exports: "named",
+    },
+    {
+        input: "./src/index.umd.ts",
+        output: "./dist/agent.cjs.js",
+        format: "cjs",
+        external,
+        exports: "named",
+    },
+]);
 
-	})],
-	output: [
-		{
-			banner,
-			freeze: false,
-			interop: false,
-			sourcemap: true,
-			file: "./dist/agent.esm.js",
-			format: "esm",
-		},
-	],
-};
