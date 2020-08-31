@@ -208,6 +208,6 @@ temp/
 doc/
 demo/_data/version.yml
 demo/release
-
+dist/
 declaration/
 
