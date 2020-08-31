@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Source: types.ts | egjs::agent - API</title>
+    
+    <meta name="description" content="Extracts browser and operating system information from the user agent string." />
+    
+    
+    
+    <meta property="og:title" content=""/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content=""/>
+    
+    <meta property="og:url" content=""/>
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <script src="scripts/jquery.min.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    
+    <link rel="canonical" href="http://naver.github.io/egjs-agent/release/latest/doc/"/>
+    
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/jaguar.css">
+    
+    
+    <script>
+    var config = {"monospaceLinks":true,"cleverLinks":true,"default":{"outputSourceFiles":true},"applicationName":"eg.Agent","disqus":"egjs","googleAnalytics":"UA-70842526-15","openGraph":{"title":"","type":"website","image":"","site_name":"","url":""},"meta":{"title":"egjs::agent - API","description":"Extracts browser and operating system information from the user agent string.","keyword":""},"linenums":true,"link":{"canonical":"http://naver.github.io/egjs-agent/release/latest/doc/"}};
+    </script>
+    
+
+    
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', config.googleAnalytics]);
+      _gaq.push(['_trackPageview']);
+    
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    
+</head>
+<body>
+<div id="wrap" class="clearfix">
+    
+<div class="navigation">
+    <h3 class="applicationName">
+        <a href="//naver.github.io/egjs/"><img style="width:40px; height:20px;" src="img/type_white.svg"/></a>
+
+        <!-- Homepage link (prefer link.home than applicationName) -->
+        
+        <a href="//naver.github.io/egjs-agent/">Agent</a>
+        
+    </h3>
+
+    <div class="search">
+        <input id="search" type="text" class="form-control input-sm" placeholder="Search Documentations">
+    </div>
+    <ul class="list">
+        <li class="item">
+            <span class="title">
+                <a href="index.html">README</a>
+            </span>
+        </li>
+    
+        <!-- Non Grouping Version -->
+        
+            
+
+<li class="item" data-name="eg.agent">
+    <span class="title">
+        <a href="eg.agent.html">eg.agent</a>
+        
+        <span class="static">static</span>
+        
+    </span>
+    <ul class="members itemMembers expends">
+    
+    </ul>
+    <ul class="typedefs itemMembers expends">
+    
+    <span class="subtitle">Typedefs</span>
+    
+        <li data-name="eg.agent.AgentBrowserInfo"><a href="eg.agent.html#.AgentBrowserInfo">AgentBrowserInfo</a></li>
+    
+        <li data-name="eg.agent.AgentInfo"><a href="eg.agent.html#.AgentInfo">AgentInfo</a></li>
+    
+        <li data-name="eg.agent.AgentOSInfo"><a href="eg.agent.html#.AgentOSInfo">AgentOSInfo</a></li>
+    
+        <li data-name="eg.agent.AgentVersionInfo"><a href="eg.agent.html#.AgentVersionInfo">AgentVersionInfo</a></li>
+    
+    </ul>
+    <ul class="methods itemMembers expends">
+    
+    <span class="subtitle">Methods</span>
+    
+        <li data-name="eg.agent#agent"><a href="eg.agent.html#agent">agent</a></li>
+    
+        <li data-name="eg.agent#getAccurateAgent"><a href="eg.agent.html#getAccurateAgent">getAccurateAgent</a></li>
+    
+    </ul>
+    <ul class="events itemMembers expends">
+    
+    </ul>
+
+    
+</li>
+
+        
+    
+    </ul>
+</div>
+
+    <div class="main">
+        <h1 class="page-title" data-filename="types.ts.html">Source: types.ts</h1>
+        
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>
+/**
+ * @memberof eg.agent
+ * @typedef
+ * @property - Agent name &lt;ko>에이전트 이름 &lt;/ko>
+ * @property - Agent version &lt;ko>에이전트 버전 &lt;/ko>
+ * @property - Agent major version &lt;ko>에이전트 메이저 버전 &lt;/ko>
+ */
+export interface AgentVersionInfo {
+    name: string;
+    majorVersion: number;
+    version: string;
+}
+/**
+**
+ * @memberof eg.agent
+ * @extends eg.agent.AgentVersionInfo
+ * @typedef - OS information &lt;ko>OS 정보&lt;/ko>
+ */
+export interface AgentOSInfo extends AgentVersionInfo {}
+
+/**
+ * @memberof eg.agent
+ * @extends eg.agent.AgentVersionInfo
+ * @typedef - Browser information &lt;ko>브라우저 정보&lt;/ko>
+ * @property - Whether the browser is webkit &lt;ko>브라우저가 webkit인지 여부&lt;/ko>
+ * @property - Whether the browser is chromium. Check applewebkit/537.6 and chrome&lt;ko>브라우저가 chromium인지 여부. applewebkit/537.6과 chrome을 검사한다.&lt;/ko>
+ * @property - Whether the browser is webview.&lt;ko>브라우저가 웹뷰인지 여부&lt;/ko>
+ */
+export interface AgentBrowserInfo extends AgentVersionInfo {
+    webkit: boolean;
+    chromium: boolean;
+    webview: boolean;
+}
+
+/**
+ * @memberof eg.agent
+ * @typedef - All Agent information &lt;ko>모든 에이전트 정보&lt;/ko>
+ * @property - Browser information &lt;ko>브라우저 정보&lt;/ko>
+ * @property - OS information &lt;ko>OS 정보&lt;/ko>
+ * @property - Whether the browser is for mobile&lt;ko>모바일 브라우저 여부&lt;/ko>
+ * @property - Whether agent information is obtained from Client Hints &lt;ko> 에이전트 정보가 Client Hints로 얻어온 정보인지 여부&lt;/ko>
+ */
+export interface AgentInfo {
+    browser: AgentBrowserInfo;
+    os: AgentOSInfo;
+    isMobile: boolean;
+    isHints: boolean;
+}
+
+export interface PresetInfo {
+    test: string;
+    id: string;
+    brand?: boolean;
+    versionTest?: string;
+    versionAlias?: string;
+}
+export interface PresetResult {
+    preset: PresetInfo | null;
+    version: string;
+}
+
+export interface NavigatorUABrandVersion {
+    brand: string;
+    version: string;
+}
+
+export interface UADataValues {
+    platform: string;
+    platformVersion: string;
+    architecture: string;
+    model: string;
+    uaFullVersion: string;
+}
+export interface NavigatorUAData {
+    brands?: NavigatorUABrandVersion[];
+    uaList?: NavigatorUABrandVersion[];
+    mobile: boolean;
+    getHighEntropyValues&lt;T extends keyof UADataValues>(hints: T[]): Promise&lt;{ [key in T]: UADataValues[T] }>;
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+
+
+        
+        <!-- disqus code -->
+        <div id="disqus_thread"></div>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="//disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        <!-- // disqus code -->
+        
+
+        <footer>
+            Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 0.3.7</a> on Mon Aug 31 2020 16:52:55 GMT+0900 (GMT+09:00)
+        </footer>
+    </div>
+</div>
+<script>prettyPrint();</script>
+<script src="scripts/main.js"></script>
+</body>
+</html>

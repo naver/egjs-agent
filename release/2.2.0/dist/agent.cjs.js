@@ -6,6 +6,8 @@ author: NAVER Corp.
 repository: git+https://github.com/naver/agent.git
 version: 2.2.0
 */
+'use strict';
+
 function some(arr, callback) {
   var length = arr.length;
 
@@ -369,6 +371,15 @@ function agent(userAgent) {
   }
 }
 
-export default agent;
-export { getAccurateAgent };
-//# sourceMappingURL=agent.esm.js.map
+var modules = {
+    __proto__: null,
+    getAccurateAgent: getAccurateAgent,
+    'default': agent
+};
+
+for (var name in modules) {
+  agent[name] = modules[name];
+}
+
+exports.default = agent;
+//# sourceMappingURL=agent.cjs.js.map

@@ -60,10 +60,10 @@
         <div class="hero-image" style="background-image: url(//naver.github.io/egjs/img/Agent.png)">
         </div>
         <h2 class="title">
-            <span class="highlight">Agent</span><a href="https://github.com/naver/egjs-agent/releases/tag/2.1.6"><span class="version">v2.1.6</span></a>
+            <span class="highlight">Agent</span><a href="https://github.com/naver/egjs-agent/releases/tag/2.2.0"><span class="version">v2.2.0</span></a>
         </h2>
-        <p class="intro">Extracts browser and operating system information from the user agent string.<br/>
-            <span class="hashtag">#user-agent-parser #browser-detection</span>
+        <p class="intro">Extracts browser and operating system information from the user agent string or user agent object(userAgentData).<br/>
+            <span class="hashtag">#user-agent-parser #browser-detection #client-hints</span>
         </p>
     </div>
 </section>
@@ -85,45 +85,91 @@
 			<div class="docs-inner">
 				<h2 class="title text-center">Getting Started</h2>
 				
-				<h3 id="browser-support">Browser support</h3>
-<p>IE 7+, latest of Chrome/FF/Safari, iOS 7+ and Android 2.3+ (except 3.x)</p>
+				
+<h3 id="supported-browsers">Supported Browsers</h3>
+<p>The following are the supported browsers.</p>
+
+<ul>
+  <li>Internet Explorer: 7+</li>
+  <li>Chromium (Chrome, Edge, Whale): latest</li>
+  <li>Firefox: latest</li>
+  <li>Safari: latest</li>
+  <li>iOS: 3+</li>
+  <li>Android: 2.1+</li>
+</ul>
+
+<h4 id="client-hints-support">Client Hints Support</h4>
+<ul>
+  <li>Chromium (Chrome, Edge, Whale): 84+ (Experimental)</li>
+  <li>Gecko (Firefox): Unknown</li>
+  <li>Webkit (Safari): Unknown</li>
+</ul>
 
 <h3 id="quick-steps-to-use">Quick steps to use:</h3>
 
 <h4 id="load-files-or-import-library">Load files or import library</h4>
 
-<h5 id="es5">ES5</h5>
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"//naver.github.io/egjs-agent/release/latest/dist/agent.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 
 </code></pre></div></div>
 
-<h5 id="es6">ES6+</h5>
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">Agent</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@egjs/agent</span><span class="dl">"</span><span class="p">;</span>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>npm i @egjs/agent
 </code></pre></div></div>
 
 <h3 id="use">Use</h3>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// eg.Agent will use browser's navigator.userAgent </span>
-<span class="kd">var</span> <span class="nx">agentInfo</span> <span class="o">=</span> <span class="nx">eg</span><span class="p">.</span><span class="nx">agent</span><span class="p">();</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">getAgent</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@egjs/agent</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="c1">// getAgent(eg.agent) will use browser's navigator.userAgentData or navigator.userAgent</span>
+<span class="kd">var</span> <span class="nx">agentInfo</span> <span class="o">=</span> <span class="nx">getAgent</span><span class="p">();</span> <span class="c1">// or eg.agent();</span>
 
 <span class="c1">// or you can use own user-agent string</span>
-<span class="nx">agentInfo</span> <span class="o">=</span> <span class="nx">eg</span><span class="p">.</span><span class="nx">agent</span><span class="p">(</span><span class="nx">ua</span><span class="p">);</span>
+<span class="nx">agentInfo</span> <span class="o">=</span> <span class="nx">getAgent</span><span class="p">(</span><span class="nx">ua</span><span class="p">);</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">agentInfo</span><span class="p">);</span>
 <span class="cm">/*
     {
         browser: {
-            name: "",
-            version: ""
-            webview: true or false
+            name: "string",
+            version: "number",
+            majorVersion: number,
+            webview: true or false,
+            webkit: true or false,
+            chromium: true or false,
         },
         os: {
-            name: "",
-            version: ""
-        }
+            name: "string",
+            version: "number",
+            majorVersion: number,
+        },
+        isHints: ture or false,
     }
 */</span>
+</code></pre></div></div>
+
+<h4 id="get-accurate-agent-information">get accurate agent information.</h4>
+<ul>
+  <li>Prepare the Client Hints.</li>
+  <li>Your agent information becomes uncertain.</li>
+  <li>Use <code class="highlighter-rouge">getAccurateAgent(eg.agent.getAccurateAgent)</code> instead of <code class="highlighter-rouge">getAgent(eg.agent)</code></li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">getAccurateAgent</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@egjs/agent</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="c1">// Use Promise</span>
+<span class="c1">// eg.agent.getAccurateAgent</span>
+<span class="nx">getAccurateAgent</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="nx">agent</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// Check OS, OS version</span>
+    <span class="nx">agent</span><span class="p">.</span><span class="nx">os</span><span class="p">.</span><span class="nx">name</span>
+    <span class="nx">agent</span><span class="p">.</span><span class="nx">os</span><span class="p">.</span><span class="nx">version</span>
+
+    <span class="c1">// Check Browser full verion</span>
+    <span class="nx">agent</span><span class="p">.</span><span class="nx">browser</span><span class="p">.</span><span class="nx">version</span>
+<span class="p">});</span>
+
+<span class="c1">// Use Callback</span>
+<span class="nx">getAccurateAgent</span><span class="p">(</span><span class="nx">agent</span> <span class="o">=&gt;</span> <span class="p">{});</span>
 </code></pre></div></div>
 
 			</div>
@@ -140,7 +186,8 @@
             <span>(Copy and paste the user agent string to parse)</span>
             <textarea class="useragent-input"></textarea>
             <select class="useragent-select">
-                <option selected="" value="">Pick One</option>     
+                <option selected="" value="">Your User Agent</option>     
+                <option value="">Empty</option>     
                 <option value="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/600.3.18 (KHTML, like Gecko) Version/8.0.3 Safari/600.3.18">OS X Yosemite 10.10 / safari 8.0.3</option>            
                 <option value="Mozilla/5.0 (Linux; Android 6.0.1; SAMSUNG SM-G935L Build/MMB29K) AppleWebkit/537.36 (KHTML, like Gecko) SamsungBrowser/4.0 Chrome/44.0.2403.133 Mobile Safari/537.36">Galaxy S7 Edge 6.0.1 / Samsung Internet 4.0</option>            
                 <option value="Mozilla/5.0 (Linux; Android 5.1.1; SM-G925S Build/LMY47X) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.84 Mobile Safari/537.36">Galaxy S6 5.1.1 / Chrome 45.0.2454.84</option>
@@ -159,26 +206,45 @@
             <h3>Result</h3>
             <h4>OS</h4>
             <p class="os">
-                name: <span class="name"></span><br /> version: <span class="version"></span><br />
+                name: <span class="name"></span>
+                <br /> version: <span class="version"></span>
+                <br /> majorVersion: <span class="majorVersion"></span>
             </p>
             <h4>Browser</h4>
             <p class="browser">
-                name: <span class="name"></span><br /> version: <span class="version"></span><br /> webview: <span class="webview"></span>
+                name: <span class="name"></span>
+                <br /> version: <span class="version"></span>
+                <br /> majorVersion: <span class="majorVersion"></span>
+                <br />
+                <br /> webview: <span class="webview"></span>
+                <br />
+                <br /> webkit: <span class="webkit"></span>
+                <br /> chromium: <span class="chromium"></span>
             </p>
             <h4>isMobile</h4>
-            <p class="isMobile">
-            </p>
+            <p class="isMobile"></p>
+            <h4>isHints</h4>
+            <p class="isHints"></p>
         </div>
     </div>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">uaInput</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">.useragent-input</span><span class="dl">"</span><span class="p">);</span>
 <span class="nx">uaInput</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">input</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">agentInfo</span> <span class="o">=</span> <span class="nx">eg</span><span class="p">.</span><span class="nx">agent</span><span class="p">(</span><span class="nx">uaInput</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">agentInfo</span> <span class="o">=</span> <span class="nx">eg</span><span class="p">.</span><span class="nx">agent</span><span class="p">();</span>
+
     <span class="nx">osName</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">agentInfo</span><span class="p">.</span><span class="nx">os</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>
     <span class="nx">osVersion</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">agentInfo</span><span class="p">.</span><span class="nx">os</span><span class="p">.</span><span class="nx">version</span><span class="p">;</span>
+    <span class="nx">osMajorVersion</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">agentInfo</span><span class="p">.</span><span class="nx">os</span><span class="p">.</span><span class="nx">majorVersion</span><span class="p">;</span>
+
     <span class="nx">browserName</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">agentInfo</span><span class="p">.</span><span class="nx">browser</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>
     <span class="nx">browserVersion</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">agentInfo</span><span class="p">.</span><span class="nx">browser</span><span class="p">.</span><span class="nx">version</span><span class="p">;</span>
+    <span class="nx">browserMajorVersion</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">agentInfo</span><span class="p">.</span><span class="nx">browser</span><span class="p">.</span><span class="nx">majorVersion</span><span class="p">;</span>
+    
     <span class="nx">browserWebview</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">agentInfo</span><span class="p">.</span><span class="nx">browser</span><span class="p">.</span><span class="nx">webview</span><span class="p">;</span>
+    <span class="nx">browserWebkit</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">agentInfo</span><span class="p">.</span><span class="nx">browser</span><span class="p">.</span><span class="nx">webkit</span><span class="p">;</span>
+    <span class="nx">browserChromium</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">agentInfo</span><span class="p">.</span><span class="nx">browser</span><span class="p">.</span><span class="nx">chromium</span><span class="p">;</span>
+
+    <span class="nx">isHints</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">agentInfo</span><span class="p">.</span><span class="nx">isHints</span><span class="p">;</span>
     <span class="nx">isMobile</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">agentInfo</span><span class="p">.</span><span class="nx">isMobile</span><span class="p">;</span>
 <span class="p">})</span>
 </code></pre></div></div>

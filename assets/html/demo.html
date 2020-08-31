@@ -4,7 +4,8 @@
             <span>(Copy and paste the user agent string to parse)</span>
             <textarea class="useragent-input"></textarea>
             <select class="useragent-select">
-                <option selected value="" >Pick One</option>     
+                <option selected value="">Your User Agent</option>     
+                <option value="">Empty</option>     
                 <option value="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/600.3.18 (KHTML, like Gecko) Version/8.0.3 Safari/600.3.18">OS X Yosemite 10.10 / safari 8.0.3</option>            
                 <option value="Mozilla/5.0 (Linux; Android 6.0.1; SAMSUNG SM-G935L Build/MMB29K) AppleWebkit/537.36 (KHTML, like Gecko) SamsungBrowser/4.0 Chrome/44.0.2403.133 Mobile Safari/537.36">Galaxy S7 Edge 6.0.1 / Samsung Internet 4.0</option>            
                 <option value="Mozilla/5.0 (Linux; Android 5.1.1; SM-G925S Build/LMY47X) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.84 Mobile Safari/537.36" >Galaxy S6 5.1.1 / Chrome 45.0.2454.84</option>
@@ -23,14 +24,24 @@
             <h3>Result</h3>
             <h4>OS</h4>
             <p class="os">
-                name: <span class="name"></span><br/> version: <span class="version"></span><br/>
+                name: <span class="name"></span>
+                <br/> version: <span class="version"></span>
+                <br/> majorVersion: <span class="majorVersion"></span>
             </p>
             <h4>Browser</h4>
             <p class="browser">
-                name: <span class="name"></span><br/> version: <span class="version"></span><br/> webview: <span class="webview"></span>
+                name: <span class="name"></span>
+                <br/> version: <span class="version"></span>
+                <br/> majorVersion: <span class="majorVersion"></span>
+                <br/>
+                <br/> webview: <span class="webview"></span>
+                <br/>
+                <br/> webkit: <span class="webkit"></span>
+                <br/> chromium: <span class="chromium"></span>
             </p>
             <h4>isMobile</h4>
-            <p class="isMobile">
-            </p>
+            <p class="isMobile"></p>
+            <h4>isHints</h4>
+            <p class="isHints"></p>
         </div>
     </div>

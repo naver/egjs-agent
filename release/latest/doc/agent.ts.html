@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Source: agent.ts | egjs::agent - API</title>
+    
+    <meta name="description" content="Extracts browser and operating system information from the user agent string." />
+    
+    
+    
+    <meta property="og:title" content=""/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content=""/>
+    
+    <meta property="og:url" content=""/>
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <script src="scripts/jquery.min.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    
+    <link rel="canonical" href="http://naver.github.io/egjs-agent/release/latest/doc/"/>
+    
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/jaguar.css">
+    
+    
+    <script>
+    var config = {"monospaceLinks":true,"cleverLinks":true,"default":{"outputSourceFiles":true},"applicationName":"eg.Agent","disqus":"egjs","googleAnalytics":"UA-70842526-15","openGraph":{"title":"","type":"website","image":"","site_name":"","url":""},"meta":{"title":"egjs::agent - API","description":"Extracts browser and operating system information from the user agent string.","keyword":""},"linenums":true,"link":{"canonical":"http://naver.github.io/egjs-agent/release/latest/doc/"}};
+    </script>
+    
+
+    
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', config.googleAnalytics]);
+      _gaq.push(['_trackPageview']);
+    
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    
+</head>
+<body>
+<div id="wrap" class="clearfix">
+    
+<div class="navigation">
+    <h3 class="applicationName">
+        <a href="//naver.github.io/egjs/"><img style="width:40px; height:20px;" src="img/type_white.svg"/></a>
+
+        <!-- Homepage link (prefer link.home than applicationName) -->
+        
+        <a href="//naver.github.io/egjs-agent/">Agent</a>
+        
+    </h3>
+
+    <div class="search">
+        <input id="search" type="text" class="form-control input-sm" placeholder="Search Documentations">
+    </div>
+    <ul class="list">
+        <li class="item">
+            <span class="title">
+                <a href="index.html">README</a>
+            </span>
+        </li>
+    
+        <!-- Non Grouping Version -->
+        
+            
+
+<li class="item" data-name="eg.agent">
+    <span class="title">
+        <a href="eg.agent.html">eg.agent</a>
+        
+        <span class="static">static</span>
+        
+    </span>
+    <ul class="members itemMembers expends">
+    
+    </ul>
+    <ul class="typedefs itemMembers expends">
+    
+    <span class="subtitle">Typedefs</span>
+    
+        <li data-name="eg.agent.AgentBrowserInfo"><a href="eg.agent.html#.AgentBrowserInfo">AgentBrowserInfo</a></li>
+    
+        <li data-name="eg.agent.AgentInfo"><a href="eg.agent.html#.AgentInfo">AgentInfo</a></li>
+    
+        <li data-name="eg.agent.AgentOSInfo"><a href="eg.agent.html#.AgentOSInfo">AgentOSInfo</a></li>
+    
+        <li data-name="eg.agent.AgentVersionInfo"><a href="eg.agent.html#.AgentVersionInfo">AgentVersionInfo</a></li>
+    
+    </ul>
+    <ul class="methods itemMembers expends">
+    
+    <span class="subtitle">Methods</span>
+    
+        <li data-name="eg.agent#agent"><a href="eg.agent.html#agent">agent</a></li>
+    
+        <li data-name="eg.agent#getAccurateAgent"><a href="eg.agent.html#getAccurateAgent">getAccurateAgent</a></li>
+    
+    </ul>
+    <ul class="events itemMembers expends">
+    
+    </ul>
+
+    
+</li>
+
+        
+    
+    </ul>
+</div>
+
+    <div class="main">
+        <h1 class="page-title" data-filename="agent.ts.html">Source: agent.ts</h1>
+        
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { AgentInfo } from "./types";
+import { hasUserAgentData } from "./utils";
+import { parseUserAgentData } from "./userAgentData";
+import { parseUserAgent } from "./userAgent";
+/**
+ * @namespace eg.agent
+ */
+
+/**
+* Extracts accuate browser and operating system information from the user agent string or client hints.
+* @ko 유저 에이전트 문자열 또는 client hints에서 정확한 브라우저와 운영체제 정보를 추출한다.
+* @function eg.agent#getAccurateAgent
+* @param - Callback function to get the accuate agent &lt;ko>정확한 에이전트를 가져오기 위한 callback 함수&lt;/ko>
+* @return - get the accuate agent promise. If Promise are not supported, null is returned. &lt;ko> 정확한 에이전트 promise를 가져온다. Promise를 지원 하지 않는 경우, null을 반환한다. &lt;/ko>
+* @example
+import { getAccurateAgent } from "@egjs/agent";
+// eg.agent.getAccurateAgent()
+getAccurateAgent().then(agent => {
+   const { os, browser, isMobile } = agent;
+});
+getAccurateAgent(agent => {
+    const { os, browser, isMobile } = agent;
+});
+*/
+export function getAccurateAgent(callback?: (result: AgentInfo) => void): Promise&lt;AgentInfo> | null {
+    if (hasUserAgentData()) {
+        return navigator.userAgentData.getHighEntropyValues([
+            "architecture",
+            "model",
+            "platform",
+            "platformVersion",
+            "uaFullVersion",
+        ]).then(info => {
+            const agentInfo = parseUserAgentData(info);
+
+            callback &amp;&amp; callback(agentInfo);
+            return agentInfo;
+        });
+    }
+    callback &amp;&amp; callback(agent());
+    if (typeof Promise === "undefined" || !Promise) {
+        return null;
+    }
+    return Promise.resolve(agent());
+}
+
+
+/**
+ * Extracts browser and operating system information from the user agent string.
+ * @ko 유저 에이전트 문자열에서 브라우저와 운영체제 정보를 추출한다.
+ * @function eg.agent#agent
+ * @param - user agent string to parse &lt;ko>파싱할 유저에이전트 문자열&lt;/ko>
+ * @return - agent Info &lt;ko> 에이전트 정보 &lt;/ko>
+ * @example
+import agent from "@egjs/agent";
+// eg.agent();
+const { os, browser, isMobile } = agent();
+ */
+function agent(userAgent?: string): AgentInfo {
+    if (typeof userAgent === "undefined" &amp;&amp; hasUserAgentData()) {
+        return parseUserAgentData();
+    } else {
+        return parseUserAgent(userAgent);
+    }
+}
+
+export default agent;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+
+
+        
+        <!-- disqus code -->
+        <div id="disqus_thread"></div>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="//disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        <!-- // disqus code -->
+        
+
+        <footer>
+            Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 0.3.7</a> on Mon Aug 31 2020 16:52:55 GMT+0900 (GMT+09:00)
+        </footer>
+    </div>
+</div>
+<script>prettyPrint();</script>
+<script src="scripts/main.js"></script>
+</body>
+</html>

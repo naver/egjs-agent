@@ -496,7 +496,7 @@ span.version:hover {
   }
 
   .promo .intro {
-    1font-size: 25px;
+    font-size: 25px;
   }  
   .promo .meta {
     margin-top: 60px;
@@ -603,9 +603,11 @@ footer {
       height: 14px;
       border-left: 1px solid #aaa;
       content: "";
-  }footer #footerContent ul li a {
-      1color: #01ABF7;
-  }footer #footerContent a {
+  }
+  footer #footerContent ul li a {
+      color: #01ABF7;
+  }
+  footer #footerContent a {
       color: #888;
   }a {
       text-decoration: none;
@@ -636,4 +638,7 @@ footer {
   }
   span.size {
       opacity: .6;
+  }
+  li {
+    padding: 2px 0px;
   }
