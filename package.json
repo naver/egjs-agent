@@ -1,63 +1,63 @@
 {
-    "name": "@egjs/agent",
-    "version": "2.2.0",
-    "description": "Extracts browser and operating system information from the user agent string or user agent object(userAgentData).",
-    "main": "./dist/agent.cjs.js",
-    "module": "./dist/agent.esm.js",
-    "sideEffects": false,
-    "types": "declaration/agent.d.ts",
-    "scripts": {
-        "start": "rollup -c -w",
-        "build": "rollup -c && npm run declaration && print-sizes ./dist",
-        "declaration": "rm -rf declaration && tsc -p tsconfig.declaration.json",
-        "test": "jest --watchAll",
-        "jsdoc": "rm -rf ./doc && jsdoc -c jsdoc.json",
-        "coverage": "jest --coverage && print-coveralls --sort=desc",
-        "coveralls": "cat ./coverage/lcov.info | coveralls",
-        "lint": "eslint . --ext .ts",
-        "demo:start": "npm run demo:prebuild-latest && npm run demo:updateVersion && jekyll serve --host=0.0.0.0 -s demo",
-        "demo:build": "npm run demo:updateVersion && jekyll build -s demo",
-        "demo:prebuild-version": "cpx 'dist/**/*' demo/release/$npm_package_version/dist --clean && cpx 'doc/**/*' demo/release/$npm_package_version/doc --clean",
-        "demo:prebuild-latest": "cpx 'dist/**/*' demo/release/latest/dist --clean && cpx 'doc/**/*' demo/release/latest/doc --clean",
-        "demo:updateVersion": "echo $npm_package_version > demo/_data/version.yml",
-        "demo:deploy": "npm run build && npm run jsdoc && npm run demo:prebuild-version && npm run demo:prebuild-latest && npm run demo:build && gh-pages -d demo/_site --add --remote upstream",
-        "release": "release-helper upstream",
-        "prepush": "npm run lint",
-        "commitmsg": "node config/validate-commit-msg.js"
-    },
-    "author": {
-        "name": "NAVER Corp."
-    },
-    "namespace": {
-        "eg": "eg"
-    },
-    "license": "MIT",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/naver/agent.git"
-    },
-    "bugs": {
-        "url": "https://github.com/naver/agent/issues"
-    },
-    "homepage": "https://github.com/naver/agent#readme",
-    "devDependencies": {
-        "@daybrush/jsdoc": "^0.3.7",
-        "@egjs/build-helper": "^0.1.2",
-        "@egjs/release-helper": "0.0.3",
-        "@types/jest": "^24.0.13",
-        "@typescript-eslint/eslint-plugin": "^3.9.1",
-        "@typescript-eslint/parser": "^3.9.1",
-        "coveralls": "^3.0.3",
-        "cpx": "^1.5.0",
-        "egjs-jsdoc-template": "^1.4.4",
-        "eslint": "^7.7.0",
-        "gh-pages": "^3.1.0",
-        "jest": "^24.8.0",
-        "print-coveralls": "^1.2.2",
-        "print-sizes": "0.0.4",
-        "rollup": "^2.24.0",
-        "ts-jest": "^24.0.2",
-        "tslint": "^5.16.0",
-        "typescript": "^3.4.5"
-    }
+	"name": "@egjs/agent",
+	"version": "2.2.0",
+	"description": "Extracts browser and operating system information from the user agent string or user agent object(userAgentData).",
+	"main": "./dist/agent.cjs.js",
+	"module": "./dist/agent.esm.js",
+	"sideEffects": false,
+	"types": "declaration/agent.d.ts",
+	"scripts": {
+		"start": "rollup -c -w",
+		"build": "rollup -c && npm run declaration && print-sizes ./dist",
+		"declaration": "rm -rf declaration && tsc -p tsconfig.declaration.json",
+		"test": "jest --watchAll",
+		"jsdoc": "rm -rf ./doc && jsdoc -c jsdoc.json",
+		"coverage": "jest --coverage && print-coveralls --sort=desc",
+		"coveralls": "cat ./coverage/lcov.info | coveralls",
+		"lint": "eslint . --ext .ts",
+		"demo:start": "npm run demo:prebuild-latest && npm run demo:updateVersion && jekyll serve --host=0.0.0.0 -s demo",
+		"demo:build": "npm run demo:updateVersion && jekyll build -s demo",
+		"demo:prebuild-version": "cpx 'dist/**/*' demo/release/$npm_package_version/dist --clean && cpx 'doc/**/*' demo/release/$npm_package_version/doc --clean",
+		"demo:prebuild-latest": "cpx 'dist/**/*' demo/release/latest/dist --clean && cpx 'doc/**/*' demo/release/latest/doc --clean",
+		"demo:updateVersion": "echo $npm_package_version > demo/_data/version.yml",
+		"demo:deploy": "npm run build && npm run jsdoc && npm run demo:prebuild-version && npm run demo:prebuild-latest && npm run demo:build && gh-pages -d demo/_site --add --remote upstream",
+		"release": "release-helper upstream",
+		"prepush": "npm run lint",
+		"commitmsg": "node config/validate-commit-msg.js"
+	},
+	"author": {
+		"name": "NAVER Corp."
+	},
+	"namespace": {
+		"eg": "eg"
+	},
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/naver/agent.git"
+	},
+	"bugs": {
+		"url": "https://github.com/naver/agent/issues"
+	},
+	"homepage": "https://github.com/naver/agent#readme",
+	"devDependencies": {
+		"@daybrush/jsdoc": "^0.3.7",
+		"@egjs/build-helper": "^0.1.2",
+		"@egjs/release-helper": "0.0.3",
+		"@types/jest": "^24.0.13",
+		"@typescript-eslint/eslint-plugin": "^3.9.1",
+		"@typescript-eslint/parser": "^3.9.1",
+		"coveralls": "^3.0.3",
+		"cpx": "^1.5.0",
+		"egjs-jsdoc-template": "^1.4.4",
+		"eslint": "^7.7.0",
+		"gh-pages": "^3.1.0",
+		"jest": "^24.8.0",
+		"print-coveralls": "^1.2.2",
+		"print-sizes": "0.0.4",
+		"rollup": "^2.24.0",
+		"ts-jest": "^24.0.2",
+		"tslint": "^5.16.0",
+		"typescript": "^3.4.5"
+	}
 }
