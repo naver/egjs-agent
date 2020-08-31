@@ -5,7 +5,7 @@
 	},
 	"source": {
 		"include": ["src", "README.md"  ], 
-		"includePattern": ".+\\.js(doc|x)?$",
+		"includePattern": ".+\\.ts(doc|x)?$",
 		"excludePattern": "(^|\\/|\\\\)_"
 	},
 	"opts": {

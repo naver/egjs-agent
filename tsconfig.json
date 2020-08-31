@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "outDir": "./outjs/",
+    "esModuleInterop": false,
+    "sourceMap": true,
+    "module": "es2015",
+    "target": "es5",
+    "experimentalDecorators": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "lib": [
+      "es2015",
+      "dom"
+    ],
+  },
+  "include": [
+    "./src/**/*.ts",
+    "./global.d.ts",
+    "./test/**/*.ts"
+  ]
+}
