@@ -31,46 +31,49 @@ describe("test userAgent", () => {
     });
     describe("test getAccurateAgent with custom userAgent", () => {
         AGENT_LIST.forEach(uaInfo => {
-            it(`test ${uaInfo.name} - ${uaInfo.ua}`, async () => {
-                // Given
-                const originalNavigator = window.navigator;
+            describe(`test ${uaInfo.name} - ${uaInfo.ua}`, () => {
+                let originalNavigator: Navigator;
 
-                Object.defineProperty(window, "navigator", {
-                    value: {
-                        ...originalNavigator,
-                        userAgent: uaInfo.ua,
-                    },
-                    configurable: true,
-                    writable: true,
+                beforeEach(() => {
+                    originalNavigator = window.navigator;
+                    Object.defineProperty(window, "navigator", {
+                        value: {
+                            ...originalNavigator,
+                            userAgent: uaInfo.ua,
+                        },
+                        configurable: true,
+                        writable: true,
+                    });
                 });
+                afterEach(() => {
+                    Object.defineProperty(window, "navigator", {
+                        value: originalNavigator,
+                        configurable: true,
+                        writable: true,
+                    });
+                });
+                it(`test getAccurateAgent function`, async () => {
+                    // Given, When
+                    const agent = await getAccurateAgent()!;
 
-                // When
-                const agent = await getAccurateAgent()!;
+                    // Then
+                    // name
+                    expect(agent.os.name).toBe(uaInfo.os.name);
+                    expect(agent.browser.name).toBe(uaInfo.browser.name);
 
-                // Then
-                // name
-                expect(agent.os.name).toBe(uaInfo.os.name);
-                expect(agent.browser.name).toBe(uaInfo.browser.name);
+                    // engine
+                    expect(agent.browser.webview).toBe(uaInfo.browser.webview);
+                    expect(agent.browser.webkit).toBe(uaInfo.browser.webkit);
+                    expect(agent.browser.chromium).toBe(uaInfo.browser.chromium);
 
-                // engine
-                expect(agent.browser.webview).toBe(uaInfo.browser.webview);
-                expect(agent.browser.webkit).toBe(uaInfo.browser.webkit);
-                expect(agent.browser.chromium).toBe(uaInfo.browser.chromium);
+                    // version
+                    expect(agent.browser.version).toBe(uaInfo.browser.version);
+                    expect(agent.os.version).toBe(uaInfo.os.version);
 
-                // version
-                expect(agent.browser.version).toBe(uaInfo.browser.version);
-                expect(agent.os.version).toBe(uaInfo.os.version);
+                    expect(agent.os.majorVersion).toBe(parseInt(uaInfo.os.version, 10));
+                    expect(agent.browser.majorVersion).toBe(parseInt(uaInfo.browser.version, 10));
 
-                expect(agent.os.majorVersion).toBe(parseInt(uaInfo.os.version, 10));
-                expect(agent.browser.majorVersion).toBe(parseInt(uaInfo.browser.version, 10));
-
-                expect(agent.isMobile).toBe(uaInfo.isMobile);
-
-                // finish
-                Object.defineProperty(window, "navigator", {
-                    value: originalNavigator,
-                    configurable: true,
-                    writable: true,
+                    expect(agent.isMobile).toBe(uaInfo.isMobile);
                 });
             });
         });

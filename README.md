@@ -34,7 +34,7 @@ You can download the files for development
 
 ## Prepare for Client Hints!
 
-Chrome is currently planning to freeze user agents to improve user privacy.
+Chrome was planned to freeze userAgent to improve user privacy, and it is being applied as an experimental feature in 84+.
 
 Not only Chrome, but other browsers will come someday.
 

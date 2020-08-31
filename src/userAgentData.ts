@@ -1,15 +1,15 @@
-import { UADataValues, AgentInfo, AgentBrowserInfo, AgentOSInfo, NavigatorUABrandVersion } from "./types";
+import { UADataValues, AgentInfo, AgentBrowserInfo, AgentOSInfo } from "./types";
 import { some, find, findBrand, convertVersion } from "./utils";
 import { BROWSER_PRESETS, OS_PRESETS, CHROMIUM_PRESETS, WEBKIT_PRESETS, WEBVIEW_PRESETS } from "./presets";
 
 export function parseUserAgentData(osData?: UADataValues): AgentInfo {
     const userAgentData = navigator.userAgentData;
-    const brands = [].slice.call(userAgentData.uaList || userAgentData.brands)! as NavigatorUABrandVersion[];
+    const brands = [...(userAgentData.uaList || userAgentData.brands)!];
     const isMobile = userAgentData.mobile || false;
-    const lastBrand = brands[0];
+    const firstBrand = brands[0];
     const browser: AgentBrowserInfo = {
-        name: lastBrand.brand,
-        version: lastBrand.version,
+        name: firstBrand.brand,
+        version: firstBrand.version,
         majorVersion: -1,
         webkit: false,
         webview: some(WEBVIEW_PRESETS, preset => findBrand(brands, preset)),

@@ -18,6 +18,9 @@ import { getAccurateAgent } from "@egjs/agent";
 getAccurateAgent().then(agent => {
    const { os, browser, isMobile } = agent;
 });
+getAccurateAgent(agent => {
+    const { os, browser, isMobile } = agent;
+});
 */
 export function getAccurateAgent(callback?: (result: AgentInfo) => void): Promise<AgentInfo> | null {
     if (hasUserAgentData()) {
