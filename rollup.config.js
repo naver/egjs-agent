@@ -35,7 +35,7 @@ export default buildHelper([
         output: "./dist/agent.cjs.js",
         format: "cjs",
         external,
-        exports: "named",
+        exports: "default",
     },
 ]);
 
