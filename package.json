@@ -1,6 +1,6 @@
 {
 	"name": "@egjs/agent",
-	"version": "2.2.0-snapshot",
+	"version": "2.2.1",
 	"description": "Extracts browser and operating system information from the user agent string or user agent object(userAgentData).",
 	"main": "./dist/agent.cjs.js",
 	"module": "./dist/agent.esm.js",
@@ -10,8 +10,8 @@
 		"start": "rollup -c -w",
 		"build": "rollup -c && npm run declaration && print-sizes ./dist",
 		"declaration": "rm -rf declaration && tsc -p tsconfig.declaration.json",
-        "test": "jest --watchAll",
-        "test:node": "npm run build && node ./test/node/node.js",
+		"test": "jest --watchAll",
+		"test:node": "npm run build && node ./test/node/node.js",
 		"jsdoc": "rm -rf ./doc && jsdoc -c jsdoc.json",
 		"coverage": "npm run test:node && jest --coverage && print-coveralls --sort=desc",
 		"coveralls": "cat ./coverage/lcov.info | coveralls",
