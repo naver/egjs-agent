@@ -9,6 +9,7 @@ Extracts browser and operating system information from the user agent string or 
 ## Documents
 - [Get Started and Demos](https://naver.github.io/egjs-agent/)
 - [API documentation](https://naver.github.io/egjs-agent/release/latest/doc/)
+- [Prepare for Client Hints, freezing User Agent](https://medium.com/naver-fe-platform/prepare-for-client-hints-freezing-user-agent-9c0ea1ddd02c)
 
 ## Download and Installation
 
@@ -161,7 +162,7 @@ const agent = getAgent();
 
 if (
     agent.os.name === "android"
-    && (agent.os.majorVersion >= 5 || agent.os.majorVersion === -1)) {
+    && (agent.os.majorVersion >= 5 || agent.isHints)) {
     console.log("is Android >= 5");
 }
 ```
@@ -174,7 +175,7 @@ const agent = getAgent();
 
 if (
     agent.os.name === "ios"
-    && (agent.os.majorVersion >= 10 || agent.os.majorVersion === -1)
+    && (agent.os.majorVersion >= 10 || agent.isHints)
 ) {
     console.log("is iOS");
 }
