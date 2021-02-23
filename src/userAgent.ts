@@ -10,8 +10,10 @@ export function parseUserAgent(userAgent?: string): AgentInfo {
         version: "-1",
         majorVersion: -1,
         webview: !!findPreset(WEBVIEW_PRESETS, nextAgent).preset,
-        chromium: !!findPreset(CHROMIUM_PRESETS, nextAgent).preset,
+        chromium: false,
+        chromiumVersion: "-1",
         webkit: false,
+        webkitVersion: "-1",
     };
     const os = {
         name: "unknown",
@@ -28,7 +30,16 @@ export function parseUserAgent(userAgent?: string): AgentInfo {
         version: osVersion,
     } = findPreset(OS_PRESETS, nextAgent);
 
-    browser.webkit = !browser.chromium && !!findPreset(WEBKIT_PRESETS, nextAgent).preset;
+    const chromiumPreset = findPreset(CHROMIUM_PRESETS, nextAgent);
+
+    browser.chromium = !!chromiumPreset.preset;
+    browser.chromiumVersion = chromiumPreset.version;
+    if (!browser.chromium) {
+        const webkitPreset = findPreset(WEBKIT_PRESETS, nextAgent);
+
+        browser.webkit = !!webkitPreset.preset;
+        browser.webkitVersion = webkitPreset.version;
+    }
 
     if (osPreset) {
         os.name = osPreset.id;

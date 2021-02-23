@@ -12,8 +12,10 @@ export function parseUserAgentData(osData?: UADataValues): AgentInfo {
         version: firstBrand.version,
         majorVersion: -1,
         webkit: false,
+        webkitVersion: "-1",
+        chromium: false,
+        chromiumVersion: "-1",
         webview: some(WEBVIEW_PRESETS, preset => findBrand(brands, preset)),
-        chromium: some(CHROMIUM_PRESETS, preset => findBrand(brands, preset)),
     };
     const os: AgentOSInfo = {
         name: "unknown",
@@ -22,6 +24,30 @@ export function parseUserAgentData(osData?: UADataValues): AgentInfo {
     };
     browser.webkit = !browser.chromium && some(WEBKIT_PRESETS, preset => findBrand(brands, preset));
 
+    some(CHROMIUM_PRESETS, preset => {
+        const result = findBrand(brands, preset);
+
+        if (!result) {
+            return false;
+        }
+
+        browser.chromium = true;
+        browser.chromiumVersion = result.version;
+        return true;
+    });
+    if (!browser.chromium) {
+        some(WEBKIT_PRESETS, preset => {
+            const result = findBrand(brands, preset);
+
+            if (!result) {
+                return false;
+            }
+
+            browser.webkit = true;
+            browser.webkitVersion = result.version;
+            return true;
+        });
+    }
     if (osData) {
         const platform = osData.platform.toLowerCase();
 

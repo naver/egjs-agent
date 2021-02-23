@@ -29,7 +29,9 @@ export interface AgentOSInfo extends AgentVersionInfo {}
  */
 export interface AgentBrowserInfo extends AgentVersionInfo {
     webkit: boolean;
+    webkitVersion: string;
     chromium: boolean;
+    chromiumVersion: string;
     webview: boolean;
 }
 
