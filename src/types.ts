@@ -8,8 +8,8 @@
  */
 export interface AgentVersionInfo {
     name: string;
-    majorVersion: number;
     version: string;
+    majorVersion: number;
 }
 /**
 **
