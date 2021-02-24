@@ -24,7 +24,9 @@ export interface AgentOSInfo extends AgentVersionInfo {}
  * @extends eg.agent.AgentVersionInfo
  * @typedef - Browser information <ko>브라우저 정보</ko>
  * @property - Whether the browser is webkit <ko>브라우저가 webkit인지 여부</ko>
+ * @property - Version of the webkit. If it is not webkit, "-1" is returned.<ko>webkit의 버전. webkit가 아닌 경우 "-1"을 반환한다.</ko>
  * @property - Whether the browser is chromium. Check applewebkit/537.6 and chrome<ko>브라우저가 chromium인지 여부. applewebkit/537.6과 chrome을 검사한다.</ko>
+ * @property - Version of the chromium. If it is not chromium, "-1" is returned.<ko>chromium의 버전. chromium이 아닌 경우 "-1"을 반환한다.</ko>
  * @property - Whether the browser is webview.<ko>브라우저가 웹뷰인지 여부</ko>
  */
 export interface AgentBrowserInfo extends AgentVersionInfo {
