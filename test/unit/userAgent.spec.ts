@@ -16,7 +16,9 @@ describe("test userAgent", () => {
                 // engine
                 expect(agent.browser.webview).toBe(uaInfo.browser.webview);
                 expect(agent.browser.webkit).toBe(uaInfo.browser.webkit);
+                expect(agent.browser.webkitVersion).toBe(uaInfo.browser.webkitVersion);
                 expect(agent.browser.chromium).toBe(uaInfo.browser.chromium);
+                expect(agent.browser.chromiumVersion).toBe(uaInfo.browser.chromiumVersion);
 
                 // version
                 expect(agent.browser.version).toBe(uaInfo.browser.version);
@@ -64,7 +66,9 @@ describe("test userAgent", () => {
                     // engine
                     expect(agent.browser.webview).toBe(uaInfo.browser.webview);
                     expect(agent.browser.webkit).toBe(uaInfo.browser.webkit);
+                    expect(agent.browser.webkitVersion).toBe(uaInfo.browser.webkitVersion);
                     expect(agent.browser.chromium).toBe(uaInfo.browser.chromium);
+                    expect(agent.browser.chromiumVersion).toBe(uaInfo.browser.chromiumVersion);
 
                     // version
                     expect(agent.browser.version).toBe(uaInfo.browser.version);

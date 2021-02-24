@@ -42,8 +42,12 @@ describe("test userAgentData", () => {
 
                 // engine
                 expect(agent.isMobile).toBe(data.result.isMobile);
+
                 expect(agent.browser.chromium).toBe(data.result.browser.chromium);
+                expect(agent.browser.chromiumVersion).toBe(data.result.browser.chromiumVersion);
+
                 expect(agent.browser.webkit).toBe(data.result.browser.webkit);
+                expect(agent.browser.webkitVersion).toBe(data.result.browser.webkitVersion);
             });
             it ("test getAccurateAgent", async () => {
                 // Given, When
@@ -60,8 +64,12 @@ describe("test userAgentData", () => {
 
                 // engine
                 expect(agent.isMobile).toBe(data.result.isMobile);
+
                 expect(agent.browser.chromium).toBe(data.result.browser.chromium);
+                expect(agent.browser.chromiumVersion).toBe(data.result.browser.chromiumVersion);
+
                 expect(agent.browser.webkit).toBe(data.result.browser.webkit);
+                expect(agent.browser.webkitVersion).toBe(data.result.browser.webkitVersion);
             });
         });
     });
