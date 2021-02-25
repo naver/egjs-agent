@@ -49,7 +49,7 @@ export function hasUserAgentData(): boolean {
     return !!(brands && brands.length);
 }
 export function findVersion(versionTest: string, userAgent: string): string {
-    const result = execRegExp(`(${versionTest})((?:\\/|\\s|:)([0-9|\\.|_]+))?`, userAgent);
+    const result = execRegExp(`(${versionTest})((?:\\/|\\s|:)([0-9|\\.|_]+))`, userAgent);
 
     return result ? result[3] : "";
 }
@@ -83,7 +83,26 @@ export function findPreset(presets: PresetInfo[], userAgent: string): PresetResu
         version,
     };
 }
+export function findPresetBrand(presets: PresetInfo[], brands: NavigatorUABrandVersion[]): NavigatorUABrandVersion {
+    const brandInfo = {
+        brand: "",
+        version: "-1",
+    };
+    some(presets, preset => {
+        const result = findBrand(brands, preset);
 
+        if (!result) {
+            return false;
+        }
+
+        brandInfo.brand = preset.id;
+        brandInfo.version = preset.versionAlias || result.version;
+
+        return brandInfo.version !== "-1";
+    });
+
+    return brandInfo;
+}
 export function findBrand(brands: NavigatorUABrandVersion[], preset: PresetInfo): NavigatorUABrandVersion | null {
     return find(brands, ({ brand }) => {
         return execRegExp(`${preset.test}`, brand.toLowerCase());

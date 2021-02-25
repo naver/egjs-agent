@@ -55,6 +55,7 @@ export const CHROMIUM_PRESETS: PresetInfo[] = [
     {
         test: "(?=.*applewebkit/(53[0-7]|5[0-2]|[0-4]))(?=.*\\schrome)",
         id: "chrome",
+        versionTest: "chrome",
     },
     {
         test: "chromium",
@@ -63,6 +64,7 @@ export const CHROMIUM_PRESETS: PresetInfo[] = [
     {
         test: "whale",
         id: "chrome",
+        versionAlias: "-1",
         brand: true,
     },
 ];
@@ -70,6 +72,7 @@ export const WEBKIT_PRESETS: PresetInfo[] = [
     {
         test: "applewebkit",
         id: "webkit",
+        versionTest: "applewebkit|safari",
     },
 ];
 export const PLATFORM_PRESETS: PresetInfo[] = [
