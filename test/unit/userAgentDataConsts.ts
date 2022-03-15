@@ -1,7 +1,7 @@
 const AGENT_DATA_LIST = [
     {
         name: "Mac && Chrome 87",
-        platform: "Win32",
+        platform: "MacIntel",
         osData: {
             architecture: "",
             model: "",
@@ -16,10 +16,11 @@ const AGENT_DATA_LIST = [
                 { brand: "Chromium", version: "87" },
             ],
             mobile: false,
+            platform: "macOS",
         },
         result: {
             os: {
-                name: "unknown",
+                name: "mac",
                 version: "-1",
             },
             browser: {
@@ -44,7 +45,7 @@ const AGENT_DATA_LIST = [
     },
     {
         name: "Mac && Whale 27 && Chromium 83",
-        platform: "Win32",
+        platform: "MacIntel",
         osData: {
             architecture: "Intel",
             model: "",
@@ -57,10 +58,11 @@ const AGENT_DATA_LIST = [
                 { brand: "Whale", version: "2" },
             ],
             mobile: false,
+            platform: "macOS",
         },
         result: {
             os: {
-                name: "unknown",
+                name: "mac",
                 version: "-1",
             },
             browser: {
@@ -85,7 +87,7 @@ const AGENT_DATA_LIST = [
     },
     {
         name: "Galaxy S5 && Chrome 87",
-        platform: "Win32",
+        platform: "Linux armv81",
         osData: {
             architecture: "",
             model: "SM-G900P",
@@ -100,10 +102,11 @@ const AGENT_DATA_LIST = [
                 { brand: "Chromium", version: "87" },
             ],
             mobile: true,
+            platform: "Android",
         },
         result: {
             os: {
-                name: "unknown",
+                name: "android",
                 version: "-1",
             },
             browser: {
@@ -127,8 +130,8 @@ const AGENT_DATA_LIST = [
         },
     },
     {
-        name: "Galaxy S5 && Chrome 87 (platform: Linux armv8l)",
-        platform: "Linux armv8l",
+        name: "Galaxy S5 && Chrome 87 (platform: Linux armv81)",
+        platform: "Linux armv81",
         osData: {
             architecture: "",
             model: "SM-G900P",
@@ -143,6 +146,7 @@ const AGENT_DATA_LIST = [
                 { brand: "Chromium", version: "87" },
             ],
             mobile: true,
+            platform: "Android",
         },
         result: {
             os: {
@@ -171,7 +175,7 @@ const AGENT_DATA_LIST = [
     },
     {
         name: "Mac & Safari (Imagination)",
-        platform: "Win32",
+        platform: "MacIntel",
         osData: {
             architecture: "",
             model: "",
@@ -186,6 +190,7 @@ const AGENT_DATA_LIST = [
                 { brand: "AppleWebKit", version: "605" },
             ],
             mobile: false,
+            platform: "macOS",
         },
         result: {
             os: {
@@ -209,6 +214,50 @@ const AGENT_DATA_LIST = [
             },
             browser: {
                 version: "13.1",
+            },
+        },
+    },
+    {
+        name: "Chrome 100",
+        platform: "Win32",
+        osData: {
+            architecture: "",
+            model: "",
+            platform: "windows",
+            platformVersion: "10.0",
+            uaFullVersion: "100.0.4664.45",
+        },
+        userAgentData: {
+            brands: [
+                { brand: "Google Chrome", version: "100" },
+                { brand: `"Not;A\\Brand`, version: "99" },
+                { brand: "Chromium", version: "100" },
+            ],
+            mobile: false,
+            platform: "Windows",
+        },
+        result: {
+            os: {
+                name: "window",
+                version: "-1",
+            },
+            browser: {
+                name: "chrome",
+                version: "100",
+                chromiumVersion: "100",
+                chromium: true,
+                webkit: false,
+                webkitVersion: "-1",
+            },
+            isMobile: false,
+        },
+        accurateResult: {
+            os: {
+                name: "window",
+                version: "10.0",
+            },
+            browser: {
+                version: "100.0.4664.45",
             },
         },
     },
