@@ -75,24 +75,6 @@ export const WEBKIT_PRESETS: PresetInfo[] = [
         versionTest: "applewebkit|safari",
     },
 ];
-export const PLATFORM_PRESETS: PresetInfo[] = [
-    {
-        test: "win",
-        id: "window",
-    },
-    {
-        test: "linux",
-        id: "linux",
-    },
-    {
-        test: "ipad|ipod|iphone",
-        id: "ios",
-    },
-    {
-        test: "android",
-        id: "android",
-    },
-];
 export const WEBVIEW_PRESETS: PresetInfo[] = [
     {
         test: "(?=(iphone|ipad))(?!(.*version))",
@@ -123,16 +105,20 @@ export const OS_PRESETS: PresetInfo[] = [
         id: "window",
     },
     {
+        test: "win32|windows",
+        id: "window",
+    },
+    {
         test: "iphone|ipad|ipod",
         id: "ios",
         versionTest: "iphone os|cpu os",
     },
     {
-        test: "mac os x",
+        test: "macos|macintel|mac os x",
         id: "mac",
     },
     {
-        test: "android",
+        test: "android|linux armv81",
         id: "android",
     },
     {
