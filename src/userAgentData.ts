@@ -7,6 +7,7 @@ export function parseUserAgentData(osData?: UADataValues): AgentInfo {
     const brands = [...(userAgentData.uaList || userAgentData.brands)!];
     const isMobile = userAgentData.mobile || false;
     const firstBrand = brands[0];
+    const platform = (osData && osData.platform || userAgentData.platform || navigator.platform).toLowerCase();
     const browser: AgentBrowserInfo = {
         name: firstBrand.brand,
         version: firstBrand.version,
@@ -34,13 +35,13 @@ export function parseUserAgentData(osData?: UADataValues): AgentInfo {
         browser.webkit = !!webkitBrand.brand;
         browser.webkitVersion = webkitBrand.version;
     }
-    if (osData) {
-        const platform = osData.platform.toLowerCase();
 
-        const result = find(OS_PRESETS, preset => {
-            return new RegExp(`${preset.test}`, "g").exec(platform);
-        });
-        os.name = result ? result.id : platform;
+    const platfomResult = find(OS_PRESETS, preset => {
+        return new RegExp(`${preset.test}`, "g").exec(platform);
+    });
+    os.name = platfomResult ? platfomResult.id : "";
+
+    if (osData) {
         os.version = osData.platformVersion;
     }
     const browserBrand = findPresetBrand(BROWSER_PRESETS, brands);
@@ -49,9 +50,7 @@ export function parseUserAgentData(osData?: UADataValues): AgentInfo {
         browser.name = browserBrand.brand;
         browser.version = osData ? osData.uaFullVersion : browserBrand.version;
     }
-    if (navigator.platform === "Linux armv8l") {
-        os.name = "android";
-    } else if (browser.webkit) {
+    if (browser.webkit) {
         os.name = isMobile ? "ios" : "mac";
     }
     if (os.name === "ios" && browser.webview) {
