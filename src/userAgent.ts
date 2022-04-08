@@ -2,7 +2,7 @@ import { AgentInfo } from "./types";
 import { getUserAgentString, findPreset } from "./utils";
 import { WEBVIEW_PRESETS, CHROMIUM_PRESETS, BROWSER_PRESETS, OS_PRESETS, WEBKIT_PRESETS } from "./presets";
 
-export function getDefaultAgent(userAgent?: string): AgentInfo {
+export function getLegacyAgent(userAgent?: string): AgentInfo {
     const nextAgent = getUserAgentString(userAgent);
     const isMobile = !!/mobi/g.exec(nextAgent);
     const browser = {

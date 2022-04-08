@@ -1,7 +1,7 @@
 import { AgentInfo } from "./types";
 import { hasUserAgentData } from "./utils";
 import { getClientHintsAgent } from "./userAgentData";
-import { getDefaultAgent } from "./userAgent";
+import { getLegacyAgent } from "./userAgent";
 
 /**
  * @namespace eg.agent
@@ -62,9 +62,9 @@ function agent(userAgent?: string): AgentInfo {
     if (typeof userAgent === "undefined" && hasUserAgentData()) {
         return getClientHintsAgent();
     } else {
-        return getDefaultAgent(userAgent);
+        return getLegacyAgent(userAgent);
     }
 }
-export { getDefaultAgent };
+export { getLegacyAgent };
 
 export default agent;

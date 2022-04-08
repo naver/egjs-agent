@@ -80,6 +80,7 @@ Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)
     * **< Windows 7**
     * **< iOS Unknown**
 
+
 ```js
 import getAgent from "@egjs/agent";
 
@@ -99,8 +100,28 @@ agent.browser.webkit
 // Check chromium
 agent.browser.chromium
 ```
+
+### If you want to use only the method using navigator.userAgent
+```js
+import { getLegacyAgent } from "@egjs/agent";
+
+const agent = getLegacyAgent();
+// Check iOS
+agent.os.name === "ios"
+agent.os.majorVersion === 9
+// Check Android
+agent.os.name === "android"
+agent.os.majorVersion === 4
+parseFloat(agent.os.version) <= 4.4
+// Check browser name
+agent.browser.name === "safari"
+// Check webkit
+agent.browser.webkit
+// Check chromium
+agent.browser.chromium
+```
 ### Not Possible (If synchronous)
-* Check OS (Mac with browsers except Safari, Windows, Linux), OS version
+* Check OS version.
 * Check Browser full version.
 
 ```js

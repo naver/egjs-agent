@@ -1,5 +1,5 @@
 import AGENT_LIST from "./userAgentConsts";
-import getAgent, { getAccurateAgent, getDefaultAgent } from "../../src/agent";
+import getAgent, { getAccurateAgent, getLegacyAgent } from "../../src/agent";
 
 describe("test userAgent", () => {
     describe("test getAgent function with custom userAgent", () => {
@@ -29,9 +29,9 @@ describe("test userAgent", () => {
 
                 expect(agent.isMobile).toBe(uaInfo.isMobile);
             });
-            it(`test getDefaultAgent ${uaInfo.name} - ${uaInfo.ua}`, () => {
+            it(`test getLegacyAgent ${uaInfo.name} - ${uaInfo.ua}`, () => {
                 // Given, When
-                const agent = getDefaultAgent(uaInfo.ua);
+                const agent = getLegacyAgent(uaInfo.ua);
 
                 // Then
                 // name
