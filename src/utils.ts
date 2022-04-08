@@ -21,7 +21,7 @@ export function find<T>(arr: T[], callback: (value: T, index: number) => any): T
     }
     return null;
 }
-export function getUserAgent(agent?: string): string {
+export function getUserAgentString(agent?: string): string {
     let userAgent = agent;
     if (typeof userAgent === "undefined") {
         if (typeof navigator === "undefined" || !navigator) {
