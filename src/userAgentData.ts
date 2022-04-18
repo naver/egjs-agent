@@ -2,7 +2,7 @@ import { UADataValues, AgentInfo, AgentBrowserInfo, AgentOSInfo } from "./types"
 import { some, find, findBrand, convertVersion, findPresetBrand } from "./utils";
 import { BROWSER_PRESETS, OS_PRESETS, CHROMIUM_PRESETS, WEBKIT_PRESETS, WEBVIEW_PRESETS } from "./presets";
 
-export function parseUserAgentData(osData?: UADataValues): AgentInfo {
+export function getClientHintsAgent(osData?: UADataValues): AgentInfo {
     const userAgentData = navigator.userAgentData;
     const brands = [...(userAgentData.uaList || userAgentData.brands)!];
     const isMobile = userAgentData.mobile || false;

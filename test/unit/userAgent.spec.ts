@@ -1,12 +1,37 @@
 import AGENT_LIST from "./userAgentConsts";
-import getAgent, { getAccurateAgent } from "../../src/agent";
+import getAgent, { getAccurateAgent, getLegacyAgent } from "../../src/agent";
 
 describe("test userAgent", () => {
     describe("test getAgent function with custom userAgent", () => {
         AGENT_LIST.forEach(uaInfo => {
-            it(`test ${uaInfo.name} - ${uaInfo.ua}`, () => {
+            it(`test getAgent ${uaInfo.name} - ${uaInfo.ua}`, () => {
                 // Given, When
                 const agent = getAgent(uaInfo.ua);
+
+                // Then
+                // name
+                expect(agent.os.name).toBe(uaInfo.os.name);
+                expect(agent.browser.name).toBe(uaInfo.browser.name);
+
+                // engine
+                expect(agent.browser.webview).toBe(uaInfo.browser.webview);
+                expect(agent.browser.webkit).toBe(uaInfo.browser.webkit);
+                expect(agent.browser.webkitVersion).toBe(uaInfo.browser.webkitVersion);
+                expect(agent.browser.chromium).toBe(uaInfo.browser.chromium);
+                expect(agent.browser.chromiumVersion).toBe(uaInfo.browser.chromiumVersion);
+
+                // version
+                expect(agent.browser.version).toBe(uaInfo.browser.version);
+                expect(agent.os.version).toBe(uaInfo.os.version);
+
+                expect(agent.os.majorVersion).toBe(parseInt(uaInfo.os.version, 10));
+                expect(agent.browser.majorVersion).toBe(parseInt(uaInfo.browser.version, 10));
+
+                expect(agent.isMobile).toBe(uaInfo.isMobile);
+            });
+            it(`test getLegacyAgent ${uaInfo.name} - ${uaInfo.ua}`, () => {
+                // Given, When
+                const agent = getLegacyAgent(uaInfo.ua);
 
                 // Then
                 // name

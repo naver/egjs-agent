@@ -1,7 +1,8 @@
 import { AgentInfo } from "./types";
 import { hasUserAgentData } from "./utils";
-import { parseUserAgentData } from "./userAgentData";
-import { parseUserAgent } from "./userAgent";
+import { getClientHintsAgent } from "./userAgentData";
+import { getLegacyAgent } from "./userAgent";
+
 /**
  * @namespace eg.agent
  */
@@ -31,7 +32,7 @@ export function getAccurateAgent(callback?: (result: AgentInfo) => void): Promis
             "platformVersion",
             "uaFullVersion",
         ]).then(info => {
-            const agentInfo = parseUserAgentData(info);
+            const agentInfo = getClientHintsAgent(info);
 
             callback && callback(agentInfo);
             return agentInfo;
@@ -43,6 +44,7 @@ export function getAccurateAgent(callback?: (result: AgentInfo) => void): Promis
     }
     return Promise.resolve(agent());
 }
+
 
 
 /**
@@ -58,10 +60,11 @@ const { os, browser, isMobile } = agent();
  */
 function agent(userAgent?: string): AgentInfo {
     if (typeof userAgent === "undefined" && hasUserAgentData()) {
-        return parseUserAgentData();
+        return getClientHintsAgent();
     } else {
-        return parseUserAgent(userAgent);
+        return getLegacyAgent(userAgent);
     }
 }
+export { getLegacyAgent };
 
 export default agent;
