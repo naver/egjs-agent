@@ -48,15 +48,14 @@ export function getClientHintsAgent(osData?: UADataValues): AgentInfo {
     const browserBrand = findPresetBrand(BROWSER_PRESETS, brands);
 
     if (browserBrand.brand) {
-        if (fullVersionList && !fullVersionList.length) {
-            const browserBrandByFullVersionList = findPresetBrand(BROWSER_PRESETS, fullVersionList);
+        browser.name = browserBrand.brand;
+        browser.version = osData ? osData.uaFullVersion : browserBrand.version;
+    }
 
-            browser.name = browserBrandByFullVersionList.brand;
-            browser.version = browserBrandByFullVersionList.version;
-        } else {
-            browser.name = browserBrand.brand;
-            browser.version = osData ? osData.uaFullVersion : browserBrand.version;
-        }
+    if (fullVersionList && !fullVersionList.length) {
+        const browserBrandByFullVersionList = findPresetBrand(BROWSER_PRESETS, fullVersionList);
+        browser.name = browserBrandByFullVersionList.brand;
+        browser.version = browserBrandByFullVersionList.version;
     }
     if (browser.webkit) {
         os.name = isMobile ? "ios" : "mac";
