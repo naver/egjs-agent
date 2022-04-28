@@ -5,6 +5,7 @@ import { BROWSER_PRESETS, OS_PRESETS, CHROMIUM_PRESETS, WEBKIT_PRESETS, WEBVIEW_
 export function getClientHintsAgent(osData?: UADataValues): AgentInfo {
     const userAgentData = navigator.userAgentData;
     const brands = [...(userAgentData.uaList || userAgentData.brands)!];
+    const fullVersionList = osData && osData.fullVersionList;
     const isMobile = userAgentData.mobile || false;
     const firstBrand = brands[0];
     const platform = (osData && osData.platform || userAgentData.platform || navigator.platform).toLowerCase();
@@ -44,11 +45,15 @@ export function getClientHintsAgent(osData?: UADataValues): AgentInfo {
     if (osData) {
         os.version = osData.platformVersion;
     }
-    const browserBrand = findPresetBrand(BROWSER_PRESETS, brands);
-
-    if (browserBrand.brand) {
-        browser.name = browserBrand.brand;
-        browser.version = osData ? osData.uaFullVersion : browserBrand.version;
+    
+    if (fullVersionList && !fullVersionList.length) {
+        const browserBrandByFullVersionList = findPresetBrand(BROWSER_PRESETS, fullVersionList);
+        browser.name = browserBrandByFullVersionList.brand || browser.name;
+        browser.version = browserBrandByFullVersionList.version || browser.version;
+    } else {
+        const browserBrand = findPresetBrand(BROWSER_PRESETS, brands);
+        browser.name = browserBrand.brand || browser.name;
+        browser.version = browserBrand.brand && osData ? osData.uaFullVersion : browserBrand.version;
     }
     if (browser.webkit) {
         os.name = isMobile ? "ios" : "mac";

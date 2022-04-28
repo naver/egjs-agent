@@ -31,6 +31,7 @@ export function getAccurateAgent(callback?: (result: AgentInfo) => void): Promis
             "platform",
             "platformVersion",
             "uaFullVersion",
+            "fullVersionList",
         ]).then(info => {
             const agentInfo = getClientHintsAgent(info);
 
