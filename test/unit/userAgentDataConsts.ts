@@ -310,6 +310,58 @@ const AGENT_DATA_LIST = [
             },
         },
     },
+    // Whale 2.9.117.22
+    {
+        name: "Naver InApp",
+        userAgent: "Mozilla/5.0 (Linux; Android 11; SM-T733 Build/RP1A.200720.012; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/90.0.4430.232 Whale/1.0.0.0 Crosswalk/26.90.3.16 Safari/537.36 NAVER(inapp; search; 1000; 11.10.5)",
+        platform: "Linux armv81",
+        osData: {
+            architecture: "",
+            model: "SM-T733",
+            platform: "Android",
+            platformVersion: "11.0",
+            fullVersionList: [
+                { brand: `"Not;A\\Brand`, version: "99.0.0.0" },
+                { brand: "Chromium", version: "90.0.4430.232" },
+                { brand: "Whale", version: "1.0.0.0" },
+            ],
+        },
+        userAgentData: {
+            brands: [
+                { brand: `"Not;A\\Brand`, version: "99" },
+                { brand: "Chromium", version: "90" },
+                { brand: "Whale", version: "1" },
+            ],
+            mobile: true,
+            platform: "Android",
+        },
+        result: {
+            os: {
+                name: "android",
+                version: "-1",
+            },
+            browser: {
+                name: "whale",
+                version: "1",
+                chromiumVersion: "90",
+                chromium: true,
+                webkit: false,
+                webkitVersion: "-1",
+                webview: true,
+            },
+            isMobile: true,
+        },
+        accurateResult: {
+            os: {
+                name: "android",
+                version: "11.0",
+            },
+            browser: {
+                version: "1.0.0.0",
+                webview: true,
+            },
+        },
+    },
 ];
 
 export default AGENT_DATA_LIST;

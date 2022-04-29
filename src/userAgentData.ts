@@ -46,12 +46,14 @@ export function getClientHintsAgent(osData?: UADataValues): AgentInfo {
     if (osData) {
         os.version = osData.platformVersion;
     }
-    if (fullVersionList && !fullVersionList.length) {
+    if (fullVersionList && fullVersionList.length) {
         const browserBrandByFullVersionList = findPresetBrand(BROWSER_PRESETS, fullVersionList);
+
         browser.name = browserBrandByFullVersionList.brand || browser.name;
         browser.version = browserBrandByFullVersionList.version || browser.version;
     } else {
         const browserBrand = findPresetBrand(BROWSER_PRESETS, brands);
+
         browser.name = browserBrand.brand || browser.name;
         browser.version = browserBrand.brand && osData ? osData.uaFullVersion : browserBrand.version;
     }
