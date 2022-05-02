@@ -2,7 +2,7 @@ import { AgentInfo } from "./types";
 import { getUserAgentString, findPreset } from "./utils";
 import { WEBVIEW_PRESETS, CHROMIUM_PRESETS, BROWSER_PRESETS, OS_PRESETS, WEBKIT_PRESETS } from "./presets";
 
-export function findWebview(userAgent: string): boolean {
+export function isWebView(userAgent: string): boolean {
     return !!findPreset(WEBVIEW_PRESETS, userAgent).preset;
 }
 
@@ -13,7 +13,7 @@ export function getLegacyAgent(userAgent?: string): AgentInfo {
         name: "unknown",
         version: "-1",
         majorVersion: -1,
-        webview: findWebview(nextAgent),
+        webview: isWebView(nextAgent),
         chromium: false,
         chromiumVersion: "-1",
         webkit: false,
