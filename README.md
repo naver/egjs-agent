@@ -33,7 +33,7 @@ You can download the files for development
 * Specific version(min):  https://naver.github.io/egjs-agent/release/[VERSION]/dist/agent.min.js
 
 
-## Prepare for Client Hints!
+## Prepare for Client Hints and User-Agent Reduction!
 
 Chrome was planned to freeze userAgent to improve user privacy, and it is being applied as an experimental feature in 84+.
 
@@ -44,19 +44,23 @@ Not only Chrome, but other browsers will come someday.
 > If you want to test, enable the flag below.
 >
 > **chrome://flags/#enable-experimental-web-platform-features**
->
 > **chrome://flags/#freeze-user-agent**
+>
+> This reduced format will be available for testing via chrome://flags/#reduce-user-agent in Chrome 93.
+> **chrome://flags/#reduce-user-agent**
 
 
-### In Chrome (Chrome 87, Mac, Freeze User-Agent)
-* Before
+### User-Agent Reduction Proposed Rollout Plan
 ```
-Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4243.0 Safari/537.36
+Phase 4: Chrome 101 Ship reduced Chrome MINOR.BUILD.PATCH version numbers (“0.0.0”). Once rolled-out, the reduced UA string would apply to all page loads on desktop and mobile OSes that do not opt into the reverse Origin Trial.
+
+Phase 5: Chrome 107 Begin roll-out of reduced Desktop UA string and related JS APIs (navigator.userAgent, navigator.appVersion, navigator.platform). Once rolled-out, the reduced UA string would apply to all page loads on desktop OSes that do not opt into the reverse Origin Trial.
+
+Phase 6: Chrome 110 Begin roll-out of reduced Android Mobile (and Tablet) UA string and related JS APIs. Once rolled-out, the reduced UA string would apply to all page loads on Android that do not opt into the reverse Origin Trial.
+
+Reduction Completion Phase 7: Chrome 113 reverse Origin Trial ends and all page loads receive the reduced UA string and related JS APIs.
 ```
-* After
-```
-Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.0.0 Safari/537.36
-```
+
 ### In the future
 1. the following attribute values will not appear correctly.
     * navigator.userAgent
@@ -71,9 +75,10 @@ Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)
 
 ### Possible (You can know exactly)
 * Check browser name, major version
+* Check the full version under Chrome 101
 * Check mobile
-* Check iOS, Android
-* Check Webkit, Chromium
+* Check OS name
+* Check Webkit, Chromium 
 * Check old OS, OS Version (Chrome 84 support range or less)
     * **< Android 5.0**
     * **< Mac OS X 10.10**
@@ -138,15 +143,14 @@ agent.os.majorVersion
 
 ### Possible (If asynchronous)
 * You can get accurate agent information.
-* Check OS(Mac, Windows, Linux), OS version
+* Check OS version.
 * Check Browser full version.
 ```js
 import { getAccurateAgent } from "@egjs/agent";
 
 // Use Promise
 getAccurateAgent().then(agent => {
-    // Check OS, OS version
-    agent.os.name
+    // Check OS version
     agent.os.version
 
     // Check Browser full verion
@@ -158,50 +162,9 @@ getAccurateAgent(agent => {});
 ```
 
 ### If you dare to use synchrous, you have to choose.
-* You cannot get the OS name and version other than iOS, Android.
-* You can only get the major version of the browser. However, unless there is a serious bug, you will mainly check the major version.
-* Instead, infer to browser, Webkit, or Chromium.
-
-#### Examples
-* Check Mac Safari, iOS all browsers
-
-Mac Safari, iOS all browsers are webkit.
-```js
-import getAgent from "@egjs/agent";
-
-const agent = getAgent();
-
-if ((agent.os.name === "mac" || agent.os.name === "ios") && agent.browser.webkit) {
-    console.log("is mac, ios webkit");
-}
-```
-* Check Android version >= 5
-```js
-import getAgent from "@egjs/agent";
-
-const agent = getAgent();
-
-if (
-    agent.os.name === "android"
-    && (agent.os.majorVersion >= 5 || agent.isHints)) {
-    console.log("is Android >= 5");
-}
-```
-* Check iOS version >= 10
-```js
-import getAgent from "@egjs/agent";
-
-const agent = getAgent();
-
-
-if (
-    agent.os.name === "ios"
-    && (agent.os.majorVersion >= 10 || agent.isHints)
-) {
-    console.log("is iOS");
-}
-
-```
+* If you're checking a version (ex. 93.0.1234.56) lower than Chrome 101 to fix the bug, there shouldn't be a problem.
+* However, if you need to check the minor or patch version of version 101 or higher, you have to check it asynchronously.
+* You can check the OS name, but if you want to check the OS version, consider switching to asynchronous before reduction is applied.
 
 
 ## Supported Browsers

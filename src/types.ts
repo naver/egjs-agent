@@ -82,9 +82,7 @@ export interface NavigatorUAData {
     uaList?: NavigatorUABrandVersion[];
     mobile: boolean;
     platform: string;
-    getHighEntropyValues<T extends keyof UADataValues>(hints: T[]): Promise<{
-        [key in T]: HighEntropyValues<key>
+    getHighEntropyValues<T extends keyof UADataValues>(hints: readonly T[]): Promise<{
+        [key in T]: UADataValues[key]
     }>;
 }
-
-type HighEntropyValues<K> = K extends 'fullVersionList' ? NavigatorUABrandVersion[] : string;

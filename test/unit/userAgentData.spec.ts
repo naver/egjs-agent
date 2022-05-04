@@ -11,6 +11,7 @@ describe("test userAgentData", () => {
                     Object.defineProperty(window, "navigator", {
                         value: {
                             ...originalNavigator,
+                            userAgent: data.userAgent || originalNavigator.userAgent,
                             userAgentData: {
                                 ...data.userAgentData,
                                 platform: hasPlatform ? data.userAgentData.platform : "",
@@ -29,7 +30,7 @@ describe("test userAgentData", () => {
                         writable: true,
                     });
                 });
-                it ("test getAgent", () => {
+                it("test getAgent", () => {
                     // Given, When
                     const agent = getAgent();
 
@@ -50,6 +51,9 @@ describe("test userAgentData", () => {
 
                     expect(agent.browser.webkit).toBe(data.result.browser.webkit);
                     expect(agent.browser.webkitVersion).toBe(data.result.browser.webkitVersion);
+
+                    // webview
+                    expect(agent.browser.webview).toBe(data.result.browser.webview || false);
                 });
                 it ("test getAccurateAgent", async () => {
                     // Given, When
@@ -72,6 +76,9 @@ describe("test userAgentData", () => {
 
                     expect(agent.browser.webkit).toBe(data.result.browser.webkit);
                     expect(agent.browser.webkitVersion).toBe(data.result.browser.webkitVersion);
+
+                    // webview
+                    expect(agent.browser.webview).toBe(data.result.browser.webview || false);
                 });
             });
         });

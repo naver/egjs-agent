@@ -1,6 +1,7 @@
 import { UADataValues, AgentInfo, AgentBrowserInfo, AgentOSInfo } from "./types";
-import { some, find, findBrand, convertVersion, findPresetBrand } from "./utils";
+import { some, find, findBrand, convertVersion, findPresetBrand, getUserAgentString } from "./utils";
 import { BROWSER_PRESETS, OS_PRESETS, CHROMIUM_PRESETS, WEBKIT_PRESETS, WEBVIEW_PRESETS } from "./presets";
+import { isWebView } from "./userAgent";
 
 export function getClientHintsAgent(osData?: UADataValues): AgentInfo {
     const userAgentData = navigator.userAgentData;
@@ -17,7 +18,7 @@ export function getClientHintsAgent(osData?: UADataValues): AgentInfo {
         webkitVersion: "-1",
         chromium: false,
         chromiumVersion: "-1",
-        webview: !!findPresetBrand(WEBVIEW_PRESETS, brands).brand,
+        webview: !!findPresetBrand(WEBVIEW_PRESETS, brands).brand || isWebView(getUserAgentString()),
     };
     const os: AgentOSInfo = {
         name: "unknown",
@@ -45,13 +46,14 @@ export function getClientHintsAgent(osData?: UADataValues): AgentInfo {
     if (osData) {
         os.version = osData.platformVersion;
     }
-    
-    if (fullVersionList && !fullVersionList.length) {
+    if (fullVersionList && fullVersionList.length) {
         const browserBrandByFullVersionList = findPresetBrand(BROWSER_PRESETS, fullVersionList);
+
         browser.name = browserBrandByFullVersionList.brand || browser.name;
         browser.version = browserBrandByFullVersionList.version || browser.version;
     } else {
         const browserBrand = findPresetBrand(BROWSER_PRESETS, brands);
+
         browser.name = browserBrand.brand || browser.name;
         browser.version = browserBrand.brand && osData ? osData.uaFullVersion : browserBrand.version;
     }
