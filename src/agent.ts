@@ -69,3 +69,5 @@ function agent(userAgent?: string): AgentInfo {
 export { getLegacyAgent };
 
 export default agent;
+
+export * from "./types";
