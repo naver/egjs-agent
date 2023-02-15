@@ -35,12 +35,12 @@
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/naver/agent.git"
+		"url": "git+https://github.com/naver/egjs-agent.git"
 	},
 	"bugs": {
-		"url": "https://github.com/naver/agent/issues"
+		"url": "https://github.com/naver/egjs-agent/issues"
 	},
-	"homepage": "https://github.com/naver/agent#readme",
+	"homepage": "https://github.com/naver/egjs-agent#readme",
 	"devDependencies": {
 		"@daybrush/jsdoc": "^0.3.7",
 		"@egjs/build-helper": "^0.1.2",
