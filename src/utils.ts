@@ -108,3 +108,6 @@ export function findBrand(brands: NavigatorUABrandVersion[], preset: PresetInfo)
         return execRegExp(`${preset.test}`, brand.toLowerCase());
     });
 }
+export function checkIfMobile(userAgent: string): boolean {
+    return /Mobile|iP(hone|od|ad)|Android|BlackBerry|IEMobile|Kindle|NetFront|Silk-Accelerated|(hpw|web)OS|Fennec|Minimo|Opera M(obi|ini)|Blazer|Dolfin|Dolphin|Skyfire|Zune/.test(userAgent);
+}
