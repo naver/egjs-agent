@@ -60,7 +60,7 @@
         <div class="hero-image" style="background-image: url(//naver.github.io/egjs/img/Agent.png)">
         </div>
         <h2 class="title">
-            <span class="highlight">Agent</span><a href="https://github.com/naver/egjs-agent/releases/tag/2.4.3"><span class="version">v2.4.3</span></a>
+            <span class="highlight">Agent</span><a href="https://github.com/naver/egjs-agent/releases/tag/2.4.4"><span class="version">v2.4.4</span></a>
         </h2>
         <p class="intro">Extracts browser and operating system information from the user agent string or user agent object(userAgentData).<br/>
             <span class="hashtag">#user-agent-parser #browser-detection #client-hints</span>
@@ -122,12 +122,12 @@
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">getAgent</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@egjs/agent</span><span class="dl">"</span><span class="p">;</span>
 
 <span class="c1">// getAgent(eg.agent) will use browser's navigator.userAgentData or navigator.userAgent</span>
-<span class="kd">var</span> <span class="nx">agentInfo</span> <span class="o">=</span> <span class="nx">getAgent</span><span class="p">();</span> <span class="c1">// or eg.agent();</span>
+<span class="kd">var</span> <span class="nx">agentInfo</span> <span class="o">=</span> <span class="nf">getAgent</span><span class="p">();</span> <span class="c1">// or eg.agent();</span>
 
 <span class="c1">// or you can use own user-agent string</span>
-<span class="nx">agentInfo</span> <span class="o">=</span> <span class="nx">getAgent</span><span class="p">(</span><span class="nx">ua</span><span class="p">);</span>
+<span class="nx">agentInfo</span> <span class="o">=</span> <span class="nf">getAgent</span><span class="p">(</span><span class="nx">ua</span><span class="p">);</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">agentInfo</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">agentInfo</span><span class="p">);</span>
 <span class="cm">/*
     {
         browser: {
@@ -159,7 +159,7 @@
 
 <span class="c1">// Use Promise</span>
 <span class="c1">// eg.agent.getAccurateAgent</span>
-<span class="nx">getAccurateAgent</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="nx">agent</span> <span class="o">=&gt;</span> <span class="p">{</span>
+<span class="nf">getAccurateAgent</span><span class="p">().</span><span class="nf">then</span><span class="p">(</span><span class="nx">agent</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="c1">// Check OS, OS version</span>
     <span class="nx">agent</span><span class="p">.</span><span class="nx">os</span><span class="p">.</span><span class="nx">name</span>
     <span class="nx">agent</span><span class="p">.</span><span class="nx">os</span><span class="p">.</span><span class="nx">version</span>
@@ -169,7 +169,7 @@
 <span class="p">});</span>
 
 <span class="c1">// Use Callback</span>
-<span class="nx">getAccurateAgent</span><span class="p">(</span><span class="nx">agent</span> <span class="o">=&gt;</span> <span class="p">{});</span>
+<span class="nf">getAccurateAgent</span><span class="p">(</span><span class="nx">agent</span> <span class="o">=&gt;</span> <span class="p">{});</span>
 </code></pre></div></div>
 
 			</div>
@@ -228,9 +228,9 @@
         </div>
     </div>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">uaInput</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">.useragent-input</span><span class="dl">"</span><span class="p">);</span>
-<span class="nx">uaInput</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">input</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">agentInfo</span> <span class="o">=</span> <span class="nx">eg</span><span class="p">.</span><span class="nx">agent</span><span class="p">();</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">uaInput</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">.useragent-input</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">uaInput</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">input</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">agentInfo</span> <span class="o">=</span> <span class="nx">eg</span><span class="p">.</span><span class="nf">agent</span><span class="p">();</span>
 
     <span class="nx">osName</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">agentInfo</span><span class="p">.</span><span class="nx">os</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>
     <span class="nx">osVersion</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">agentInfo</span><span class="p">.</span><span class="nx">os</span><span class="p">.</span><span class="nx">version</span><span class="p">;</span>
