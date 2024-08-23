@@ -1,5 +1,5 @@
 import { AgentInfo } from "./types";
-import { getUserAgentString, findPreset } from "./utils";
+import { getUserAgentString, findPreset, checkIfMobile } from "./utils";
 import { WEBVIEW_PRESETS, CHROMIUM_PRESETS, BROWSER_PRESETS, OS_PRESETS, WEBKIT_PRESETS } from "./presets";
 
 export function isWebView(userAgent: string): boolean {
@@ -8,7 +8,7 @@ export function isWebView(userAgent: string): boolean {
 
 export function getLegacyAgent(userAgent?: string): AgentInfo {
     const nextAgent = getUserAgentString(userAgent);
-    const isMobile = !!/mobi/g.exec(nextAgent);
+    const isMobile = checkIfMobile(nextAgent);
     const browser = {
         name: "unknown",
         version: "-1",
