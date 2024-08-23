@@ -362,6 +362,54 @@ const AGENT_DATA_LIST = [
             },
         },
     },
+    {
+        name: "Mac && Chrome 100 (NO Version)",
+        platform: "macOS",
+        osData: {
+            architecture: "x86",
+            model: "",
+            platform: "macOS",
+            uaFullVersion: "100.0.4896.127",
+            fullVersionList: [
+                { brand: `"Not;A\\Brand`, version: "99.0.0.0" },
+                { brand: "Chromium", version: "100.0.4896.127" },
+                { brand: "Google Chrome", version: "100.0.4896.127" },
+            ],
+        },
+        userAgentData: {
+            brands: [
+                { brand: `"Not;A\\Brand`, version: "99" },
+                { brand: "Chromium", version: "100" },
+                { brand: "Google Chrome", version: "100" },
+            ],
+            mobile: false,
+            platform: "macOS",
+        },
+        result: {
+            os: {
+                name: "mac",
+                version: "-1",
+            },
+            browser: {
+                name: "chrome",
+                version: "100",
+                chromium: true,
+                webkit: false,
+                chromiumVersion: "100",
+                webkitVersion: "-1",
+            },
+            isMobile: false,
+        },
+        accurateResult: {
+            os: {
+                name: "mac",
+                version: "-1",
+            },
+            browser: {
+                version: "100.0.4896.127",
+            },
+        },
+    },
 ];
 
 export default AGENT_DATA_LIST;

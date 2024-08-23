@@ -30,12 +30,12 @@ export function getClientHintsAgent(osData?: UADataValues): AgentInfo {
     const chromiumBrand = findPresetBrand(CHROMIUM_PRESETS, brands);
 
     browser.chromium = !!chromiumBrand.brand;
-    browser.chromiumVersion = chromiumBrand.version;
+    browser.chromiumVersion = chromiumBrand.version || "-1";
     if (!browser.chromium) {
         const webkitBrand = findPresetBrand(WEBKIT_PRESETS, brands);
 
         browser.webkit = !!webkitBrand.brand;
-        browser.webkitVersion = webkitBrand.version;
+        browser.webkitVersion = webkitBrand.version || "-1";
     }
 
     const platfomResult = find(OS_PRESETS, preset => {
@@ -44,7 +44,7 @@ export function getClientHintsAgent(osData?: UADataValues): AgentInfo {
     os.name = platfomResult ? platfomResult.id : "";
 
     if (osData) {
-        os.version = osData.platformVersion;
+        os.version = osData.platformVersion || "-1";
     }
     if (fullVersionList && fullVersionList.length) {
         const browserBrandByFullVersionList = findPresetBrand(BROWSER_PRESETS, fullVersionList);
